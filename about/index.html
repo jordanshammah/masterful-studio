@@ -81,7 +81,7 @@
 
 <main>
 <section class="manifesto wrap">
-  <div style="display:grid;grid-template-columns:1fr 320px;gap:64px;align-items:start">
+  <div class="manifesto-layout" style="display:grid;grid-template-columns:1fr 320px;gap:64px;align-items:start">
     <div>
       <div class="kicker" style="margin-bottom:32px">About Masterful</div>
       <p class="manifesto-body">We run a fourteen-client visibility studio. All work is in-house. The deliverable is search presence: rankings, AI citations, entity recognition. Founded 2021.</p>
@@ -102,7 +102,8 @@
 </section>
 <style>
 @media(max-width:900px){
-  .manifesto .grid-about{grid-template-columns:1fr}
+  .manifesto-layout{grid-template-columns:1fr !important}
+  .manifesto-layout > div:last-child{position:static !important}
 }
 </style>
 

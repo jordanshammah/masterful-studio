@@ -32,6 +32,8 @@
   .case-card{border-right:0}
   .case-card:nth-last-child(-n+2){border-bottom:1px solid var(--rule)}
   .case-card:last-child{border-bottom:0}
+  .featured-card-inner{grid-template-columns:1fr !important}
+  .featured-card-inner > div:first-child{height:220px !important;grid-row:auto}
 }
 </style>
 </head>
@@ -104,7 +106,8 @@
   <div class="case-grid">
 
     <!-- Northpath Labs — featured -->
-    <div class="case-card" style="grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:32px;border-right:0">
+    <div class="case-card" style="grid-column:1/-1;border-right:0">
+      <div class="featured-card-inner" style="display:grid;grid-template-columns:1fr 1fr;gap:32px">
       <div class="cc-imgph" style="height:280px;grid-row:1/3">northpath labs · hero shot</div>
       <div>
         <div class="cc-tags">
@@ -116,6 +119,7 @@
         <p class="cc-name">Northpath Labs</p>
         <p class="cc-stat">+418% AI citations</p>
         <a href="/work/northpath.html" class="btn" style="margin-top:20px">Read the case study →</a>
+      </div>
       </div>
     </div>
 
