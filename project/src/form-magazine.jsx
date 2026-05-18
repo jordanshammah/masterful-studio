@@ -305,7 +305,7 @@ function MFormDone(){
   return (
     <MFormShell step={6} complete kicker="✓ CARD FILED"
       question={<>Card filed. We&rsquo;re <em style={{color:'var(--orange)'}}>on it.</em></>}
-      sub="One of nine humans will reply within 48 hours with your visibility report and what we'd do first. No automated drips."
+      sub="Someone on the team will reply within 48 hours with your visibility report and what we'd do first. No automated drips."
       ctaLabel="Back to the homepage">
       <div style={{display:'grid', gridTemplateColumns:'repeat(3, 1fr)', gap:0, borderTop:'1px solid var(--rule)', marginTop:8}}>
         {[
