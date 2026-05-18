@@ -2,6 +2,13 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;scroll-behavior:smooth}
 
+/* ─── LOGO ─────────────────────────────────────── */
+.logo-mark{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:inherit}
+.logo-m{width:28px;height:28px;flex-shrink:0}
+.logo-wordmark{font-family:'Big Shoulders Display',Impact,sans-serif;font-size:19px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;line-height:1}
+.site-nav .logo-wordmark{color:var(--ink)}
+.on-dark .logo-wordmark,.nav-dark .logo-wordmark{color:var(--cream)}
+
 /* ─── TOKENS ─────────────────────────────────────── */
 :root{
   --cream:#F4F0E8;
