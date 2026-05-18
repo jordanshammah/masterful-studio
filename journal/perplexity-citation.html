@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <link rel="icon" type="image/svg+xml" href="../favicon.svg">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>How we got Perplexity to cite us — Masterful Journal</title>
+<title>How we got Perplexity to cite us: Masterful Journal</title>
 <meta name="description" content="A play-by-play of an AEO sprint that pulled citations from nothing in 38 days. The prompt-map spreadsheet, the schema we shipped.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -113,26 +113,26 @@
         <p>The category was niche enough that there were fewer than twenty pages on the internet that could even attempt to answer the prompt. That's the first thing you check. If there are a thousand good pages competing, you have a different problem. If there are twenty, you have an opportunity.</p>
 
         <h2 id="prompt-map">§ II &nbsp; The prompt map</h2>
-        <p>We started with the prompt map. We pulled 180 prompts across the buyer journey — awareness, consideration, decision — and tested all 180 across six models: ChatGPT 4o, Perplexity, Claude 3.5 Sonnet, Gemini 1.5, Llama 3.1 70B, and Grok 2.</p>
+        <p>We started with the prompt map. We pulled 180 prompts across the buyer journey (awareness, consideration, decision) and tested all 180 across six AI tools: ChatGPT 4o, Perplexity, Claude 3.5 Sonnet, Gemini 1.5, Llama 3.1 70B, and Grok 2.</p>
         <div class="imgph" style="height:220px;margin:32px 0 8px">figure 2 · prompt cluster heatmap</div>
-        <p class="fig-caption">Fig. 2 — Prompt cluster heatmap. 180 prompts, 6 models. Red = competitor cited. Orange = neither cited.</p>
-        <p>The heatmap was revealing. Our competitor was being cited consistently in one cluster — comparison queries ("X vs Y", "best tools for Z"). They had a single, well-structured comparison page that all six models loved to lift from. That was it. One page. That's their whole AEO strategy.</p>
+        <p class="fig-caption">Fig. 2: Prompt cluster heatmap. 180 prompts, 6 models. Red = competitor cited. Orange = neither cited.</p>
+        <p>The heatmap was revealing. Our competitor was being cited consistently in one cluster: comparison queries ("X vs Y", "best tools for Z"). They had a single, well-structured comparison page that all six models loved to lift from. That was it. One page. That's their whole AEO strategy.</p>
         <p>Our client appeared in exactly zero prompts. Not because their product was worse. Because their pages didn't have the shape that models want to lift.</p>
 
         <h2 id="pages">§ III &nbsp; The pages</h2>
         <p>We shipped four pages in six weeks. Each one built around a specific prompt cluster. Each one with:</p>
-        <p>A clear, definitive thesis in the first paragraph — the kind of sentence that a model can lift verbatim and attribute to you. A Q&amp;A structure in the middle, with headers that match the prompt language exactly. A comparison table (because models love tables). And a schema block with FAQ markup, Article markup, and the boring Organization properties that most teams skip.</p>
-        <p>We also shipped llms.txt on day twelve. Basic stuff — the important pages, the canonical URLs, a brief description of what the brand does. Perplexity started fetching it by week two. We could see it in the server logs.</p>
+        <p>A clear, definitive thesis in the first paragraph: the kind of sentence that a model can lift verbatim and attribute to you. A Q&amp;A structure in the middle, with headers that match the prompt language exactly. A comparison table (because models love tables). And a schema block with FAQ markup, Article markup, and the boring Organization properties that most teams skip.</p>
+        <p>We also shipped llms.txt on day twelve. Basic stuff: the important pages, the canonical URLs, a brief description of what the brand does. Perplexity started fetching it by week two. We could see it in the server logs.</p>
 
         <h2 id="result">§ IV &nbsp; The result</h2>
         <p>First citation: day 24. Perplexity, consideration-stage query. The model lifted two sentences from our comparison table and attributed them correctly.</p>
-        <p>By day 38, the client was cited in 14 of the 180 prompts we were tracking. Their competitor was still cited in 22. But the gap had closed significantly — and we'd only shipped four pages.</p>
+        <p>By day 38, the client was cited in 14 of the 180 prompts we were tracking. Their competitor was still cited in 22. But the gap had closed significantly, and we'd only shipped four pages.</p>
         <p>By month three, the client was cited in 31 prompts. The competitor, still 22. The comparison page we built had become the more-cited page, even though our client still doesn't rank particularly well on Google for the category term.</p>
 
         <h2 id="differently">§ V &nbsp; What we'd do differently</h2>
         <p>Ship llms.txt on day one, not day twelve. The two-week delay probably cost us a week of citations.</p>
         <p>Build the prompt map before writing a single word. We had a rough version at the start but refined it after the first page draft. The refinement changed the structure of the second and third pages significantly. Should've done it upfront.</p>
-        <p>Add original data to at least one page. The pages that get cited most consistently are the ones with a unique data point — a survey result, an analysis, a benchmark — that models can't find anywhere else. We didn't have time to run original research on this sprint. Next time, we'd budget for it.</p>
+        <p>Add original data to at least one page. The pages that get cited most consistently are the ones with a unique data point (a survey result, an analysis, a benchmark) that models can't find anywhere else. We didn't have time to run original research on this sprint. Next time, we'd budget for it.</p>
       </div>
 
       <!-- Filed tags -->
