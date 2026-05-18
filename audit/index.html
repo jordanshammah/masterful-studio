@@ -1,0 +1,468 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Free Audit — Masterful</title>
+<meta name="description" content="Six questions. Ninety seconds. A free 18-page visibility report within 48 hours. No dashboard. No drip campaign. Just a PDF and the truth.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/main.css">
+<style>
+/* ─── FORM LAYOUT ─────────────────────────────────── */
+html,body{height:100%;background:var(--cream)}
+
+.audit-shell{
+  min-height:100vh;
+  display:grid;
+  grid-template-rows:auto 1fr auto;
+}
+
+/* Card chrome */
+.card-frame{
+  display:flex;
+  align-items:stretch;
+  min-height:calc(100vh - 112px);
+  max-width:960px;
+  margin:0 auto;
+  width:100%;
+  padding:32px;
+  gap:0;
+}
+
+/* Left panel — decorative */
+.card-l{
+  width:200px;
+  flex-shrink:0;
+  border-right:1px solid var(--rule);
+  padding-right:32px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+}
+.cl-wordmark{
+  font-family:var(--serif);
+  font-size:18px;
+  letter-spacing:-0.01em;
+  color:var(--ink);
+}
+.cl-big-num{
+  font-family:var(--serif);
+  font-size:96px;
+  line-height:1;
+  letter-spacing:-0.04em;
+  color:var(--orange);
+  opacity:0.2;
+}
+.cl-meta{
+  font-family:var(--mono);
+  font-size:9px;
+  letter-spacing:0.06em;
+  text-transform:uppercase;
+  color:var(--mute);
+  line-height:1.8;
+}
+
+/* Right panel — content */
+.card-r{
+  flex:1;
+  padding-left:48px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+}
+
+/* Form info */
+.form-info{margin-bottom:32px}
+.fi-label{
+  font-family:var(--mono);font-size:10px;letter-spacing:0.06em;
+  text-transform:uppercase;color:var(--mute);margin-bottom:20px;
+  display:flex;gap:16px;align-items:center;flex-wrap:wrap;
+}
+.fi-tag{padding:4px 10px;border:1px solid var(--rule-dark);border-radius:2px}
+.fi-body{font-size:13px;line-height:1.6;color:var(--mute);max-width:480px;margin-bottom:16px}
+.fi-guarantees{display:flex;gap:20px;font-family:var(--mono);font-size:9px;letter-spacing:0.06em;text-transform:uppercase;color:var(--mute)}
+
+/* Question */
+.q-label{font-family:var(--mono);font-size:10px;letter-spacing:0.06em;text-transform:uppercase;color:var(--mute);margin-bottom:16px}
+.q-headline{font-family:var(--serif);font-size:clamp(24px,3vw,38px);line-height:1.1;letter-spacing:-0.01em;margin-bottom:8px}
+.q-hint{font-size:13px;color:var(--mute);margin-bottom:28px;line-height:1.5}
+
+/* Input fields */
+.fields-group{display:flex;flex-direction:column;gap:0;margin-bottom:24px}
+
+/* Choices */
+.choices{display:flex;flex-direction:column;gap:8px;margin-bottom:24px}
+.choice{
+  display:flex;align-items:center;gap:14px;padding:14px 16px;
+  border:1px solid var(--rule);cursor:pointer;
+  transition:border-color .15s,background .15s;
+  user-select:none;
+}
+.choice:hover{border-color:var(--ink)}
+.choice.selected{border-color:var(--orange);background:rgba(196,80,26,0.04)}
+.choice-mark{
+  width:14px;height:14px;border-radius:50%;border:1.5px solid var(--rule-dark);
+  flex-shrink:0;transition:border-color .15s,background .15s;
+}
+.choice.selected .choice-mark{border-color:var(--orange);background:var(--orange)}
+.choice-label{font-size:14px}
+
+/* Nav row */
+.form-nav{display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding-top:24px;border-top:1px solid var(--rule)}
+.fn-back{
+  background:transparent;border:0;color:var(--mute);
+  font-family:var(--mono);font-size:11px;letter-spacing:0.06em;text-transform:uppercase;
+  cursor:pointer;padding:0;transition:color .15s;
+}
+.fn-back:hover{color:var(--ink)}
+.fn-hint{font-family:var(--mono);font-size:9px;letter-spacing:0.06em;text-transform:uppercase;color:var(--mute)}
+
+/* Footer strip */
+.card-footer{
+  border-top:1px solid var(--rule);
+  padding:12px 32px;
+  max-width:960px;
+  margin:0 auto;
+  width:100%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+.cf-site{font-family:var(--mono);font-size:9px;letter-spacing:0.06em;text-transform:uppercase;color:var(--mute)}
+.cf-progress{display:flex;align-items:center;gap:12px;font-family:var(--mono);font-size:9px;letter-spacing:0.06em;text-transform:uppercase;color:var(--mute)}
+.progress-track{width:120px;height:2px;background:var(--rule-dark);overflow:hidden}
+.progress-fill-el{height:100%;background:var(--orange);transition:width .4s cubic-bezier(.4,0,.2,1)}
+
+/* Confirm screen */
+.confirm-screen{text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;flex:1;padding:48px 0}
+.cs-icon{font-size:40px;margin-bottom:24px}
+.cs-headline{font-family:var(--serif);font-size:clamp(28px,3.5vw,48px);line-height:1.1;letter-spacing:-0.02em;margin-bottom:12px}
+.cs-sub{font-size:15px;line-height:1.65;color:var(--mute);max-width:440px;margin-bottom:32px}
+.cs-steps{list-style:none;display:flex;flex-direction:column;gap:12px;margin-bottom:40px;text-align:left}
+.cs-steps li{display:flex;align-items:flex-start;gap:14px;font-size:14px}
+.cs-step-n{font-family:var(--mono);font-size:10px;letter-spacing:0.06em;text-transform:uppercase;color:var(--orange);flex-shrink:0;padding-top:2px}
+
+/* Responsive */
+@media(max-width:640px){
+  .card-l{display:none}
+  .card-r{padding-left:0}
+  .card-frame{padding:24px}
+}
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="nav-top">
+    <span class="nav-top-l">Est. 2021 · Brooklyn, NY</span>
+    <span class="nav-top-c"><a href="/">Masterful</a></span>
+    <span class="nav-top-r">SEO · AEO · GEO</span>
+  </div>
+  <div class="nav-bottom">
+    <ul class="nav-links">
+      <li><a href="/services/" class="link-ul">Services</a></li>
+      <li><a href="/work/" class="link-ul">Work</a></li>
+      <li><a href="/journal/" class="link-ul">Journal</a></li>
+      <li><a href="/about/" class="link-ul">About</a></li>
+    </ul>
+    <a href="/" class="btn btn-ghost">← Back home</a>
+  </div>
+</nav>
+
+<main class="audit-shell">
+  <div class="card-frame">
+    <!-- Left panel -->
+    <aside class="card-l">
+      <div>
+        <div class="cl-wordmark">Masterful</div>
+        <div style="font-family:var(--mono);font-size:9px;letter-spacing:0.06em;text-transform:uppercase;color:var(--mute);margin-top:4px">The Subscriber Card</div>
+        <div style="font-family:var(--mono);font-size:9px;letter-spacing:0.06em;text-transform:uppercase;color:var(--mute)">Free · 6 Questions</div>
+      </div>
+      <div class="cl-big-num" id="left-num">00</div>
+      <div class="cl-meta">
+        EST. 2021 · BROOKLYN<br>
+        masterful.studio<br>
+        vol. xii · cover
+      </div>
+    </aside>
+
+    <!-- Right panel -->
+    <div class="card-r">
+
+      <!-- STEP 0: Welcome -->
+      <div id="step-0" class="step-pane">
+        <div class="form-info">
+          <div class="fi-label"><span class="fi-tag">Free</span><span>6 Questions</span></div>
+          <h2 style="font-family:var(--serif);font-size:clamp(28px,3.5vw,48px);line-height:1.05;letter-spacing:-0.02em;margin-bottom:12px">Find out what the <em style="font-style:italic">machines say</em> about you</h2>
+          <p class="fi-body">Six quick questions. Ninety seconds. A free 18-page report — what models say about your brand today, what we'd change first, and what we think it'd be worth.</p>
+          <div class="fi-guarantees">
+            <span>No login</span>
+            <span>No spam</span>
+            <span>No sales calls</span>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:12px">
+          <div style="display:flex;gap:20px;font-family:var(--mono);font-size:10px;letter-spacing:0.06em;text-transform:uppercase;color:var(--mute)">
+            <span>Avg. completion · 94s</span>
+            <span>Reply ≤ 48hr</span>
+          </div>
+        </div>
+        <button class="btn btn-orange" onclick="goTo(1)" style="align-self:flex-start">Let's begin →</button>
+        <p style="font-family:var(--mono);font-size:9px;letter-spacing:0.06em;text-transform:uppercase;color:var(--mute);margin-top:12px">or press ↵ Enter</p>
+      </div>
+
+      <!-- STEP 1: Who -->
+      <div id="step-1" class="step-pane" style="display:none">
+        <div class="fi-label">
+          <span>About You · Step 01</span>
+          <span>Form No. <strong style="color:var(--ink)">01</strong> / 06</span>
+        </div>
+        <div class="form-info">
+          <p class="q-label">Question No. 01</p>
+          <h2 class="q-headline">First, who are<br>we talking to?</h2>
+          <p class="q-hint">We promise we won't send fourteen follow-ups. One reply, from a human, within 48 hours.</p>
+        </div>
+        <div class="fields-group">
+          <div class="field-group">
+            <label class="field-label">Full name</label>
+            <input type="text" class="field" id="f-name" placeholder="Your full name" autocomplete="name">
+          </div>
+          <div class="field-group">
+            <label class="field-label">Role at the company</label>
+            <input type="text" class="field" id="f-role" placeholder="e.g. Founder, Head of Marketing">
+          </div>
+          <div class="field-group">
+            <label class="field-label">Email address</label>
+            <input type="email" class="field" id="f-email" placeholder="you@company.com" autocomplete="email">
+          </div>
+          <div class="field-group">
+            <label class="field-label">Phone (optional)</label>
+            <input type="tel" class="field" id="f-phone" placeholder="+1 (555) 000 0000" autocomplete="tel">
+          </div>
+        </div>
+        <div class="form-nav">
+          <button class="fn-back" style="visibility:hidden">Back</button>
+          <span class="fn-hint">press ↵ to continue</span>
+          <button class="btn btn-orange" onclick="goTo(2)">Continue →</button>
+        </div>
+      </div>
+
+      <!-- STEP 2: Business -->
+      <div id="step-2" class="step-pane" style="display:none">
+        <div class="fi-label">
+          <span>The Business · Step 02</span>
+          <span>Form No. <strong style="color:var(--ink)">02</strong> / 06</span>
+        </div>
+        <div class="form-info">
+          <p class="q-label">Question No. 02</p>
+          <h2 class="q-headline">And what do you<br><em style="font-style:italic">actually do?</em></h2>
+          <p class="q-hint">One line is fine. We just want enough to spin up the audit before we talk.</p>
+        </div>
+        <div class="fields-group">
+          <div class="field-group">
+            <label class="field-label">Business / brand name</label>
+            <input type="text" class="field" id="f-biz-name" placeholder="Company name">
+          </div>
+          <div class="field-group">
+            <label class="field-label">Website URL</label>
+            <input type="url" class="field" id="f-url" placeholder="https://yoursite.com">
+          </div>
+          <div class="field-group">
+            <label class="field-label">Niche / category</label>
+            <input type="text" class="field" id="f-niche" placeholder="e.g. B2B SaaS, DTC wellness, local plumbing">
+          </div>
+        </div>
+        <div class="form-nav">
+          <button class="fn-back" onclick="goTo(1)">← Previous</button>
+          <span class="fn-hint">press ↵ to continue</span>
+          <button class="btn btn-orange" onclick="goTo(3)">Continue →</button>
+        </div>
+      </div>
+
+      <!-- STEP 3: Revenue -->
+      <div id="step-3" class="step-pane" style="display:none">
+        <div class="fi-label">
+          <span>The Numbers · Step 03</span>
+          <span>Form No. <strong style="color:var(--ink)">03</strong> / 06</span>
+        </div>
+        <div class="form-info">
+          <p class="q-label">Question No. 03</p>
+          <h2 class="q-headline">How much revenue is<br>the business doing right now?</h2>
+          <p class="q-hint">Approximate is fine. We don't share this. The playbook for $20k/mo is very different from the playbook for $2M/mo.</p>
+        </div>
+        <div class="choices" id="revenue-choices">
+          <div class="choice" onclick="selectChoice(this, 'revenue')"><div class="choice-mark"></div><span class="choice-label">Pre-revenue / just launching</span></div>
+          <div class="choice" onclick="selectChoice(this, 'revenue')"><div class="choice-mark"></div><span class="choice-label">$0–10k / month</span></div>
+          <div class="choice" onclick="selectChoice(this, 'revenue')"><div class="choice-mark"></div><span class="choice-label">$10k–50k / month</span></div>
+          <div class="choice" onclick="selectChoice(this, 'revenue')"><div class="choice-mark"></div><span class="choice-label">$50k–250k / month</span></div>
+          <div class="choice" onclick="selectChoice(this, 'revenue')"><div class="choice-mark"></div><span class="choice-label">$250k–1M / month</span></div>
+          <div class="choice" onclick="selectChoice(this, 'revenue')"><div class="choice-mark"></div><span class="choice-label">$1M+ / month</span></div>
+        </div>
+        <div class="form-nav">
+          <button class="fn-back" onclick="goTo(2)">← Previous</button>
+          <span class="fn-hint">press ↵ to continue</span>
+          <button class="btn btn-orange" onclick="goTo(4)">Continue →</button>
+        </div>
+      </div>
+
+      <!-- STEP 4: Budget -->
+      <div id="step-4" class="step-pane" style="display:none">
+        <div class="fi-label">
+          <span>The Budget · Step 04</span>
+          <span>Form No. <strong style="color:var(--ink)">04</strong> / 06</span>
+        </div>
+        <div class="form-info">
+          <p class="q-label">Question No. 04</p>
+          <h2 class="q-headline">What's the budget you can put<br>toward visibility, monthly?</h2>
+          <p class="q-hint">Our floor is $4k/mo so we can do real work. If you're below, we'll happily send a self-serve checklist — no shame.</p>
+        </div>
+        <div class="choices" id="budget-choices">
+          <div class="choice" onclick="selectChoice(this, 'budget')"><div class="choice-mark"></div><span class="choice-label">Under $4k — send me the checklist</span></div>
+          <div class="choice" onclick="selectChoice(this, 'budget')"><div class="choice-mark"></div><span class="choice-label">$4k–8k / month</span></div>
+          <div class="choice" onclick="selectChoice(this, 'budget')"><div class="choice-mark"></div><span class="choice-label">$8k–15k / month</span></div>
+          <div class="choice" onclick="selectChoice(this, 'budget')"><div class="choice-mark"></div><span class="choice-label">$15k–30k / month</span></div>
+          <div class="choice" onclick="selectChoice(this, 'budget')"><div class="choice-mark"></div><span class="choice-label">$30k+ / month</span></div>
+          <div class="choice" onclick="selectChoice(this, 'budget')"><div class="choice-mark"></div><span class="choice-label">Project-based, let's talk</span></div>
+        </div>
+        <div class="form-nav">
+          <button class="fn-back" onclick="goTo(3)">← Previous</button>
+          <span class="fn-hint">press ↵ to continue</span>
+          <button class="btn btn-orange" onclick="goTo(5)">Continue →</button>
+        </div>
+      </div>
+
+      <!-- STEP 5: Goals -->
+      <div id="step-5" class="step-pane" style="display:none">
+        <div class="fi-label">
+          <span>Goals · Step 05</span>
+          <span>Form No. <strong style="color:var(--ink)">05</strong> / 06</span>
+        </div>
+        <div class="form-info">
+          <p class="q-label">Question No. 05</p>
+          <h2 class="q-headline">What does <em style="font-style:italic">winning</em><br>look like in 6 months?</h2>
+          <p class="q-hint">Pick everything that applies. We'll prioritise accordingly.</p>
+        </div>
+        <div class="choices multi" id="goals-choices">
+          <div class="choice" onclick="toggleChoice(this)"><div class="choice-mark" style="border-radius:2px"></div><span class="choice-label">Show up in ChatGPT &amp; Perplexity answers</span></div>
+          <div class="choice" onclick="toggleChoice(this)"><div class="choice-mark" style="border-radius:2px"></div><span class="choice-label">Rank #1 on Google for our core terms</span></div>
+          <div class="choice" onclick="toggleChoice(this)"><div class="choice-mark" style="border-radius:2px"></div><span class="choice-label">More qualified pipeline from organic</span></div>
+          <div class="choice" onclick="toggleChoice(this)"><div class="choice-mark" style="border-radius:2px"></div><span class="choice-label">Become the default brand in our category</span></div>
+          <div class="choice" onclick="toggleChoice(this)"><div class="choice-mark" style="border-radius:2px"></div><span class="choice-label">Recover from a Google algorithm hit</span></div>
+          <div class="choice" onclick="toggleChoice(this)"><div class="choice-mark" style="border-radius:2px"></div><span class="choice-label">Other — I'll tell you on a call</span></div>
+        </div>
+        <div class="form-nav">
+          <button class="fn-back" onclick="goTo(4)">← Previous</button>
+          <span class="fn-hint">press ↵ to continue</span>
+          <button class="btn btn-orange" onclick="goTo(6)">Continue →</button>
+        </div>
+      </div>
+
+      <!-- STEP 6: Source -->
+      <div id="step-6" class="step-pane" style="display:none">
+        <div class="fi-label">
+          <span>Last One · Step 06</span>
+          <span>Form No. <strong style="color:var(--ink)">06</strong> / 06</span>
+        </div>
+        <div class="form-info">
+          <p class="q-label">Question No. 06</p>
+          <h2 class="q-headline">Last one — how did<br>you <em style="font-style:italic">find us?</em></h2>
+          <p class="q-hint">Genuinely curious. Helps us spend time on the channels that work.</p>
+        </div>
+        <div class="choices" id="source-choices">
+          <div class="choice" onclick="selectChoice(this, 'source')"><div class="choice-mark"></div><span class="choice-label">A friend / colleague</span></div>
+          <div class="choice" onclick="selectChoice(this, 'source')"><div class="choice-mark"></div><span class="choice-label">Twitter / X</span></div>
+          <div class="choice" onclick="selectChoice(this, 'source')"><div class="choice-mark"></div><span class="choice-label">LinkedIn</span></div>
+          <div class="choice" onclick="selectChoice(this, 'source')"><div class="choice-mark"></div><span class="choice-label">Podcast or YouTube</span></div>
+          <div class="choice" onclick="selectChoice(this, 'source')"><div class="choice-mark"></div><span class="choice-label">Our journal / blog post</span></div>
+          <div class="choice" onclick="selectChoice(this, 'source')"><div class="choice-mark"></div><span class="choice-label">ChatGPT or Perplexity told you</span></div>
+          <div class="choice" onclick="selectChoice(this, 'source')"><div class="choice-mark"></div><span class="choice-label">Google search</span></div>
+          <div class="choice" onclick="selectChoice(this, 'source')"><div class="choice-mark"></div><span class="choice-label">Don't remember</span></div>
+        </div>
+        <div class="form-nav">
+          <button class="fn-back" onclick="goTo(5)">← Previous</button>
+          <span class="fn-hint">press ↵ to submit</span>
+          <button class="btn btn-orange" onclick="submitForm()">Mail the card →</button>
+        </div>
+      </div>
+
+      <!-- STEP 7: Confirmation -->
+      <div id="step-7" class="step-pane" style="display:none">
+        <div class="confirm-screen">
+          <div class="cs-icon">✓</div>
+          <h2 class="cs-headline">Card filed. We're<br><em style="font-style:italic">on it.</em></h2>
+          <p class="cs-sub">One of nine humans will reply within 48 hours with your visibility report and what we'd do first. No automated drips.</p>
+          <ul class="cs-steps">
+            <li><span class="cs-step-n">I.</span><span>We score you in 6 LLMs</span></li>
+            <li><span class="cs-step-n">II.</span><span>We map your top 50 prompts</span></li>
+            <li><span class="cs-step-n">III.</span><span>We send a free report + plan</span></li>
+          </ul>
+          <a href="/" class="btn btn-ghost">← Back to the homepage</a>
+        </div>
+      </div>
+
+    </div><!-- card-r -->
+  </div><!-- card-frame -->
+
+  <!-- Footer strip -->
+  <footer class="card-footer">
+    <span class="cf-site">masterful.studio · the subscriber card</span>
+    <div class="cf-progress">
+      <span id="progress-text">0% complete</span>
+      <div class="progress-track">
+        <div class="progress-fill-el" id="progress-bar" style="width:0%"></div>
+      </div>
+      <span>vol. xii</span>
+    </div>
+  </footer>
+</main>
+
+<script>
+const STEPS = 7; // 0–6 = steps, 7 = confirm
+const PROGRESS = [0, 17, 33, 50, 67, 83, 100, 100];
+const LEFT_NUMS = ['00', '01', '02', '03', '04', '05', '06', '✓'];
+
+let currentStep = 0;
+
+function goTo(n) {
+  document.getElementById('step-' + currentStep).style.display = 'none';
+  currentStep = n;
+  document.getElementById('step-' + currentStep).style.display = '';
+  updateChrome(n);
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+
+function updateChrome(n) {
+  const pct = PROGRESS[n] || 0;
+  document.getElementById('progress-bar').style.width = pct + '%';
+  document.getElementById('progress-text').textContent = (n === 7 ? 'card filed ✓' : pct + '% complete');
+  document.getElementById('left-num').textContent = LEFT_NUMS[n] || '00';
+}
+
+function selectChoice(el, group) {
+  const parent = el.parentElement;
+  parent.querySelectorAll('.choice').forEach(c => c.classList.remove('selected'));
+  el.classList.add('selected');
+}
+
+function toggleChoice(el) {
+  el.classList.toggle('selected');
+}
+
+function submitForm() {
+  goTo(7);
+}
+
+// Enter key navigation
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter' && currentStep < 6) {
+    const pane = document.getElementById('step-' + currentStep);
+    const primaryBtn = pane.querySelector('.btn-orange');
+    if (primaryBtn) primaryBtn.click();
+  }
+});
+</script>
+
+</body>
+</html>

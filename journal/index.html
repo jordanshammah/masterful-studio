@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Journal — Masterful</title>
+<meta name="description" content="Field notes on getting cited. We write down what worked, what didn't, and what we'd charge for elsewhere. Not weekly. Not on a cadence.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/main.css">
+<style>
+.journal-hero{display:grid;grid-template-columns:1fr 1fr;gap:48px;padding:64px 0;border-bottom:1px solid var(--rule)}
+.journal-stats{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-content:start}
+.lead-entry{display:grid;grid-template-columns:1fr 1fr;gap:0;padding:48px 0;border-bottom:1px solid var(--rule)}
+.le-img{padding-right:48px;border-right:1px solid var(--rule)}
+.le-content{padding-left:48px}
+.entries-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;padding:48px 0;border-bottom:1px solid var(--rule)}
+.entry-card{padding:28px;border-right:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.entry-card:nth-child(3n){border-right:0}
+.entry-card:nth-last-child(-n+3){border-bottom:0}
+.ec-tag{font-family:var(--mono);font-size:9px;letter-spacing:0.08em;text-transform:uppercase;color:var(--orange);margin-bottom:8px}
+.ec-date{font-family:var(--mono);font-size:10px;letter-spacing:0.06em;text-transform:uppercase;color:var(--mute);margin-bottom:12px}
+.ec-headline{font-family:var(--serif);font-size:clamp(16px,1.8vw,20px);line-height:1.2;letter-spacing:-0.01em;margin-bottom:10px}
+.ec-body{font-size:13px;line-height:1.6;color:var(--mute);margin-bottom:16px}
+.ec-meta{display:flex;align-items:center;gap:12px;font-family:var(--mono);font-size:10px;letter-spacing:0.06em;text-transform:uppercase;color:var(--mute)}
+.ec-read{color:var(--orange)}
+
+@media(max-width:900px){
+  .journal-hero{grid-template-columns:1fr}
+  .lead-entry{grid-template-columns:1fr}
+  .le-img{border-right:0;padding-right:0;border-bottom:1px solid var(--rule);padding-bottom:32px}
+  .le-content{padding-left:0;padding-top:32px}
+  .entries-grid{grid-template-columns:1fr}
+  .entry-card{border-right:0}
+  .entry-card:nth-last-child(-n+3){border-bottom:1px solid var(--rule)}
+  .entry-card:last-child{border-bottom:0}
+}
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="nav-top">
+    <span class="nav-top-l">Est. 2021 · Brooklyn, NY</span>
+    <span class="nav-top-c"><a href="/">Masterful</a></span>
+    <span class="nav-top-r">SEO · AEO · GEO</span>
+  </div>
+  <div class="nav-bottom">
+    <ul class="nav-links">
+      <li><a href="/services/" class="link-ul">Services</a></li>
+      <li><a href="/work/" class="link-ul">Work</a></li>
+      <li><a href="/journal/" class="link-ul active">Journal</a></li>
+      <li><a href="/about/" class="link-ul">About</a></li>
+    </ul>
+    <a href="/audit/" class="btn btn-orange">Free audit</a>
+  </div>
+</nav>
+
+<div class="masthead">
+  <div class="masthead-inner">
+    <span class="masthead-item">Masterful Quarterly · Vol. XII</span>
+    <span class="masthead-item">The Visibility Issue · May 2026</span>
+    <span class="masthead-item">Subscribers: 14 brands · always</span>
+    <span class="masthead-item">Limited print run · $0.00</span>
+  </div>
+</div>
+
+<main>
+<section class="wrap">
+  <div class="journal-hero">
+    <div>
+      <div class="kicker" style="margin-bottom:24px">Journal · Field Notes on Getting Cited</div>
+      <h1 style="font-family:var(--serif);font-size:clamp(44px,5.5vw,72px);line-height:1.0;letter-spacing:-0.02em;margin-bottom:16px">Field notes,<br><em style="font-style:italic">filed in public.</em></h1>
+      <p style="font-size:15px;line-height:1.65;color:var(--mute);max-width:440px">We write down what worked, what didn't, and what we'd charge for elsewhere. Posted when we have something to say. Not weekly. Not on a cadence. No newsletter.</p>
+    </div>
+    <div class="journal-stats">
+      <div class="stat-block">
+        <div class="stat-n">41</div>
+        <div class="stat-l">Entries</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-n">6</div>
+        <div class="stat-l">Contributors</div>
+      </div>
+      <div class="stat-block" style="grid-column:1/-1">
+        <div class="stat-n" style="font-size:20px;font-family:var(--sans);font-weight:400">Updated May 14</div>
+        <div class="stat-l">Last entry</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- Lead entry -->
+<section class="wrap">
+  <div class="kicker" style="margin:40px 0 32px">Lead Entry <span class="kicker-num">/ XII</span></div>
+  <div class="lead-entry">
+    <div class="le-img">
+      <div class="imgph" style="height:320px;margin-bottom:12px">featured article art</div>
+      <div style="display:flex;gap:8px;margin-top:12px">
+        <span class="tag tag-filled">AEO</span>
+      </div>
+    </div>
+    <div class="le-content">
+      <div class="ec-date">May 14, 2026 · 8 min read</div>
+      <h2 style="font-family:var(--serif);font-size:clamp(24px,3vw,36px);line-height:1.1;letter-spacing:-0.01em;margin-bottom:14px">How we got Perplexity to cite us in a category we don't rank for on Google.</h2>
+      <p style="font-size:15px;line-height:1.65;color:var(--mute);margin-bottom:24px">A play-by-play of an AEO sprint that pulled citations from nothing in 38 days. Includes the prompt-map spreadsheet and the schema we shipped.</p>
+      <div style="display:flex;align-items:center;gap:16px;margin-bottom:28px">
+        <span class="t-mono" style="font-size:10px;letter-spacing:0.06em;text-transform:uppercase;color:var(--mute)">By Avery Chen</span>
+      </div>
+      <a href="/journal/perplexity-citation.html" class="btn btn-orange">Read the entry →</a>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- Recent entries -->
+<section class="wrap">
+  <div class="kicker" style="margin:40px 0 32px">Recent Entries</div>
+  <div class="entries-grid">
+
+    <div class="entry-card">
+      <div class="cc-imgph imgph" style="height:160px;margin-bottom:16px">schema entry art</div>
+      <div class="ec-tag">Schema</div>
+      <div class="ec-date">May 02, 2026 · 11 min</div>
+      <h3 class="ec-headline">The actual schema you need for AEO, with the 9 properties most teams skip.</h3>
+      <p class="ec-body">JSON-LD beyond the basics. The properties that move retrieval, not just rich snippets. With copy-pasteable templates.</p>
+      <a href="#" class="t-mono link-ul ec-read" style="font-size:11px;letter-spacing:0.06em;text-transform:uppercase">Read →</a>
+    </div>
+
+    <div class="entry-card">
+      <div class="cc-imgph imgph" style="height:160px;margin-bottom:16px">geo entry art</div>
+      <div class="ec-tag">GEO</div>
+      <div class="ec-date">Apr 21, 2026 · 6 min</div>
+      <h3 class="ec-headline">Reddit is the new authority signal. Here's how we seed without getting banned.</h3>
+      <p class="ec-body">On being useful in a community, paying down karma debt, and the long arc of UGC authority.</p>
+      <a href="#" class="t-mono link-ul ec-read" style="font-size:11px;letter-spacing:0.06em;text-transform:uppercase">Read →</a>
+    </div>
+
+    <div class="entry-card">
+      <div class="cc-imgph imgph" style="height:160px;margin-bottom:16px">field note entry art</div>
+      <div class="ec-tag">Field note</div>
+      <div class="ec-date">Apr 09, 2026 · 4 min</div>
+      <h3 class="ec-headline">We surveyed 412 founders. Most still think SEO is "blogging."</h3>
+      <p class="ec-body">A short post with one big bar chart, three cranky observations, and a free PDF.</p>
+      <a href="#" class="t-mono link-ul ec-read" style="font-size:11px;letter-spacing:0.06em;text-transform:uppercase">Read →</a>
+    </div>
+
+    <div class="entry-card">
+      <div class="ec-tag">AEO</div>
+      <div class="ec-date">Mar 28, 2026 · 9 min</div>
+      <h3 class="ec-headline">What llms.txt actually does (and what it doesn't).</h3>
+      <p class="ec-body">The spec, the current support matrix across models, and why it's worth 20 minutes of your dev's time.</p>
+      <a href="#" class="t-mono link-ul ec-read" style="font-size:11px;letter-spacing:0.06em;text-transform:uppercase">Read →</a>
+    </div>
+
+    <div class="entry-card">
+      <div class="ec-tag">SEO</div>
+      <div class="ec-date">Mar 12, 2026 · 7 min</div>
+      <h3 class="ec-headline">The topical map template we use for every new client.</h3>
+      <p class="ec-body">Hub-and-spoke, done properly. How we structure 60+ page architectures and why the internal linking matters more than the content itself.</p>
+      <a href="#" class="t-mono link-ul ec-read" style="font-size:11px;letter-spacing:0.06em;text-transform:uppercase">Read →</a>
+    </div>
+
+    <div class="entry-card">
+      <div class="ec-tag">GEO</div>
+      <div class="ec-date">Feb 24, 2026 · 5 min</div>
+      <h3 class="ec-headline">How to get a Wikipedia article that sticks.</h3>
+      <p class="ec-body">Notability criteria, the editors who'll delete your page on sight, and the three citations that actually matter.</p>
+      <a href="#" class="t-mono link-ul ec-read" style="font-size:11px;letter-spacing:0.06em;text-transform:uppercase">Read →</a>
+    </div>
+
+  </div>
+</section>
+
+<section class="on-dark" style="padding:80px 32px;text-align:center">
+  <div class="wrap" style="max-width:600px">
+    <h2 style="font-family:var(--serif);font-size:clamp(36px,5vw,60px);line-height:1.0;letter-spacing:-0.02em;margin-bottom:28px">Want us to audit your <em style="font-style:italic">visibility</em>?</h2>
+    <a href="/audit/" class="btn btn-orange">Start for free →</a>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <span class="footer-logo">Masterful</span>
+    <nav class="footer-links">
+      <a href="/services/">Services</a>
+      <a href="/work/">Work</a>
+      <a href="/journal/">Journal</a>
+      <a href="/about/">About</a>
+      <a href="/audit/">Free audit</a>
+    </nav>
+    <span class="t-mono" style="font-size:10px;color:var(--mute-light)">© 2026 · Brooklyn, NY · hello@masterful.studio</span>
+  </div>
+</footer>
+
+</body>
+</html>
