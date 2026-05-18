@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Process — Masterful</title>
+<meta name="description" content="What happens after you fill in the audit form. Month one, monthly deliverables, how we measure progress.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700&family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/main.css">
+<style>
+.process-hero{padding:64px 0 56px;border-bottom:1px solid var(--rule)}
+.phase-row{display:grid;grid-template-columns:120px 1fr;gap:0;padding:40px 0;border-bottom:1px solid var(--rule)}
+.phase-row:last-child{border-bottom:0}
+.phase-numeral{font-family:var(--serif);font-size:72px;line-height:1;letter-spacing:-0.03em;color:var(--orange);opacity:0.25;padding-right:32px;border-right:1px solid var(--rule)}
+.phase-content{padding-left:48px}
+.phase-timing{font-family:var(--mono);font-size:10px;letter-spacing:0.06em;text-transform:uppercase;color:var(--mute);margin-bottom:12px}
+.phase-title{font-family:var(--serif);font-size:clamp(22px,2.5vw,30px);line-height:1.1;letter-spacing:-0.01em;margin-bottom:12px}
+.phase-body{font-size:15px;line-height:1.72;color:var(--ink);max-width:620px}
+.deliverables-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;padding:48px 0}
+.deliverable-item{padding:24px;border-right:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.deliverable-item:nth-child(3n){border-right:0}
+.deliverable-item:nth-last-child(-n+3){border-bottom:0}
+.di-num{font-family:var(--mono);font-size:10px;letter-spacing:0.06em;text-transform:uppercase;color:var(--orange);margin-bottom:8px}
+.di-label{font-family:var(--sans);font-size:14px;font-weight:600;margin-bottom:6px}
+.di-desc{font-size:13px;line-height:1.55;color:var(--mute)}
+
+@media(max-width:900px){
+  .phase-row{grid-template-columns:1fr}
+  .phase-numeral{font-size:48px;border-right:0;padding-right:0;border-bottom:1px solid var(--rule);padding-bottom:16px;margin-bottom:16px}
+  .phase-content{padding-left:0}
+  .deliverables-grid{grid-template-columns:1fr 1fr}
+  .deliverable-item:nth-child(3n){border-right:1px solid var(--rule)}
+  .deliverable-item:nth-child(2n){border-right:0}
+  .deliverable-item:nth-last-child(-n+3){border-bottom:1px solid var(--rule)}
+  .deliverable-item:nth-last-child(-n+2){border-bottom:0}
+  .deliverable-item:last-child{border-bottom:0}
+}
+@media(max-width:640px){
+  .deliverables-grid{grid-template-columns:1fr}
+  .deliverable-item{border-right:0}
+  .deliverable-item:nth-last-child(-n+2){border-bottom:1px solid var(--rule)}
+  .deliverable-item:last-child{border-bottom:0}
+}
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="nav-top">
+    <span class="nav-top-c"><a href="/" class="logo-mark">
+        <svg class="logo-m" viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M 195 815 L 195 185 L 305 185 L 500 720 L 695 185 L 805 185 L 805 815 Z" fill="#C4501A"/>
+        </svg>
+        <span class="logo-wordmark">Masterful</span>
+      </a></span>
+    <span class="nav-top-r">SEO · AEO · GEO</span>
+  </div>
+  <div class="nav-bottom">
+    <ul class="nav-links">
+      <li><a href="/services/" class="link-ul">Services</a></li>
+      <li><a href="/process/" class="link-ul active">Process</a></li>
+      <li><a href="/work/" class="link-ul">Work</a></li>
+      <li><a href="/journal/" class="link-ul">Journal</a></li>
+      <li><a href="/about/" class="link-ul">About</a></li>
+    </ul>
+    <a href="/audit/" class="btn btn-orange">Free audit</a>
+  </div>
+</nav>
+
+<div class="masthead">
+  <div class="masthead-inner">
+    <span class="masthead-item">Masterful Quarterly · Vol. XII</span>
+    <span class="masthead-item">The Visibility Issue · May 2026</span>
+    <span class="masthead-item">Limited print run · $0.00</span>
+  </div>
+</div>
+
+<main>
+<!-- HERO -->
+<section class="wrap process-hero">
+  <div class="kicker" style="margin-bottom:28px">The Engagement</div>
+  <h1 style="font-family:var(--serif);font-size:clamp(44px,5.5vw,72px);line-height:1.0;letter-spacing:-0.02em;margin-bottom:20px;max-width:800px">What working together<br><em style="font-style:italic">actually looks like.</em></h1>
+  <p style="font-size:16px;line-height:1.65;color:var(--mute);max-width:560px">The audit starts the conversation. Here's what the engagement looks like after that.</p>
+</section>
+
+<hr class="rule">
+
+<!-- FIVE PHASES -->
+<section class="wrap" style="padding:48px 0">
+  <div class="kicker" style="margin-bottom:40px">Five Phases <span class="kicker-num">/ XII</span></div>
+
+  <div class="phase-row">
+    <div class="phase-numeral">I</div>
+    <div class="phase-content">
+      <div class="phase-timing">Week 0</div>
+      <h2 class="phase-title">The Audit</h2>
+      <p class="phase-body">Before we talk money, we run your audit. We score your brand across six frontier models, map the top prompts your buyers are actually asking, and identify where competitors are outranking you in AI answers. You get an 18-page report. It's free. There's no pitch attached.</p>
+    </div>
+  </div>
+
+  <div class="phase-row">
+    <div class="phase-numeral">II</div>
+    <div class="phase-content">
+      <div class="phase-timing">Weeks 1–2</div>
+      <h2 class="phase-title">Kickoff &amp; Strategy</h2>
+      <p class="phase-body">If you want to move forward, we spend two weeks building the strategy together. Prompt architecture, content gaps, technical issues, entity coverage — everything goes onto a shared roadmap. You approve the plan before we touch anything.</p>
+    </div>
+  </div>
+
+  <div class="phase-row">
+    <div class="phase-numeral">III</div>
+    <div class="phase-content">
+      <div class="phase-timing">Weeks 3–8</div>
+      <h2 class="phase-title">Foundation Work</h2>
+      <p class="phase-body">We fix what's broken and build what's missing. Technical SEO issues addressed. llms.txt installed. Schema deployed. Initial AEO pages shipped. GEO entity profiles created or cleaned up. The foundation work is often where the most visible early wins happen.</p>
+    </div>
+  </div>
+
+  <div class="phase-row">
+    <div class="phase-numeral">IV</div>
+    <div class="phase-content">
+      <div class="phase-timing">Months 3–6</div>
+      <h2 class="phase-title">Velocity</h2>
+      <p class="phase-body">Once the foundation is solid, we move fast. Content published on a consistent schedule. Link earning underway. Prompt coverage expanding. We test every two weeks across all six models and adjust based on what's moving.</p>
+    </div>
+  </div>
+
+  <div class="phase-row">
+    <div class="phase-numeral">V</div>
+    <div class="phase-content">
+      <div class="phase-timing">Month 6 onward</div>
+      <h2 class="phase-title">Compounding</h2>
+      <p class="phase-body">Search visibility compounds with time. By month six, the citation count, ranking positions, and entity recognition are all measurably different from where you started. We report monthly — a short written summary, the numbers, and what we're prioritising next. No dashboard login required.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- MONTHLY DELIVERABLES -->
+<section class="wrap" style="padding:48px 0 0">
+  <div class="kicker" style="margin-bottom:40px">What You Get Each Month <span class="kicker-num">/ XII</span></div>
+  <div class="deliverables-grid">
+    <div class="deliverable-item">
+      <div class="di-num">01</div>
+      <div class="di-label">Written monthly report</div>
+      <p class="di-desc">A short, plain-English summary — not a dashboard, not a data dump. What moved, what didn't, why.</p>
+    </div>
+    <div class="deliverable-item">
+      <div class="di-num">02</div>
+      <div class="di-label">Prompt coverage update</div>
+      <p class="di-desc">How many AI answers your brand appears in across all six models, tracked against your baseline.</p>
+    </div>
+    <div class="deliverable-item">
+      <div class="di-num">03</div>
+      <div class="di-label">Content published</div>
+      <p class="di-desc">Everything we shipped that month — pages, articles, schema updates — with a note on what each one was built to do.</p>
+    </div>
+    <div class="deliverable-item">
+      <div class="di-num">04</div>
+      <div class="di-label">Links earned</div>
+      <p class="di-desc">Every link we acquired, where it came from, and its relevance to your topical authority map.</p>
+    </div>
+    <div class="deliverable-item">
+      <div class="di-num">05</div>
+      <div class="di-label">Technical changes made</div>
+      <p class="di-desc">A changelog of what we touched on the technical side — schema, crawl fixes, llms.txt updates, Core Web Vitals work.</p>
+    </div>
+    <div class="deliverable-item">
+      <div class="di-num">06</div>
+      <div class="di-label">Next month's priorities</div>
+      <p class="di-desc">Three to five things we're focusing on next, with a brief rationale for why they're the highest-leverage items right now.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA DARK -->
+<section class="on-dark" style="padding:80px 32px;text-align:center;margin-top:64px">
+  <div class="wrap" style="max-width:600px">
+    <h2 style="font-family:var(--serif);font-size:clamp(36px,5vw,60px);line-height:1.0;letter-spacing:-0.02em;margin-bottom:28px">Ready to <em style="font-style:italic">start?</em></h2>
+    <p style="font-size:15px;line-height:1.65;color:rgba(244,240,232,0.65);max-width:440px;margin:0 auto 32px">The audit is free. It's 18 pages. No pitch. Fill in six questions and a human sends it within 48 hours.</p>
+    <a href="/audit/" class="btn btn-orange">Get the free audit →</a>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <a href="/" class="logo-mark" style="text-decoration:none">
+      <svg style="width:22px;height:22px;flex-shrink:0" viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M 195 815 L 195 185 L 305 185 L 500 720 L 695 185 L 805 185 L 805 815 Z" fill="#C4501A"/>
+      </svg>
+      <span class="logo-wordmark" style="color:var(--cream)">Masterful</span>
+    </a>
+    <nav class="footer-links">
+      <a href="/services/">Services</a>
+      <a href="/process/">Process</a>
+      <a href="/work/">Work</a>
+      <a href="/journal/">Journal</a>
+      <a href="/about/">About</a>
+      <a href="/audit/">Free audit</a>
+    </nav>
+    <span class="t-mono" style="font-size:10px;color:var(--mute-light)">© 2026 · Nairobi, KE · hello@masterful.studio</span>
+  </div>
+</footer>
+
+</body>
+</html>
