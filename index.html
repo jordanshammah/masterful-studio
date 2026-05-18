@@ -1,0 +1,1232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Masterful is a search visibility studio in Nairobi. We help businesses show up on Google, in AI recommendations, and in local results that drive real bookings and sales. Free visibility check in 48 hours.">
+  <title>Masterful — A Search Visibility Studio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Space+Mono:ital,wght@0,400;0,700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ─── RESET ─────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* ─── TOKENS ─────────────────────────────────────────────── */
+    :root {
+      --bg:      #0D0D0D;
+      --surface: #181614;
+      --orange:  #C4501A;
+      --text:    #FFFFFF;
+      --muted:   #999999;
+      --border:  #2A2A2A;
+
+      --bebas:   'Bebas Neue', Impact, sans-serif;
+      --corm:    'Cormorant Garamond', Georgia, serif;
+      --mono:    'Space Mono', 'Courier New', monospace;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background: var(--bg);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--corm);
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    /* ─── FADE-IN ─────────────────────────────────────────────── */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* ─── BUTTONS ─────────────────────────────────────────────── */
+    .btn {
+      display: inline-block;
+      font-family: var(--bebas);
+      font-size: 16px;
+      letter-spacing: 0.06em;
+      padding: 12px 24px;
+      border-radius: 0;
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+      border: 2px solid transparent;
+      transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+    }
+    .btn-solid {
+      background: var(--orange);
+      color: #fff;
+      border-color: var(--orange);
+    }
+    .btn-solid:hover { background: #ae451a; border-color: #ae451a; }
+    .btn-ghost {
+      background: transparent;
+      color: var(--orange);
+      border-color: var(--orange);
+    }
+    .btn-ghost:hover { background: var(--orange); color: #fff; }
+    .btn-full {
+      display: block;
+      width: 100%;
+      margin-bottom: 12px;
+      padding: 16px 24px;
+      font-size: 18px;
+    }
+
+    /* ─── MASTHEAD ─────────────────────────────────────────────── */
+    .masthead {
+      background: var(--surface);
+      border-bottom: 2px solid var(--orange);
+      padding: 20px 60px;
+    }
+    .masthead-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      align-items: center;
+      gap: 24px;
+    }
+    .logo-wordmark {
+      display: block;
+      font-family: var(--bebas);
+      font-size: 48px;
+      color: var(--orange);
+      line-height: 1;
+      letter-spacing: 0.04em;
+    }
+    .logo-rule {
+      display: block;
+      height: 2px;
+      background: var(--orange);
+      margin: 5px 0 7px;
+    }
+    .logo-tagline {
+      font-family: var(--corm);
+      font-style: italic;
+      font-size: 15px;
+      color: var(--muted);
+    }
+    .masthead-center {
+      text-align: center;
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+      line-height: 1.7;
+    }
+    .masthead-right {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    /* ─── NAV ─────────────────────────────────────────────── */
+    .nav-bar {
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      padding: 0 60px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 0;
+    }
+    .nav-links li a {
+      display: block;
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      padding: 14px 18px;
+      transition: color 0.2s ease;
+    }
+    .nav-links li a:hover { color: var(--orange); }
+    .hamburger {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 14px 0;
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    /* ─── HERO ─────────────────────────────────────────────── */
+    .hero {
+      background: var(--bg);
+      padding: 80px 60px;
+      border-bottom: 1px solid var(--border);
+    }
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 65fr 35fr;
+      gap: 60px;
+      align-items: start;
+    }
+    .hero-category {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--orange);
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+    .hero-headline {
+      font-family: var(--bebas);
+      font-size: 72px;
+      color: var(--text);
+      line-height: 1.0;
+      letter-spacing: 0.02em;
+      margin-bottom: 20px;
+    }
+    .hero-byline {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+      margin-bottom: 14px;
+    }
+    .hero-orange-rule {
+      height: 2px;
+      background: var(--orange);
+      margin-bottom: 24px;
+    }
+    .hero-body {
+      font-family: var(--corm);
+      font-size: 18px;
+      color: var(--text);
+      line-height: 1.7;
+      margin-bottom: 14px;
+    }
+    .hero-ctas {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+      margin-top: 32px;
+      flex-wrap: wrap;
+    }
+    .link-cta {
+      font-family: var(--corm);
+      font-size: 17px;
+      color: var(--text);
+      text-decoration: underline;
+      text-underline-offset: 4px;
+      transition: color 0.2s ease;
+    }
+    .link-cta:hover { color: var(--orange); }
+
+    /* ─── SIDEBAR ─────────────────────────────────────────────── */
+    .hero-sidebar {
+      background: var(--surface);
+      padding: 32px;
+      border-left: 2px solid var(--orange);
+    }
+    .sidebar-label {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--orange);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+    .stat-number {
+      font-family: var(--bebas);
+      font-size: 56px;
+      color: var(--orange);
+      line-height: 1;
+    }
+    .stat-label {
+      font-family: var(--corm);
+      font-style: italic;
+      font-size: 16px;
+      color: var(--muted);
+      line-height: 1.5;
+      margin-top: 6px;
+      margin-bottom: 16px;
+    }
+    .sidebar-rule {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 8px 0 20px;
+    }
+
+    /* ─── SHARED SECTION LABELS ─────────────────────────────────── */
+    .sec-cat {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--orange);
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .sec-h2 {
+      font-family: var(--bebas);
+      font-size: 48px;
+      color: var(--text);
+      line-height: 1.0;
+      letter-spacing: 0.02em;
+      margin-top: 12px;
+    }
+
+    /* ─── PROBLEM ─────────────────────────────────────────────── */
+    .problem {
+      background: var(--surface);
+      padding: 80px 60px;
+      border-bottom: 2px solid var(--orange);
+    }
+    .problem-headline {
+      font-family: var(--bebas);
+      font-size: 52px;
+      color: var(--text);
+      line-height: 1.0;
+      letter-spacing: 0.02em;
+      margin-bottom: 40px;
+    }
+    .problem-cols {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      margin-bottom: 0;
+    }
+    .problem-cols p {
+      font-family: var(--corm);
+      font-size: 18px;
+      color: var(--text);
+      line-height: 1.7;
+      margin-bottom: 18px;
+    }
+    .pull-quote {
+      font-family: var(--corm);
+      font-style: italic;
+      font-size: 32px;
+      color: var(--text);
+      line-height: 1.4;
+      border-left: 4px solid var(--orange);
+      padding: 4px 0 4px 32px;
+      margin-top: 48px;
+    }
+
+    /* ─── SERVICES ─────────────────────────────────────────────── */
+    .services {
+      background: var(--bg);
+      padding: 80px 60px;
+      border-bottom: 1px solid var(--border);
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      margin-top: 48px;
+    }
+    .svc-col {
+      padding: 0 40px;
+    }
+    .svc-col:first-child { padding-left: 0; }
+    .svc-col:last-child  { padding-right: 0; }
+    .svc-col + .svc-col  { border-left: 1px solid var(--border); }
+    .svc-label {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--orange);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .svc-headline {
+      font-family: var(--bebas);
+      font-size: 32px;
+      color: var(--text);
+      line-height: 1.1;
+      letter-spacing: 0.02em;
+      margin-bottom: 16px;
+    }
+    .svc-body {
+      font-family: var(--corm);
+      font-size: 17px;
+      color: var(--muted);
+      line-height: 1.6;
+      margin-bottom: 12px;
+    }
+    .svc-metric {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--orange);
+      letter-spacing: 0.1em;
+      margin-top: 20px;
+    }
+
+    /* ─── PROCESS ─────────────────────────────────────────────── */
+    .process {
+      background: var(--surface);
+      padding: 80px 60px;
+      border-bottom: 2px solid var(--orange);
+    }
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 48px;
+      margin-top: 48px;
+    }
+    .step-num {
+      font-family: var(--bebas);
+      font-size: 96px;
+      color: var(--orange);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .step-label {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--muted);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .step-headline {
+      font-family: var(--bebas);
+      font-size: 28px;
+      color: var(--text);
+      letter-spacing: 0.02em;
+      margin-bottom: 12px;
+    }
+    .step-body {
+      font-family: var(--corm);
+      font-size: 17px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* ─── AUDIENCE + PRICING ─────────────────────────────────── */
+    .audience-pricing {
+      background: var(--bg);
+      padding: 80px 60px;
+      border-bottom: 1px solid var(--border);
+    }
+    .niche-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+      margin-bottom: 80px;
+    }
+    .niche-card {
+      background: var(--surface);
+      padding: 32px;
+    }
+    .niche-label {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--orange);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .niche-headline {
+      font-family: var(--bebas);
+      font-size: 26px;
+      color: var(--text);
+      letter-spacing: 0.02em;
+      margin-bottom: 12px;
+    }
+    .niche-body {
+      font-family: var(--corm);
+      font-size: 16px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      margin-top: 48px;
+    }
+    .pricing-tier {
+      padding: 32px 28px;
+      border-top: 2px solid transparent;
+    }
+    .pricing-tier + .pricing-tier { border-left: 1px solid var(--border); }
+    .pricing-tier.featured { border-top-color: var(--orange); }
+    .tier-label {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .tier-label-orange { color: var(--orange); }
+    .tier-label-muted  { color: var(--muted); }
+    .tier-price {
+      font-family: var(--bebas);
+      font-size: 48px;
+      color: var(--text);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .tier-price-md {
+      font-family: var(--bebas);
+      font-size: 40px;
+      color: var(--text);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .tier-sub {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--muted);
+      margin-bottom: 16px;
+      line-height: 1.5;
+    }
+    .tier-body {
+      font-family: var(--corm);
+      font-size: 16px;
+      color: var(--muted);
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+
+    /* ─── FAQ + CTA ─────────────────────────────────────────────── */
+    .faq-cta-section {
+      background: var(--surface);
+      padding: 80px 60px;
+    }
+    .faq-cta-inner {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+    }
+    .faq-question {
+      font-family: var(--corm);
+      font-size: 19px;
+      color: var(--text);
+      font-weight: 600;
+      padding: 20px 0;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+      user-select: none;
+      line-height: 1.4;
+    }
+    .faq-toggle {
+      font-family: var(--mono);
+      font-size: 18px;
+      color: var(--orange);
+      flex-shrink: 0;
+      margin-top: 2px;
+      transition: transform 0.25s ease;
+      display: inline-block;
+    }
+    .faq-item.open .faq-toggle { transform: rotate(45deg); }
+    .faq-answer {
+      font-family: var(--corm);
+      font-size: 17px;
+      color: var(--muted);
+      line-height: 1.7;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding-bottom 0.2s ease;
+    }
+    .faq-item.open .faq-answer {
+      max-height: 400px;
+      padding-bottom: 20px;
+    }
+    .sticky-cta {
+      position: sticky;
+      top: 60px;
+      background: var(--bg);
+      border: 2px solid var(--orange);
+      padding: 40px;
+    }
+    .sticky-cta-label {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--orange);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .sticky-cta-headline {
+      font-family: var(--bebas);
+      font-size: 40px;
+      color: var(--text);
+      line-height: 1.0;
+      letter-spacing: 0.02em;
+      margin-bottom: 16px;
+    }
+    .sticky-cta-body {
+      font-family: var(--corm);
+      font-size: 17px;
+      color: var(--muted);
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+    .sticky-cta-note {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--muted);
+      text-align: center;
+      letter-spacing: 0.06em;
+      margin-top: 8px;
+    }
+
+    /* ─── FOOTER ─────────────────────────────────────────────── */
+    footer {
+      background: var(--bg);
+      border-top: 2px solid var(--orange);
+      padding: 40px 60px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 32px;
+    }
+    .footer-brand-name {
+      font-family: var(--bebas);
+      font-size: 24px;
+      color: var(--orange);
+      letter-spacing: 0.04em;
+    }
+    .footer-brand-tag {
+      font-family: var(--corm);
+      font-style: italic;
+      font-size: 16px;
+      color: var(--muted);
+      margin: 6px 0 6px;
+    }
+    .footer-brand-svc {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+    }
+    .footer-nav-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .footer-nav-links a {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+      transition: color 0.2s ease;
+    }
+    .footer-nav-links a:hover { color: var(--orange); }
+    .footer-right {
+      font-family: var(--corm);
+      font-size: 16px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+    .footer-right a {
+      color: var(--muted);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      font-size: 15px;
+      font-family: var(--mono);
+      letter-spacing: 0.04em;
+      transition: color 0.2s ease;
+    }
+    .footer-right a:hover { color: var(--orange); }
+    .footer-bottom {
+      border-top: 1px solid var(--border);
+      padding-top: 20px;
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+    }
+
+    /* ─── RESPONSIVE: 1024 ─────────────────────────────────────── */
+    @media (max-width: 1024px) {
+      .masthead, .nav-bar, .hero,
+      .problem, .services, .process,
+      .audience-pricing, .faq-cta-section, footer {
+        padding-left: 40px;
+        padding-right: 40px;
+      }
+      .hero-headline { font-size: 60px; }
+      .pull-quote    { font-size: 26px; }
+    }
+
+    /* ─── RESPONSIVE: 768 ─────────────────────────────────────── */
+    @media (max-width: 768px) {
+      /* Masthead */
+      .masthead { padding: 20px 24px; }
+      .masthead-inner {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 16px;
+      }
+      .logo-rule   { margin-left: auto; margin-right: auto; max-width: 180px; }
+      .masthead-right { justify-content: center; }
+
+      /* Nav */
+      .nav-bar { padding: 0 24px; }
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        order: 1;
+        padding: 8px 0 16px;
+      }
+      .nav-links.open { display: flex; }
+      .nav-links li a { padding: 10px 0; }
+      .hamburger { display: block; }
+
+      /* Hero */
+      .hero { padding: 48px 24px; }
+      .hero-inner { grid-template-columns: 1fr; gap: 40px; }
+      .hero-headline { font-size: 48px; }
+      .hero-sidebar { border-left: none; border-top: 2px solid var(--orange); }
+
+      /* Problem */
+      .problem { padding: 60px 24px; }
+      .problem-headline { font-size: 38px; }
+      .problem-cols { grid-template-columns: 1fr; gap: 0; }
+      .pull-quote { font-size: 22px; padding-left: 20px; }
+
+      /* Services */
+      .services { padding: 60px 24px; }
+      .sec-h2   { font-size: 36px; }
+      .services-grid { grid-template-columns: 1fr; }
+      .svc-col  { padding: 24px 0; border-left: none; }
+      .svc-col + .svc-col { border-left: none; border-top: 1px solid var(--border); }
+      .svc-col:first-child { padding-top: 0; }
+
+      /* Process */
+      .process { padding: 60px 24px; }
+      .process-grid { grid-template-columns: 1fr; gap: 40px; }
+
+      /* Audience + Pricing */
+      .audience-pricing { padding: 60px 24px; }
+      .niche-grid { grid-template-columns: 1fr; }
+      .pricing-grid { grid-template-columns: 1fr; }
+      .pricing-tier { padding: 28px 0; border-left: none; }
+      .pricing-tier + .pricing-tier { border-left: none; border-top: 1px solid var(--border); }
+      .pricing-tier.featured { padding-top: 28px; border-top-color: var(--orange); }
+
+      /* FAQ + CTA */
+      .faq-cta-section { padding: 60px 24px; }
+      .faq-cta-inner { grid-template-columns: 1fr; gap: 48px; }
+      .sticky-cta { position: static; }
+
+      /* Footer */
+      footer { padding: 40px 24px; }
+      .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════════
+       SECTION 1: MASTHEAD
+  ══════════════════════════════════════════ -->
+  <header class="masthead">
+    <div class="masthead-inner">
+
+      <div>
+        <span class="logo-wordmark">MASTERFUL</span>
+        <span class="logo-rule"></span>
+        <span class="logo-tagline">A search visibility studio.</span>
+      </div>
+
+      <div class="masthead-center">
+        EST. 2026 &nbsp;|&nbsp; NAIROBI, KENYA &nbsp;|&nbsp; SEO · AEO · GEO
+      </div>
+
+      <div class="masthead-right">
+        <a href="#contact" class="btn btn-solid">Get free visibility check</a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- NAVIGATION -->
+  <nav class="nav-bar" id="nav">
+    <div class="nav-inner">
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#how-it-works">How it works</a></li>
+        <li><a href="#who-we-work-with">Who we work with</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+        Menu
+      </button>
+    </div>
+  </nav>
+
+
+  <!-- ══════════════════════════════════════════
+       SECTION 2: HERO (THE LEAD STORY)
+  ══════════════════════════════════════════ -->
+  <section class="hero" id="home">
+    <div class="hero-inner">
+
+      <!-- Left: Lead story -->
+      <div>
+        <p class="hero-category">Lead Story</p>
+
+        <h1 class="hero-headline">
+          Your customers are searching for what you offer. Most are finding your competitors first.
+        </h1>
+
+        <p class="hero-byline">By Jordan | Masterful &nbsp;·&nbsp; Published May 2026 &nbsp;·&nbsp; 3 min read</p>
+
+        <div class="hero-orange-rule"></div>
+
+        <p class="hero-body">
+          Search has changed. Google still matters. But today, millions of people also use AI tools to get recommendations before they ever open a website. They ask a question. They get a direct answer with two or three business names. They call the first one.
+        </p>
+        <p class="hero-body">
+          If your business is not in that answer, they do not know you exist.
+        </p>
+        <p class="hero-body">
+          We help businesses show up where their customers are actually looking. On Google, in AI recommendations, and in the local results that drive real bookings and real sales.
+        </p>
+
+        <div class="hero-ctas">
+          <a href="https://calendly.com/jordanshammah-masterful-app/30min" target="_blank" rel="noopener" class="btn btn-solid">
+            Get the free visibility check
+          </a>
+          <a href="https://calendly.com/jordanshammah-masterful-app/30min" target="_blank" rel="noopener" class="link-cta">
+            Book a 15-minute call
+          </a>
+        </div>
+      </div>
+
+      <!-- Right: Sidebar -->
+      <aside class="hero-sidebar">
+        <p class="sidebar-label">In Numbers</p>
+
+        <div class="stat-number">40%</div>
+        <p class="stat-label">of service searches now start on AI tools, not Google.</p>
+
+        <hr class="sidebar-rule">
+
+        <div class="stat-number">3</div>
+        <p class="stat-label">businesses get recommended per AI answer. Most searches only need one.</p>
+
+        <hr class="sidebar-rule">
+
+        <div class="stat-number">48hr</div>
+        <p class="stat-label">turnaround on the free visibility check. No call required.</p>
+      </aside>
+
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════
+       SECTION 3: THE PROBLEM
+  ══════════════════════════════════════════ -->
+  <section class="problem fade-in" id="situation">
+    <p class="sec-cat">The Situation</p>
+    <h2 class="problem-headline">The search tools your customers use have changed.</h2>
+
+    <div class="problem-cols">
+      <div>
+        <p>Ten years ago, showing up on Google was enough. You built your website, collected reviews, and ranked. That model still works. But something has shifted.</p>
+        <p>A growing number of your potential customers now start their search by asking an AI tool a question. They type "best boutique hotel in Karen" or "best safari company in Nairobi" and they get a direct answer, not a list of websites to scroll through. Two or three businesses are named. They book the first one that sounds right.</p>
+      </div>
+      <div>
+        <p>The businesses being recommended are not always the best ones. They are the ones structured so AI tools can read, understand, and recommend them.</p>
+        <p>If your website is not set up that way, AI tools skip you. Your competitors get the recommendation. You lose the booking before the customer ever finds your website.</p>
+        <p>We set up your online presence so search tools, both Google and AI tools, recommend you by name.</p>
+      </div>
+    </div>
+
+    <blockquote class="pull-quote">
+      "The businesses being recommended are not always the best ones. They are the ones structured so AI tools can read, understand, and recommend them."
+    </blockquote>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════
+       SECTION 4: SERVICES
+  ══════════════════════════════════════════ -->
+  <section class="services fade-in" id="services">
+    <p class="sec-cat">Our Services</p>
+    <h2 class="sec-h2">Three things we do. All pointing to one outcome.</h2>
+
+    <div class="services-grid">
+
+      <!-- Column 1: SEO -->
+      <div class="svc-col">
+        <p class="svc-label">Service 01 | SEO</p>
+        <h3 class="svc-headline">Show up when customers search on Google.</h3>
+        <p class="svc-body">We improve where your business ranks on Google for the searches that bring paying customers. Higher rankings. More clicks. More people contacting you.</p>
+        <p class="svc-body">This covers your website, your content, and the technical setup that tells Google what you do and who you serve.</p>
+        <p class="svc-metric">Results visible: 60 to 90 days</p>
+      </div>
+
+      <!-- Column 2: AI Recommendations -->
+      <div class="svc-col">
+        <p class="svc-label">Service 02 | AI Recommendations</p>
+        <h3 class="svc-headline">Get recommended when customers ask AI tools.</h3>
+        <p class="svc-body">When someone asks ChatGPT or a similar tool for the best hotel, tour operator, or course in your field, it gives a direct answer with specific names. We structure your online presence so your business is one of those names.</p>
+        <p class="svc-body">This is new territory. Most businesses have not done anything about it. The ones that move first own the recommendation.</p>
+        <p class="svc-metric">Results visible: 30 to 60 days</p>
+      </div>
+
+      <!-- Column 3: Local Visibility -->
+      <div class="svc-col">
+        <p class="svc-label">Service 03 | Local Visibility</p>
+        <h3 class="svc-headline">Appear in local results and AI-generated answers.</h3>
+        <p class="svc-body">We make sure your business shows up in location-based searches and the AI-powered sections of Google results that are replacing the old list of blue links.</p>
+        <p class="svc-body">The customers nearest to you, and the ones searching specifically for your area, find you first.</p>
+        <p class="svc-metric">Results visible: 30 to 45 days</p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════
+       SECTION 5: HOW IT WORKS
+  ══════════════════════════════════════════ -->
+  <section class="process fade-in" id="how-it-works">
+    <p class="sec-cat">The Process</p>
+    <h2 class="sec-h2">Three steps. The first one costs nothing.</h2>
+
+    <div class="process-grid">
+
+      <div>
+        <div class="step-num">01</div>
+        <p class="step-label">Free Visibility Check</p>
+        <h3 class="step-headline">We search for you the way your customers do.</h3>
+        <p class="step-body">We run your business through the searches your customers actually use. We find exactly where you are appearing, where you are not, and which competitors are showing up in your place.</p>
+      </div>
+
+      <div>
+        <div class="step-num">02</div>
+        <p class="step-label">The Report</p>
+        <h3 class="step-headline">You get a plain-English report with what we found.</h3>
+        <p class="step-body">No jargon. No technical language. A short document showing the full picture and three specific things that would change your search results. Free and no strings attached.</p>
+      </div>
+
+      <div>
+        <div class="step-num">03</div>
+        <p class="step-label">If You Want, We Fix It</p>
+        <h3 class="step-headline">If the report makes sense, we agree on a plan.</h3>
+        <p class="step-body">No long contracts. No jargon. No surprises. We tell you what we are going to do, you approve it, and we get to work. You see the first changes within 30 to 60 days.</p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════
+       SECTION 6: WHO WE WORK WITH + PRICING
+  ══════════════════════════════════════════ -->
+  <section class="audience-pricing fade-in" id="who-we-work-with">
+
+    <!-- Who we work with -->
+    <p class="sec-cat">Who We Work With</p>
+    <h2 class="sec-h2">Three types of businesses. One common problem.</h2>
+
+    <div class="niche-grid">
+
+      <div class="niche-card">
+        <p class="niche-label">Hospitality</p>
+        <h3 class="niche-headline">Boutique hotels and safari lodges.</h3>
+        <p class="niche-body">International travelers plan trips using AI tools. If your property is not in those recommendations, guests are booking elsewhere. We change that.</p>
+      </div>
+
+      <div class="niche-card">
+        <p class="niche-label">Tourism</p>
+        <h3 class="niche-headline">Safari and tour operators.</h3>
+        <p class="niche-body">A traveler planning a Kenya safari asks an AI tool which operator to book with. We make sure your company is in that answer.</p>
+      </div>
+
+      <div class="niche-card">
+        <p class="niche-label">Education</p>
+        <h3 class="niche-headline">Course creators and coaches.</h3>
+        <p class="niche-body">Students search for the best courses in their field using AI tools. We get your programme in front of them before they sign up with a competitor.</p>
+      </div>
+
+    </div>
+
+    <!-- Pricing anchor -->
+    <div id="pricing"></div>
+
+    <!-- Pricing -->
+    <p class="sec-cat">Pricing</p>
+    <h2 class="sec-h2">Clear pricing. No surprises.</h2>
+
+    <div class="pricing-grid">
+
+      <!-- Free -->
+      <div class="pricing-tier">
+        <p class="tier-label tier-label-muted">Get Started</p>
+        <div class="tier-price">Free</div>
+        <p class="tier-body">A full report showing where you appear in search and AI results, who is appearing in your place, and three things that would change that. No cost. No call required. 48-hour turnaround.</p>
+        <a href="https://calendly.com/jordanshammah-masterful-app/30min" target="_blank" rel="noopener" class="btn btn-ghost">Get the free check</a>
+      </div>
+
+      <!-- Starter (featured) -->
+      <div class="pricing-tier featured">
+        <p class="tier-label tier-label-orange">Most Popular</p>
+        <div class="tier-price">KES 60,000 / $1,400</div>
+        <p class="tier-sub">per month, 3-month minimum</p>
+        <p class="tier-body">Google rankings, AI recommendation presence, and local search visibility. Monthly plain-English report. Dedicated point of contact.</p>
+        <a href="https://calendly.com/jordanshammah-masterful-app/30min" target="_blank" rel="noopener" class="btn btn-solid">Book a call</a>
+      </div>
+
+      <!-- Growth -->
+      <div class="pricing-tier">
+        <p class="tier-label tier-label-muted">Move Faster</p>
+        <div class="tier-price">KES 110,000 / $2,800</div>
+        <p class="tier-sub">per month, 3-month minimum</p>
+        <p class="tier-body">Everything in Starter plus more content, more citation building, and faster results. For businesses ready to move quickly and capture market before competitors catch up.</p>
+        <a href="https://calendly.com/jordanshammah-masterful-app/30min" target="_blank" rel="noopener" class="btn btn-ghost">Book a call</a>
+      </div>
+
+      <!-- Premium -->
+      <div class="pricing-tier">
+        <p class="tier-label tier-label-muted">Full Rebuild</p>
+        <div class="tier-price-md">KES 840,000 / $20,300</div>
+        <p class="tier-sub">one-time + 6 months included</p>
+        <p class="tier-body">A full website rebuild designed for search visibility from the ground up, plus six months of Growth retainer. For businesses whose current website is part of the problem.</p>
+        <a href="https://calendly.com/jordanshammah-masterful-app/30min" target="_blank" rel="noopener" class="btn btn-ghost">Book a call</a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════
+       SECTION 7: FAQ + CTA
+  ══════════════════════════════════════════ -->
+  <section class="faq-cta-section fade-in" id="contact">
+    <div class="faq-cta-inner">
+
+      <!-- FAQ (left 2/3) -->
+      <div>
+        <p class="sec-cat">Frequently Asked</p>
+
+        <div class="faq-item open">
+          <div class="faq-question" role="button" tabindex="0" aria-expanded="true">
+            <span>What exactly is AEO?</span>
+            <span class="faq-toggle" aria-hidden="true">+</span>
+          </div>
+          <div class="faq-answer">
+            AEO stands for Answer Engine Optimisation. When someone asks an AI tool a question, the tool gives a direct answer with specific business names. AEO is the work that gets your business into those answers. Think of it as SEO, but for AI tools instead of Google.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" role="button" tabindex="0" aria-expanded="false">
+            <span>Do I need to understand the technical side?</span>
+            <span class="faq-toggle" aria-hidden="true">+</span>
+          </div>
+          <div class="faq-answer">
+            No. We explain everything in plain language. You tell us the result you want. We tell you what we are going to do and why. You approve it and we do the work.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" role="button" tabindex="0" aria-expanded="false">
+            <span>How long before I see results?</span>
+            <span class="faq-toggle" aria-hidden="true">+</span>
+          </div>
+          <div class="faq-answer">
+            The first changes to your AI recommendation presence typically show within 30 to 60 days. Google rankings take longer, usually 60 to 90 days depending on how competitive your market is.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" role="button" tabindex="0" aria-expanded="false">
+            <span>I already pay for Google Ads. Why do I need this?</span>
+            <span class="faq-toggle" aria-hidden="true">+</span>
+          </div>
+          <div class="faq-answer">
+            Google Ads buy visibility. This work earns it. When your ad budget stops, paid visibility stops immediately. The search rankings and AI recommendations we build continue bringing customers long after the work is done.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" role="button" tabindex="0" aria-expanded="false">
+            <span>Do you work with businesses outside Kenya?</span>
+            <span class="faq-toggle" aria-hidden="true">+</span>
+          </div>
+          <div class="faq-answer">
+            Yes. A portion of our clients are based in the UK and US. We work fully remotely and async. No calls required if that works better for you.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" role="button" tabindex="0" aria-expanded="false">
+            <span>What if I am not happy with the results?</span>
+            <span class="faq-toggle" aria-hidden="true">+</span>
+          </div>
+          <div class="faq-answer">
+            Three-month minimum on retainers. If results are not showing after month one, we have a direct conversation before we continue. No hiding behind long contracts.
+          </div>
+        </div>
+
+      </div>
+
+      <!-- CTA (right 1/3, sticky) -->
+      <div>
+        <div class="sticky-cta">
+          <p class="sticky-cta-label">Start Here</p>
+          <h2 class="sticky-cta-headline">Find out where your business stands.</h2>
+          <p class="sticky-cta-body">We search for your business the way your customers do and send you a plain-English report with what we found. Free. No call required. 48-hour turnaround.</p>
+          <a href="https://calendly.com/jordanshammah-masterful-app/30min" target="_blank" rel="noopener" class="btn btn-solid btn-full">
+            Get the free visibility check
+          </a>
+          <a href="https://calendly.com/jordanshammah-masterful-app/30min" target="_blank" rel="noopener" class="btn btn-ghost btn-full">
+            Book a 15-minute call
+          </a>
+          <p class="sticky-cta-note">No jargon. No sales call required. No obligation.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════════ -->
+  <footer>
+    <div class="footer-grid">
+
+      <div>
+        <div class="footer-brand-name">MASTERFUL</div>
+        <p class="footer-brand-tag">A search visibility studio.</p>
+        <p class="footer-brand-svc">SEO · AEO · GEO</p>
+      </div>
+
+      <div>
+        <ul class="footer-nav-links">
+          <li><a href="#services">Services</a></li>
+          <li><a href="#how-it-works">Process</a></li>
+          <li><a href="#who-we-work-with">Who we work with</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-right">
+        <p>Jordan | Masterful</p>
+        <p>Nairobi, Kenya.</p>
+        <a href="https://calendly.com/jordanshammah-masterful-app/30min" target="_blank" rel="noopener">
+          Book a 15-minute call
+        </a>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      Copyright 2026 Masterful. All rights reserved.
+    </div>
+  </footer>
+
+
+  <!-- ══════════════════════════════════════════
+       JAVASCRIPT
+  ══════════════════════════════════════════ -->
+  <script>
+    'use strict';
+
+    // ── Hamburger menu ───────────────────────────────────────────
+    const hamburger = document.getElementById('hamburger');
+    const navLinks  = document.getElementById('nav-links');
+
+    hamburger.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      hamburger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+
+    // Close on nav link click (mobile)
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // ── FAQ Accordion ─────────────────────────────────────────────
+    const faqItems = document.querySelectorAll('.faq-item');
+
+    faqItems.forEach(item => {
+      const question = item.querySelector('.faq-question');
+
+      question.addEventListener('click', () => {
+        const isOpen = item.classList.contains('open');
+        faqItems.forEach(i => {
+          i.classList.remove('open');
+          i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+        });
+        if (!isOpen) {
+          item.classList.add('open');
+          question.setAttribute('aria-expanded', 'true');
+        }
+      });
+
+      // Keyboard support
+      question.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          question.click();
+        }
+      });
+    });
+
+    // ── Fade-in on scroll ─────────────────────────────────────────
+    const fadeEls = document.querySelectorAll('.fade-in');
+
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.08 });
+
+      fadeEls.forEach(el => io.observe(el));
+    } else {
+      // Fallback: show everything if IntersectionObserver not supported
+      fadeEls.forEach(el => el.classList.add('visible'));
+    }
+  </script>
+
+</body>
+</html>
