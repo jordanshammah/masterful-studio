@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://masterful-app.com/sitemap.xml
