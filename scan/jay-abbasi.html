@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<title>AI Visibility Audit · Jay Abbasi · Masterful</title>
+<meta name="description" content="A private AI visibility audit prepared for Jay Abbasi. How ChatGPT and Perplexity answer when corporate leaders search for a coach.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700&family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/main.css">
+<style>
+html,body{background:var(--cream)}
+.scan-toprule{height:2px;background:var(--orange)}
+.scan-wrap{max-width:720px;margin:0 auto;padding:0 24px}
+
+.scan-header{background:var(--cream);border-bottom:1px solid var(--rule);padding:13px 0}
+.scan-header-inner{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.scan-header-meta{font-family:var(--mono);font-size:10px;letter-spacing:0.06em;text-transform:uppercase;color:var(--mute);text-align:right}
+
+.scan-section{padding:56px 0;border-top:1px solid var(--rule)}
+.scan-cover{border-top:0;padding:44px 0 56px}
+
+.scan-dateline{font-family:var(--mono);font-size:10px;letter-spacing:0.07em;text-transform:uppercase;color:var(--mute);margin-bottom:26px}
+.scan-headline{font-family:var(--serif);font-size:clamp(33px,5.6vw,56px);line-height:1.02;letter-spacing:-0.02em}
+.scan-headline em{font-style:italic}
+.scan-subline{font-size:clamp(15px,1.9vw,17px);line-height:1.6;color:var(--mute);margin-top:18px;max-width:600px}
+
+.score-block{margin:34px 0;padding:26px 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.score-label{font-family:var(--mono);font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:var(--orange);margin-bottom:12px}
+.score-row{display:flex;align-items:flex-end;gap:24px;flex-wrap:wrap}
+.score-display{display:flex;align-items:baseline;gap:10px;line-height:1}
+.score-num{font-family:var(--mono);font-weight:500;font-size:clamp(76px,15vw,132px);letter-spacing:-0.04em;color:var(--orange)}
+.score-denom{font-family:var(--mono);font-size:clamp(20px,3vw,30px);color:var(--mute)}
+.score-verdict{font-family:var(--serif);font-style:italic;font-size:clamp(17px,2.3vw,21px);line-height:1.3;color:var(--ink-2);max-width:280px;padding-bottom:6px}
+
+.stat-grid{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--rule);margin:34px 0}
+.stat-cell{padding:18px 14px;border-right:1px solid var(--rule)}
+.stat-cell:last-child{border-right:0}
+.stat-num{font-family:var(--mono);font-weight:500;font-size:clamp(20px,3vw,27px);line-height:1;letter-spacing:-0.02em;margin-bottom:9px}
+.stat-cap{font-family:var(--mono);font-size:9px;letter-spacing:0.05em;text-transform:uppercase;color:var(--mute);line-height:1.5}
+
+.revenue-band{position:relative;overflow:hidden;background:var(--orange);color:var(--cream);padding:26px 24px}
+.revenue-band::before{content:"";position:absolute;inset:0;background-image:repeating-linear-gradient(0deg,rgba(244,240,232,0.13) 0 1px,transparent 1px 26px),repeating-linear-gradient(90deg,rgba(244,240,232,0.13) 0 1px,transparent 1px 26px);pointer-events:none}
+.revenue-band>*{position:relative}
+.rb-label{font-family:var(--mono);font-size:9px;letter-spacing:0.08em;text-transform:uppercase;opacity:0.82;margin-bottom:8px}
+.rb-figure{font-family:var(--serif);font-size:clamp(25px,4.4vw,38px);line-height:1.12;letter-spacing:-0.01em}
+
+.scan-h2{font-family:var(--serif);font-size:clamp(27px,4.2vw,42px);line-height:1.06;letter-spacing:-0.02em;margin-bottom:18px}
+.scan-h2 em{font-style:italic}
+.scan-intro{font-size:15px;line-height:1.65;color:var(--mute);margin-bottom:26px;max-width:580px}
+.scan-p{font-size:15px;line-height:1.72;color:var(--ink);margin-bottom:18px;max-width:620px}
+.scan-p:last-child{margin-bottom:0}
+
+.sub-kicker{font-family:var(--mono);font-size:10px;letter-spacing:0.06em;text-transform:uppercase;color:var(--mute);margin:36px 0 4px;padding-bottom:9px;border-bottom:1px solid var(--rule)}
+.num-table{width:100%;border-collapse:collapse}
+.num-table tr{border-bottom:1px solid var(--rule)}
+.num-table tr:last-child{border-bottom:0}
+.num-table td{padding:12px 0;font-size:14px;line-height:1.4}
+.num-table td:last-child{text-align:right;font-family:var(--mono);font-weight:500;padding-left:16px}
+.num-strong{color:var(--orange);font-weight:600}
+
+.citation-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:6px}
+.cite-title{font-family:var(--mono);font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:var(--ink);margin-bottom:10px}
+.cite-table{width:100%;border-collapse:collapse;table-layout:fixed}
+.cite-table th{background:var(--ink);color:var(--cream);font-family:var(--mono);font-weight:400;font-size:8px;letter-spacing:0.05em;text-transform:uppercase;text-align:left;padding:7px 8px}
+.cite-table td{border:1px solid var(--rule);background:var(--cream);padding:9px 8px;vertical-align:top;font-size:12px;line-height:1.45;overflow-wrap:break-word}
+.cite-q{font-weight:500;color:var(--ink)}
+.cite-mark{text-align:center}
+.cite-yes{color:#2f7d4f;font-weight:700;font-size:14px}
+.cite-no{color:#b3361a;font-weight:700;font-size:14px}
+.cite-instead{color:var(--mute);font-size:11px}
+.cite-note{border-left:3px solid var(--orange);padding:4px 0 4px 20px;margin-top:26px}
+.cite-note-label{font-family:var(--mono);font-size:9px;letter-spacing:0.07em;text-transform:uppercase;color:var(--mute);margin-bottom:8px}
+.cite-note p{font-size:14px;line-height:1.65;color:var(--ink-2)}
+
+.action-card{border:1px solid var(--rule);background:var(--cream);padding:24px;margin-bottom:14px}
+.action-card:last-child{margin-bottom:0}
+.action-num{font-family:var(--mono);font-size:10px;letter-spacing:0.06em;text-transform:uppercase;color:var(--orange);margin-bottom:11px}
+.action-title{font-family:var(--serif);font-size:clamp(20px,2.7vw,27px);line-height:1.14;letter-spacing:-0.01em;margin-bottom:11px}
+.action-body{font-size:14px;line-height:1.66;color:var(--ink);margin-bottom:18px}
+.action-tags{display:flex;gap:7px;flex-wrap:wrap}
+
+.scan-offer{background:var(--ink);color:var(--cream);border-top:0}
+.scan-offer .scan-h2{color:var(--cream)}
+.scan-offer .kicker{color:var(--mute-light)}
+.offer-intro{font-size:15px;line-height:1.65;color:var(--mute-light);margin-bottom:30px;max-width:560px}
+.offer-grid{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--rule-light)}
+.offer-card{padding:22px 20px;border-right:1px solid var(--rule-light)}
+.offer-card:last-child{border-right:0}
+.offer-tag{font-family:var(--mono);font-size:9px;letter-spacing:0.06em;text-transform:uppercase;color:var(--orange);margin-bottom:12px;line-height:1.5}
+.offer-name{font-family:var(--sans);font-size:16px;font-weight:600;margin-bottom:6px;color:var(--cream)}
+.offer-price{font-family:var(--mono);font-size:13px;font-weight:500;color:var(--cream);margin-bottom:12px}
+.offer-desc{font-size:13px;line-height:1.6;color:var(--mute-light)}
+.cta-block{margin-top:36px;padding-top:34px;border-top:1px solid var(--rule-light);text-align:center}
+.cta-line{font-family:var(--serif);font-size:clamp(22px,3vw,30px);line-height:1.15;letter-spacing:-0.01em;color:var(--cream);margin-bottom:20px}
+.cta-sub{font-family:var(--mono);font-size:10px;letter-spacing:0.06em;text-transform:uppercase;color:var(--mute-light);margin-top:16px}
+
+.scan-footer{background:var(--ink);color:var(--cream);padding:30px 0}
+.scan-footer-inner{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.footer-name{font-family:var(--serif);font-size:18px;letter-spacing:-0.01em;color:var(--cream)}
+.footer-name span{color:var(--mute-light);margin:0 5px}
+.footer-email{font-family:var(--mono);font-size:11px;letter-spacing:0.04em;color:var(--mute-light)}
+.footer-email:hover{color:var(--cream)}
+
+@media(max-width:768px){
+  .citation-grid{grid-template-columns:1fr}
+  .offer-grid{grid-template-columns:1fr}
+  .offer-card{border-right:0;border-bottom:1px solid var(--rule-light)}
+  .offer-card:last-child{border-bottom:0}
+}
+@media(max-width:560px){
+  .stat-grid{grid-template-columns:1fr 1fr}
+  .stat-cell:nth-child(2n){border-right:0}
+  .stat-cell:nth-child(-n+2){border-bottom:1px solid var(--rule)}
+  .scan-section{padding:44px 0}
+  .score-row{gap:14px}
+}
+
+@media print{
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  body{background:#fff}
+  .scan-section{padding:26px 0}
+  .scan-offer{background:#fff;color:var(--ink)}
+  .scan-offer .scan-h2,.cta-line,.offer-name,.offer-price{color:var(--ink)}
+  .scan-offer .kicker,.offer-intro,.offer-desc,.cta-sub{color:var(--mute)}
+  .offer-grid,.offer-card,.cta-block{border-color:var(--rule)}
+  .scan-footer{background:#fff;color:var(--ink);border-top:2px solid var(--ink)}
+  .footer-name,.footer-name span,.footer-email{color:var(--ink)}
+  .btn{background:#fff;color:var(--ink);border-color:var(--ink)}
+  .action-card,.cite-table,.stat-grid,.revenue-band,.offer-card,.score-block{break-inside:avoid}
+  a[href^="http"]::after{content:" (" attr(href) ")";font-size:9px;color:var(--mute);font-family:var(--mono)}
+  .scan-header a[href^="http"]::after{content:""}
+}
+</style>
+</head>
+<body>
+
+<div class="scan-toprule"></div>
+
+<header class="scan-header">
+  <div class="scan-wrap scan-header-inner">
+    <a href="https://masterful-app.com/" class="logo-mark">
+      <svg class="logo-m" viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M 195 815 L 195 185 L 305 185 L 500 720 L 695 185 L 805 185 L 805 815 Z" fill="#C4501A"/></svg>
+      <span class="logo-wordmark">Masterful</span>
+    </a>
+    <span class="scan-header-meta">Prepared for Jay Abbasi</span>
+  </div>
+</header>
+
+<main>
+
+<!-- SECTION I: COVER -->
+<section class="scan-section scan-cover" id="cover">
+  <div class="scan-wrap">
+    <p class="scan-dateline">Masterful &nbsp;·&nbsp; AI Visibility Audit &nbsp;·&nbsp; May 2026</p>
+    <div class="kicker"><span>I</span><span>Cover</span></div>
+    <h1 class="scan-headline">Tesla. Forbes. <em>Zero AI citations.</em></h1>
+    <p class="scan-subline">Jay Abbasi led national training for 1,000+ Tesla employees, coaches leaders at Amazon and Google, and is featured in Forbes. ChatGPT and Perplexity recommended eleven other coaches across his three core queries. Jay was not among them.</p>
+    <div class="score-block">
+      <p class="score-label">AI Visibility Score</p>
+      <div class="score-row">
+        <div class="score-display">
+          <span class="score-num">0</span>
+          <span class="score-denom">/ 10</span>
+        </div>
+        <p class="score-verdict">A strong record AI tools cannot see.</p>
+      </div>
+    </div>
+    <div class="stat-grid"><div class="stat-cell"><div class="stat-num">0 / 6</div><div class="stat-cap">Queries cited</div></div><div class="stat-cell"><div class="stat-num">11</div><div class="stat-cap">Competitors cited instead</div></div><div class="stat-cell"><div class="stat-num">Forbes</div><div class="stat-cap">Coverage AI tools miss</div></div><div class="stat-cell"><div class="stat-num">$0</div><div class="stat-cap">Current AI revenue</div></div></div>
+    <div class="revenue-band">
+      <p class="rb-label">Revenue passing by each year</p>
+      <p class="rb-figure">$96,000 to $192,000</p>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION II: WHAT THIS MEANS + THE NUMBERS -->
+<section class="scan-section" id="meaning">
+  <div class="scan-wrap">
+    <div class="kicker"><span>II</span><span>What this means</span></div>
+    <h2 class="scan-h2">A Tesla background AI tools <em>cannot see</em>.</h2>
+    <p class="scan-p">AI tools like ChatGPT and Perplexity answer the questions corporate leaders ask before they hire a coach. Someone types the question. The tool returns a short list of names. Jay sits on that list, or he does not.</p><p class="scan-p">We ran six of those questions across both platforms. The Conscious Professional appeared in zero answers. ChatGPT pointed leaders to Aileron, Andrew Guy, and Coherence Leadership Coaching. Perplexity pointed them to Melissa Dawn, firedupnow.com, and Altruist UK. None of them trained 1,000 employees at Tesla.</p><p class="scan-p">Each answer sends a leader toward a coach. At an estimated $8,000 engagement, one or two clients a month from AI tools comes to $96,000 to $192,000 a year. That money reaches the coaches AI tools can read.</p>
+    <p class="sub-kicker">By the numbers</p>
+    <table class="num-table"><tbody><tr><td>Engagement price, estimated</td><td>$8,000</td></tr><tr><td>AI-referred clients a month</td><td>1 to 2</td></tr><tr><td>Queries cited</td><td>0 of 6</td></tr><tr><td>Annual revenue at stake</td><td class="num-strong">$96,000 to $192,000</td></tr></tbody></table>
+  </div>
+</section>
+
+<!-- SECTION III: CITATION INDEX -->
+<section class="scan-section" id="citations">
+  <div class="scan-wrap">
+    <div class="kicker"><span>III</span><span>Citation index</span></div>
+    <h2 class="scan-h2">The <em>citation</em> index</h2>
+    <p class="scan-intro">Six queries across ChatGPT and Perplexity. Here is who AI tools named in each answer.</p>
+    <div class="citation-grid">
+      <div class="cite-block"><h3 class="cite-title">ChatGPT</h3><table class="cite-table"><colgroup><col style="width:46%"><col style="width:13%"><col style="width:41%"></colgroup><thead><tr><th>Query</th><th>Cited?</th><th>Who appeared instead</th></tr></thead><tbody><tr><td class="cite-q">best conscious leadership coach</td><td class="cite-mark"><span class="cite-no" role="img" aria-label="Not cited">&#10007;</span></td><td class="cite-instead">Aileron, Conscious Leadership Company, Abigail Stason Coaching</td></tr><tr><td class="cite-q">best executive coach for peak performance without burnout</td><td class="cite-mark"><span class="cite-no" role="img" aria-label="Not cited">&#10007;</span></td><td class="cite-instead">Andrew Guy, Leland directory, Coherence Leadership Coaching</td></tr><tr><td class="cite-q">leadership resilience coach for corporate professionals</td><td class="cite-mark"><span class="cite-no" role="img" aria-label="Not cited">&#10007;</span></td><td class="cite-instead">Andrew Guy, Coherence Leadership, firedupnow.com, Aileron</td></tr></tbody></table></div>
+      <div class="cite-block"><h3 class="cite-title">Perplexity</h3><table class="cite-table"><colgroup><col style="width:46%"><col style="width:13%"><col style="width:41%"></colgroup><thead><tr><th>Query</th><th>Cited?</th><th>Who appeared instead</th></tr></thead><tbody><tr><td class="cite-q">best conscious leadership coach</td><td class="cite-mark"><span class="cite-no" role="img" aria-label="Not cited">&#10007;</span></td><td class="cite-instead">Melissa Dawn, Conscious Leadership Group, ConsciousLeadership.org</td></tr><tr><td class="cite-q">best executive coach for peak performance without burnout</td><td class="cite-mark"><span class="cite-no" role="img" aria-label="Not cited">&#10007;</span></td><td class="cite-instead">firedupnow.com, Altruist UK, Bright Arrow Coaching</td></tr><tr><td class="cite-q">leadership resilience coach for corporate professionals</td><td class="cite-mark"><span class="cite-no" role="img" aria-label="Not cited">&#10007;</span></td><td class="cite-instead">firedupnow.com, Altruist UK, ICF Resilience Coach Program</td></tr></tbody></table></div>
+    </div>
+    <div class="cite-note">
+      <p class="cite-note-label">What the pattern shows</p>
+      <p>Andrew Guy and firedupnow.com appear across both platforms on several queries. Neither carries a Tesla training background. Both run own-domain pages titled for 'peak performance without burnout' and 'resilience coach for corporate professionals'. Jay's site carries none of these pages.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION IV: THREE PRIORITIZED ACTIONS -->
+<section class="scan-section" id="actions">
+  <div class="scan-wrap">
+    <div class="kicker"><span>IV</span><span>Prioritized actions</span></div>
+    <h2 class="scan-h2">Three places to <em>start</em></h2>
+    <p class="scan-intro">Ranked by impact. The first action takes the least effort and moves the most.</p>
+    <div class="action-card"><div class="action-num">Action I</div><h3 class="action-title">Put your Tesla credentials where AI tools can read them</h3><p class="action-body">Jayabbasi.me should state the 1,000-plus Tesla employees trained, the Amazon and Google coaching clients, and the Forbes feature as plain, structured facts. Add the labels that tell AI tools what each fact means. This is the evidence AI tools quote when they name a coach.</p><div class="action-tags"><span class="tag tag-orange">Impact · High</span><span class="tag">Effort · Low</span><span class="tag">1 to 2 weeks</span></div></div><div class="action-card"><div class="action-num">Action II</div><h3 class="action-title">Build the pages that answer the search</h3><p class="action-body">Create pages on jayabbasi.me for 'executive performance coach' and 'conscious leadership coach'. Name the corporate clients and the outcomes. Andrew Guy and firedupnow.com win these searches because their pages carry these exact titles.</p><div class="action-tags"><span class="tag tag-orange">Impact · High</span><span class="tag">Effort · Medium</span><span class="tag">2 to 4 weeks</span></div></div><div class="action-card"><div class="action-num">Action III</div><h3 class="action-title">Turn the podcast into pages AI tools can read</h3><p class="action-body">The Unstuck podcast builds authority and audience. AI tools do not index podcast episodes as coaching citations. Repurpose each episode as an article on jayabbasi.me, where AI tools can read it and cite it.</p><div class="action-tags"><span class="tag tag-orange">Impact · Medium</span><span class="tag">Effort · Medium</span><span class="tag">Ongoing</span></div></div>
+  </div>
+</section>
+
+<!-- SECTION V: WORKING WITH MASTERFUL -->
+<section class="scan-section scan-offer" id="offer">
+  <div class="scan-wrap">
+    <div class="kicker"><span>V</span><span>Working with Masterful</span></div>
+    <h2 class="scan-h2">What working with <em>Masterful</em> looks like</h2>
+    <p class="offer-intro">Three ways to work together. Each one starts with the same goal: your name in the answer.</p>
+    <div class="offer-grid">
+      <div class="offer-card"><div class="offer-tag">One-time · 5 working days</div><div class="offer-name">Full Audit</div><div class="offer-price">$397</div><p class="offer-desc">A deep scan across six AI tools. Delivered in five working days. Includes a Loom walkthrough that talks through every finding.</p></div><div class="offer-card"><div class="offer-tag">Monthly · 3-month minimum</div><div class="offer-name">Core Retainer</div><div class="offer-price">$750 / $1,400 mo</div><p class="offer-desc">Starter at $750 a month. Growth at $1,400 a month. Masterful runs the fixes and reports the movement across every AI tool we track.</p></div><div class="offer-card"><div class="offer-tag">One-time + monthly · 6-month minimum</div><div class="offer-name">Premium Bundle</div><div class="offer-price">$2,800 + $1,400 mo</div><p class="offer-desc">A full website rebuild structured for AI visibility, plus a six-month retainer. $11,200 total.</p></div>
+    </div>
+    <div class="cta-block">
+      <p class="cta-line">Pick the audit, or talk it through first.</p>
+      <a href="https://calendly.com/jordanshammah-masterful-app/30-min-discovery-call" class="btn btn-orange">Book a 30-minute walkthrough &rarr;</a>
+      <p class="cta-sub">30 minutes &nbsp;·&nbsp; No charge &nbsp;·&nbsp; A human on the call</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="scan-footer">
+  <div class="scan-wrap scan-footer-inner">
+    <span class="footer-name">Jordan <span>|</span> Masterful</span>
+    <a href="mailto:jordanshammah@masterful-app.com" class="footer-email">jordanshammah@masterful-app.com</a>
+  </div>
+</footer>
+
+</body>
+</html>
