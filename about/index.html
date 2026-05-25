@@ -58,24 +58,50 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "name": "Masterful",
-  "description": "A search visibility studio offering SEO, AEO, and GEO services.",
-  "url": "https://masterful-app.com",
-  "email": "jordanshammah@masterful-app.com",
-  "founder": {
-    "@type": "Person",
-    "name": "Jordan Shammah"
-  },
-  "areaServed": [
-    "United States",
-    "United Kingdom",
-    "Kenya"
-  ],
-  "serviceType": [
-    "SEO",
-    "Answer Engine Optimization",
-    "Generative Engine Optimization"
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://masterful-app.com/#organization",
+      "name": "Masterful",
+      "description": "A search visibility studio that builds brand presence across SEO, AEO, and GEO. Three months minimum. Flat rate. All organic.",
+      "url": "https://masterful-app.com",
+      "email": "jordanshammah@masterful-app.com",
+      "founder": {
+        "@type": "Person",
+        "@id": "https://masterful-app.com/#jordan-shammah",
+        "name": "Jordan Shammah",
+        "jobTitle": "Founder",
+        "worksFor": {
+          "@id": "https://masterful-app.com/#organization"
+        },
+        "knowsAbout": [
+          "Answer Engine Optimization",
+          "Generative Engine Optimization",
+          "Search Engine Optimization",
+          "AI Citation Optimization",
+          "Search Visibility"
+        ]
+      },
+      "areaServed": ["United States", "United Kingdom", "Kenya"],
+      "serviceType": [
+        "SEO",
+        "Answer Engine Optimization",
+        "Generative Engine Optimization"
+      ],
+      "knowsAbout": [
+        "Answer Engine Optimization",
+        "Generative Engine Optimization",
+        "Search Engine Optimization",
+        "AI Citation Optimization",
+        "LLM Citation Building",
+        "Search Visibility",
+        "Topical Authority"
+      ],
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://masterful-app.com/assets/og-image.png"
+      }
+    }
   ]
 }
 </script>

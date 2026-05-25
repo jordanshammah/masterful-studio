@@ -58,24 +58,73 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "name": "Masterful",
-  "description": "A search visibility studio offering SEO, AEO, and GEO services.",
-  "url": "https://masterful-app.com",
-  "email": "jordanshammah@masterful-app.com",
-  "founder": {
-    "@type": "Person",
-    "name": "Jordan Shammah"
-  },
-  "areaServed": [
-    "United States",
-    "United Kingdom",
-    "Kenya"
-  ],
-  "serviceType": [
-    "SEO",
-    "Answer Engine Optimization",
-    "Generative Engine Optimization"
+  "@graph": [
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What happens after I fill in the Masterful audit form?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A human reviews your brand across six major AI tools and sends back an 18-page visibility report within 48 hours. There is no sales call attached and no follow-up sequence. If you want to move forward, the next step is a two-week kickoff where Masterful builds a shared strategy roadmap covering prompt architecture, content gaps, technical issues, and entity coverage."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does Masterful deliver each month?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Every month: a written report in plain English covering what moved and why, an AI visibility update tracking how many of the 6 major AI tools mention your brand by name, a log of all content published and what each piece was built to do, a record of every link earned and its topical relevance, a technical changelog of schema updates and crawl fixes, and the three to five priorities for the following month with rationale."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long is the minimum engagement with Masterful?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Three months minimum. SEO, AEO, and GEO all take time to produce measurable movement. Masterful does not start work it cannot finish. After the initial three months, engagements run month-to-month with no lock-in."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "HowTo",
+      "name": "How a Masterful engagement works",
+      "description": "The five phases of a Masterful search visibility engagement, from free audit to compounding results.",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "The Audit",
+          "text": "Before any money changes hands, Masterful runs your audit. This covers how your brand appears across six major AI tools people use to search, the top questions your buyers are actually asking, and where competitors appear in AI answers instead of you. 18-page report. Free."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "Kickoff and Strategy",
+          "text": "Two weeks building the strategy together. Prompt architecture, content gaps, technical issues, entity coverage — all mapped onto a shared roadmap that you approve before work begins."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "Foundation Work",
+          "text": "Technical SEO issues addressed. llms.txt installed. Schema deployed. Initial AEO pages shipped. GEO entity profiles created or corrected. Typically weeks three through eight."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 4,
+          "name": "Velocity",
+          "text": "Content published on a consistent schedule. Link earning underway. Citation counts tracked fortnightly across all six AI tools. Adjustments made based on what is moving."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 5,
+          "name": "Compounding",
+          "text": "By month six, citation count, ranking positions, and how AI tools identify your brand are all measurably different from the baseline. Monthly reporting continues with no dashboard login required."
+        }
+      ]
+    }
   ]
 }
 </script>
