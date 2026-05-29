@@ -4,7 +4,7 @@
   <!-- Homepage -->
   <url>
     <loc>https://masterful-app.com/</loc>
-    <lastmod>2026-05-19</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.00</priority>
   </url>
@@ -12,7 +12,7 @@
   <!-- Audit — primary conversion page -->
   <url>
     <loc>https://masterful-app.com/audit/</loc>
-    <lastmod>2026-05-19</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.90</priority>
   </url>
@@ -20,25 +20,25 @@
   <!-- Services -->
   <url>
     <loc>https://masterful-app.com/services/</loc>
-    <lastmod>2026-05-19</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.90</priority>
   </url>
   <url>
     <loc>https://masterful-app.com/services/seo</loc>
-    <lastmod>2026-05-19</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://masterful-app.com/services/aeo</loc>
-    <lastmod>2026-05-19</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://masterful-app.com/services/geo</loc>
-    <lastmod>2026-05-19</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
@@ -46,13 +46,13 @@
   <!-- About / Process / Work -->
   <url>
     <loc>https://masterful-app.com/about/</loc>
-    <lastmod>2026-05-19</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>
   <url>
     <loc>https://masterful-app.com/process/</loc>
-    <lastmod>2026-05-19</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>
@@ -66,31 +66,37 @@
   <!-- Journal -->
   <url>
     <loc>https://masterful-app.com/journal/</loc>
-    <lastmod>2026-05-19</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>
   <url>
+    <loc>https://masterful-app.com/journal/google-replaced-the-search-bar</loc>
+    <lastmod>2026-05-29</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.60</priority>
+  </url>
+  <url>
     <loc>https://masterful-app.com/journal/perplexity-citation</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.60</priority>
   </url>
   <url>
     <loc>https://masterful-app.com/journal/how-llms-decide-what-to-cite</loc>
-    <lastmod>2026-05-08</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.60</priority>
   </url>
   <url>
     <loc>https://masterful-app.com/journal/what-geo-actually-is</loc>
-    <lastmod>2026-04-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.60</priority>
   </url>
   <url>
     <loc>https://masterful-app.com/journal/the-three-search-surfaces</loc>
-    <lastmod>2026-04-14</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.60</priority>
   </url>
