@@ -1,0 +1,177 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const SITE = 'https://masterful-app.com';
+const graph = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'FAQPage',
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: 'What happens after I fill in the Masterful audit form?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'A human reviews your brand across six major AI tools and sends back an 18-page visibility report within 48 hours. There is no sales call attached and no follow-up sequence. If you want to move forward, the next step is a two-week kickoff where Masterful builds a shared strategy roadmap covering prompt architecture, content gaps, technical issues, and entity coverage.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'What does Masterful deliver each month?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Every month: a written report in plain English covering what moved and why, an AI visibility update tracking how many of the 6 major AI tools mention your brand by name, a log of all content published and what each piece was built to do, a record of every link earned and its topical relevance, a technical changelog of schema updates and crawl fixes, and the three to five priorities for the following month with rationale.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'How long is the minimum engagement with Masterful?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Three months minimum. SEO, AEO, and GEO all take time to produce measurable movement. Masterful does not start work it cannot finish. After the initial three months, engagements run month-to-month with no lock-in.',
+          },
+        },
+      ],
+    },
+    {
+      '@type': 'HowTo',
+      name: 'How a Masterful engagement works',
+      description: 'The five phases of a Masterful search visibility engagement, from free audit to compounding results.',
+      step: [
+        { '@type': 'HowToStep', position: 1, name: 'The Audit', text: 'Before any money changes hands, Masterful runs your audit. This covers how your brand appears across six major AI tools people use to search, the top questions your buyers are actually asking, and where competitors appear in AI answers instead of you. 18-page report. Free.' },
+        { '@type': 'HowToStep', position: 2, name: 'Kickoff and Strategy', text: 'Two weeks building the strategy together. Prompt architecture, content gaps, technical issues, and entity coverage, all mapped onto a shared roadmap you approve before work begins.' },
+        { '@type': 'HowToStep', position: 3, name: 'Foundation Work', text: 'Technical SEO issues addressed. llms.txt installed. Schema deployed. Initial AEO pages shipped. GEO entity profiles created or corrected. Typically weeks three through eight.' },
+        { '@type': 'HowToStep', position: 4, name: 'Velocity', text: 'Content published on a consistent schedule. Link earning underway. Citation counts tracked fortnightly across all six AI tools. Adjustments made based on what is moving.' },
+        { '@type': 'HowToStep', position: 5, name: 'Compounding', text: 'By month six, citation count, ranking positions, and how AI tools identify your brand are all measurably different from the baseline. Monthly reporting continues with no dashboard login required.' },
+      ],
+    },
+  ],
+};
+const breadcrumb = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` },
+    { '@type': 'ListItem', position: 2, name: 'Process', item: `${SITE}/process/` },
+  ],
+};
+---
+<BaseLayout
+  title="Process | Masterful"
+  description="What happens after you fill in the audit form. Month one, monthly deliverables, how we measure progress."
+  path="/process/"
+  navActive="process"
+>
+  <Fragment slot="schema">
+    <script type="application/ld+json" set:html={JSON.stringify(graph)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumb)} />
+  </Fragment>
+
+  <main>
+  <!-- HERO -->
+  <section class="wrap process-hero">
+    <div class="kicker" style="margin-bottom:28px">The Engagement</div>
+    <h1 style="font-family:var(--serif);font-size:clamp(44px,5.5vw,72px);line-height:1.0;letter-spacing:-0.02em;margin-bottom:20px;max-width:800px">How the engagement runs.</h1>
+    <p style="font-size:16px;line-height:1.65;color:var(--mute);max-width:560px">The audit starts the conversation. The engagement runs in five phases.</p>
+  </section>
+
+  <hr class="rule">
+
+  <!-- FIVE PHASES -->
+  <section class="wrap" style="padding:48px 0">
+    <div class="kicker" style="margin-bottom:40px">Five Phases <span class="kicker-num">/ XII</span></div>
+
+    <div class="phase-row" data-reveal>
+      <div class="phase-numeral">I</div>
+      <div class="phase-content">
+        <div class="phase-timing">Week 0</div>
+        <h2 class="phase-title">The Audit</h2>
+        <p class="phase-body">Before we talk money, we run your audit. We check how your brand appears across the six major AI tools people use to search, map the top questions your buyers are asking, and identify where competitors appear in AI answers instead of you. You get an 18-page report. It's free. There's no pitch attached.</p>
+      </div>
+    </div>
+
+    <div class="phase-row" data-reveal>
+      <div class="phase-numeral">II</div>
+      <div class="phase-content">
+        <div class="phase-timing">Weeks 1–2</div>
+        <h2 class="phase-title">Kickoff &amp; Strategy</h2>
+        <p class="phase-body">Phase II opens with two weeks of strategy. Prompt architecture, content gaps, technical issues, entity coverage: all onto a shared roadmap. You approve the plan before we touch anything.</p>
+      </div>
+    </div>
+
+    <div class="phase-row" data-reveal>
+      <div class="phase-numeral">III</div>
+      <div class="phase-content">
+        <div class="phase-timing">Weeks 3–8</div>
+        <h2 class="phase-title">Foundation Work</h2>
+        <p class="phase-body">We fix what's broken and build what's missing. Technical SEO issues addressed. llms.txt installed. Schema deployed. Initial AEO pages shipped. GEO entity profiles created or cleaned up. Foundation work is where early wins show up. Technical fixes move fast. AI citations follow within weeks.</p>
+      </div>
+    </div>
+
+    <div class="phase-row" data-reveal>
+      <div class="phase-numeral">IV</div>
+      <div class="phase-content">
+        <div class="phase-timing">Months 3–6</div>
+        <h2 class="phase-title">Velocity</h2>
+        <p class="phase-body">Once the foundation is solid, we move fast. We publish content on a fixed schedule. Link earning underway. Your brand appearing in more of the searches your buyers run. We test every two weeks across all six AI tools and adjust based on what's moving.</p>
+      </div>
+    </div>
+
+    <div class="phase-row" data-reveal>
+      <div class="phase-numeral">V</div>
+      <div class="phase-content">
+        <div class="phase-timing">Month 6 onward</div>
+        <h2 class="phase-title">Compounding</h2>
+        <p class="phase-body">Search visibility compounds with time. By month six, the citation count, ranking positions, and how AI tools identify your brand have shifted. We show you the numbers. We report monthly: a short written summary, the numbers, and what we're prioritising next.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- MONTHLY DELIVERABLES -->
+  <section class="wrap" style="padding:48px 0 0">
+    <div class="kicker" style="margin-bottom:40px">What You Get Each Month <span class="kicker-num">/ XII</span></div>
+    <div class="deliverables-grid">
+      <div class="deliverable-item">
+        <div class="di-num">01</div>
+        <div class="di-label">Written monthly report</div>
+        <p class="di-desc">A short written summary. What moved, what caused it, what comes next.</p>
+      </div>
+      <div class="deliverable-item">
+        <div class="di-num">02</div>
+        <div class="di-label">AI visibility update</div>
+        <p class="di-desc">How many of the 6 major AI tools mention your brand by name each week, tracked against your baseline.</p>
+      </div>
+      <div class="deliverable-item">
+        <div class="di-num">03</div>
+        <div class="di-label">Content published</div>
+        <p class="di-desc">Everything we shipped that month: pages, articles, schema updates, with a note on what each one was built to do.</p>
+      </div>
+      <div class="deliverable-item">
+        <div class="di-num">04</div>
+        <div class="di-label">Links earned</div>
+        <p class="di-desc">Every link we acquired, where it came from, and its relevance to your topical authority map.</p>
+      </div>
+      <div class="deliverable-item">
+        <div class="di-num">05</div>
+        <div class="di-label">Technical changes made</div>
+        <p class="di-desc">A changelog of what we touched on the technical side: schema, crawl fixes, llms.txt updates, Core Web Vitals work.</p>
+      </div>
+      <div class="deliverable-item">
+        <div class="di-num">06</div>
+        <div class="di-label">Next month's priorities</div>
+        <p class="di-desc">Three to five things we're focusing on next, with a brief rationale for why they're the highest-leverage items right now.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA DARK -->
+  <section class="on-dark" style="padding:80px 32px;text-align:center;margin-top:64px">
+    <div class="wrap" style="max-width:600px">
+      <p style="font-size:15px;line-height:1.65;color:rgba(244,240,232,0.65);max-width:440px;margin:0 auto 32px">The audit is free. It covers 18 pages. No pitch, no follow-up sequence. Fill in six questions and a human sends it within 48 hours.</p>
+      <a href="/audit/" class="btn btn-orange">Get the free audit →</a>
+    </div>
+  </section>
+  </main>
+</BaseLayout>

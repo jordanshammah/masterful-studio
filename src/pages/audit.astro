@@ -1,0 +1,329 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const SITE = 'https://masterful-app.com';
+const orgLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  name: 'Masterful',
+  description: 'A search visibility studio offering SEO, AEO, and GEO services.',
+  url: SITE,
+  email: 'jordanshammah@masterful-app.com',
+  founder: { '@type': 'Person', name: 'Jordan Shammah' },
+  areaServed: ['United States', 'United Kingdom', 'Kenya'],
+  serviceType: ['SEO', 'Answer Engine Optimization', 'Generative Engine Optimization'],
+};
+const breadcrumb = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` },
+    { '@type': 'ListItem', position: 2, name: 'Free Audit', item: `${SITE}/audit/` },
+  ],
+};
+---
+<BaseLayout
+  title="Free Audit | Masterful"
+  description="Six questions. About ninety seconds. A free 18-page visibility report within 48 hours. No dashboard. No follow-up sequence."
+  path="/audit/"
+  navActive=""
+  navCta="home"
+  showMasthead={false}
+  showFooter={false}
+  floatingCta={false}
+>
+  <Fragment slot="schema">
+    <script type="application/ld+json" set:html={JSON.stringify(orgLd)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumb)} />
+  </Fragment>
+
+  <main class="audit-shell">
+    <div class="card-frame">
+      <!-- Left panel -->
+      <aside class="card-l">
+        <div>
+          <div class="cl-wordmark">Masterful</div>
+          <div style="font-family:var(--mono);font-size:9px;letter-spacing:0.06em;text-transform:uppercase;color:var(--mute);margin-top:4px">The Subscriber Card</div>
+          <div style="font-family:var(--mono);font-size:9px;letter-spacing:0.06em;text-transform:uppercase;color:var(--mute)">Free · 6 Questions</div>
+        </div>
+        <div class="cl-big-num" id="left-num">00</div>
+        <div class="cl-meta">
+          masterful.studio<br>
+          vol. xii · cover
+        </div>
+      </aside>
+
+      <!-- Right panel -->
+      <div class="card-r">
+
+        <!-- STEP 0: Welcome -->
+        <div id="step-0" class="step-pane">
+          <div class="form-info">
+            <div class="fi-label"><span class="fi-tag">Free</span><span>6 Questions</span></div>
+            <h1 style="font-family:var(--serif);font-size:clamp(28px,3.5vw,48px);line-height:1.05;letter-spacing:-0.02em;margin-bottom:12px">Free AI visibility audit: find out what the <em style="font-style:italic">machines say</em> about you</h1>
+            <p class="fi-body">Six questions. About ninety seconds. A free 18-page report showing what models say about your brand now, what we'd change first, and what we'd prioritise first.</p>
+            <div class="fi-guarantees">
+              <span>One reply, from a human</span>
+              <span>That's it</span>
+            </div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:12px">
+            <div style="display:flex;gap:20px;font-family:var(--mono);font-size:10px;letter-spacing:0.06em;text-transform:uppercase;color:var(--mute)">
+              <span>Avg. completion · 94s</span>
+              <span>Reply ≤ 48hr</span>
+            </div>
+          </div>
+          <button class="btn btn-orange" onclick="goTo(1)" style="align-self:flex-start">Let's begin →</button>
+          <p style="font-family:var(--mono);font-size:9px;letter-spacing:0.06em;text-transform:uppercase;color:var(--mute);margin-top:12px">or press ↵ Enter</p>
+        </div>
+
+        <!-- STEP 1: Who -->
+        <div id="step-1" class="step-pane" style="display:none">
+          <div class="fi-label">
+            <span>About You · Step 01</span>
+            <span>Form No. <strong style="color:var(--ink)">01</strong> / 06</span>
+          </div>
+          <div class="form-info">
+            <p class="q-label">Question No. 01</p>
+            <h2 class="q-headline">First, who are<br>we talking to?</h2>
+            <p class="q-hint">One reply from a human, within 48 hours.</p>
+          </div>
+          <div class="fields-group">
+            <div class="field-group">
+              <label class="field-label">Full name</label>
+              <input type="text" class="field" id="f-name" placeholder="Your full name" autocomplete="name">
+            </div>
+            <div class="field-group">
+              <label class="field-label">Role at the company</label>
+              <input type="text" class="field" id="f-role" placeholder="e.g. Founder, Head of Marketing">
+            </div>
+            <div class="field-group">
+              <label class="field-label">Email address</label>
+              <input type="email" class="field" id="f-email" placeholder="you@company.com" autocomplete="email">
+            </div>
+            <div class="field-group">
+              <label class="field-label">Phone (optional)</label>
+              <input type="tel" class="field" id="f-phone" placeholder="+1 (555) 000 0000" autocomplete="tel">
+            </div>
+          </div>
+          <div class="form-nav">
+            <button class="fn-back" style="visibility:hidden">Back</button>
+            <span class="fn-hint">press ↵ to continue</span>
+            <button class="btn btn-orange" onclick="goTo(2)">Continue →</button>
+          </div>
+        </div>
+
+        <!-- STEP 2: Business -->
+        <div id="step-2" class="step-pane" style="display:none">
+          <div class="fi-label">
+            <span>The Business · Step 02</span>
+            <span>Form No. <strong style="color:var(--ink)">02</strong> / 06</span>
+          </div>
+          <div class="form-info">
+            <p class="q-label">Question No. 02</p>
+            <h2 class="q-headline">And what do you<br><em style="font-style:italic">actually do?</em></h2>
+            <p class="q-hint">One line is fine. We just want enough to spin up the audit before we talk.</p>
+          </div>
+          <div class="fields-group">
+            <div class="field-group">
+              <label class="field-label">Business / brand name</label>
+              <input type="text" class="field" id="f-biz-name" placeholder="Company name">
+            </div>
+            <div class="field-group">
+              <label class="field-label">Website URL</label>
+              <input type="url" class="field" id="f-url" placeholder="https://yoursite.com">
+            </div>
+            <div class="field-group">
+              <label class="field-label">Niche / category</label>
+              <input type="text" class="field" id="f-niche" placeholder="e.g. B2B SaaS, DTC wellness, local plumbing">
+            </div>
+          </div>
+          <div class="form-nav">
+            <button class="fn-back" onclick="goTo(1)">← Previous</button>
+            <span class="fn-hint">press ↵ to continue</span>
+            <button class="btn btn-orange" onclick="goTo(3)">Continue →</button>
+          </div>
+        </div>
+
+        <!-- STEP 3: Revenue -->
+        <div id="step-3" class="step-pane" style="display:none">
+          <div class="fi-label">
+            <span>The Numbers · Step 03</span>
+            <span>Form No. <strong style="color:var(--ink)">03</strong> / 06</span>
+          </div>
+          <div class="form-info">
+            <p class="q-label">Question No. 03</p>
+            <h2 class="q-headline">How much revenue is<br>the business doing right now?</h2>
+            <p class="q-hint">Approximate is fine. We keep this between us. The plan for a $20k/mo business looks different from the plan for a $2M/mo one.</p>
+          </div>
+          <div class="choices" id="revenue-choices">
+            <div class="choice" onclick="selectChoice(this, 'revenue')"><div class="choice-mark"></div><span class="choice-label">Pre-revenue / just launching</span></div>
+            <div class="choice" onclick="selectChoice(this, 'revenue')"><div class="choice-mark"></div><span class="choice-label">$0–10k / month</span></div>
+            <div class="choice" onclick="selectChoice(this, 'revenue')"><div class="choice-mark"></div><span class="choice-label">$10k–50k / month</span></div>
+            <div class="choice" onclick="selectChoice(this, 'revenue')"><div class="choice-mark"></div><span class="choice-label">$50k–250k / month</span></div>
+            <div class="choice" onclick="selectChoice(this, 'revenue')"><div class="choice-mark"></div><span class="choice-label">$250k–1M / month</span></div>
+            <div class="choice" onclick="selectChoice(this, 'revenue')"><div class="choice-mark"></div><span class="choice-label">$1M+ / month</span></div>
+          </div>
+          <div class="form-nav">
+            <button class="fn-back" onclick="goTo(2)">← Previous</button>
+            <span class="fn-hint">press ↵ to continue</span>
+            <button class="btn btn-orange" onclick="goTo(4)">Continue →</button>
+          </div>
+        </div>
+
+        <!-- STEP 4: Budget -->
+        <div id="step-4" class="step-pane" style="display:none">
+          <div class="fi-label">
+            <span>The Budget · Step 04</span>
+            <span>Form No. <strong style="color:var(--ink)">04</strong> / 06</span>
+          </div>
+          <div class="form-info">
+            <p class="q-label">Question No. 04</p>
+            <h2 class="q-headline">What's the budget you can put<br>toward visibility, monthly?</h2>
+            <p class="q-hint">We'll let you know after the audit if it's a fit. Approximate is fine.</p>
+          </div>
+          <div class="choices" id="budget-choices">
+            <div class="choice" onclick="selectChoice(this, 'budget')"><div class="choice-mark"></div><span class="choice-label">Under $3k / month</span></div>
+            <div class="choice" onclick="selectChoice(this, 'budget')"><div class="choice-mark"></div><span class="choice-label">$4k–8k / month</span></div>
+            <div class="choice" onclick="selectChoice(this, 'budget')"><div class="choice-mark"></div><span class="choice-label">$8k–15k / month</span></div>
+            <div class="choice" onclick="selectChoice(this, 'budget')"><div class="choice-mark"></div><span class="choice-label">$15k–30k / month</span></div>
+            <div class="choice" onclick="selectChoice(this, 'budget')"><div class="choice-mark"></div><span class="choice-label">$30k+ / month</span></div>
+            <div class="choice" onclick="selectChoice(this, 'budget')"><div class="choice-mark"></div><span class="choice-label">Project-based, let's talk</span></div>
+          </div>
+          <div class="form-nav">
+            <button class="fn-back" onclick="goTo(3)">← Previous</button>
+            <span class="fn-hint">press ↵ to continue</span>
+            <button class="btn btn-orange" onclick="goTo(5)">Continue →</button>
+          </div>
+        </div>
+
+        <!-- STEP 5: Goals -->
+        <div id="step-5" class="step-pane" style="display:none">
+          <div class="fi-label">
+            <span>Goals · Step 05</span>
+            <span>Form No. <strong style="color:var(--ink)">05</strong> / 06</span>
+          </div>
+          <div class="form-info">
+            <p class="q-label">Question No. 05</p>
+            <h2 class="q-headline">What does <em style="font-style:italic">winning</em><br>look like in 6 months?</h2>
+            <p class="q-hint">Pick everything that applies. We'll prioritise accordingly.</p>
+          </div>
+          <div class="choices multi" id="goals-choices">
+            <div class="choice" onclick="toggleChoice(this)"><div class="choice-mark" style="border-radius:2px"></div><span class="choice-label">Show up in ChatGPT &amp; Perplexity answers</span></div>
+            <div class="choice" onclick="toggleChoice(this)"><div class="choice-mark" style="border-radius:2px"></div><span class="choice-label">Rank #1 on Google for our core terms</span></div>
+            <div class="choice" onclick="toggleChoice(this)"><div class="choice-mark" style="border-radius:2px"></div><span class="choice-label">More qualified pipeline from organic</span></div>
+            <div class="choice" onclick="toggleChoice(this)"><div class="choice-mark" style="border-radius:2px"></div><span class="choice-label">Become the default brand in our category</span></div>
+            <div class="choice" onclick="toggleChoice(this)"><div class="choice-mark" style="border-radius:2px"></div><span class="choice-label">Recover from a Google algorithm hit</span></div>
+            <div class="choice" onclick="toggleChoice(this)"><div class="choice-mark" style="border-radius:2px"></div><span class="choice-label">Other: I'll tell you on a call</span></div>
+          </div>
+          <div class="form-nav">
+            <button class="fn-back" onclick="goTo(4)">← Previous</button>
+            <span class="fn-hint">press ↵ to continue</span>
+            <button class="btn btn-orange" onclick="goTo(6)">Continue →</button>
+          </div>
+        </div>
+
+        <!-- STEP 6: Source -->
+        <div id="step-6" class="step-pane" style="display:none">
+          <div class="fi-label">
+            <span>Last One · Step 06</span>
+            <span>Form No. <strong style="color:var(--ink)">06</strong> / 06</span>
+          </div>
+          <div class="form-info">
+            <p class="q-label">Question No. 06</p>
+            <h2 class="q-headline">Last one. How did<br>you <em style="font-style:italic">find us?</em></h2>
+            <p class="q-hint">Helps us figure out which channels to invest in.</p>
+          </div>
+          <div class="choices" id="source-choices">
+            <div class="choice" onclick="selectChoice(this, 'source')"><div class="choice-mark"></div><span class="choice-label">A friend / colleague</span></div>
+            <div class="choice" onclick="selectChoice(this, 'source')"><div class="choice-mark"></div><span class="choice-label">Twitter / X</span></div>
+            <div class="choice" onclick="selectChoice(this, 'source')"><div class="choice-mark"></div><span class="choice-label">LinkedIn</span></div>
+            <div class="choice" onclick="selectChoice(this, 'source')"><div class="choice-mark"></div><span class="choice-label">Podcast or YouTube</span></div>
+            <div class="choice" onclick="selectChoice(this, 'source')"><div class="choice-mark"></div><span class="choice-label">Our journal / blog post</span></div>
+            <div class="choice" onclick="selectChoice(this, 'source')"><div class="choice-mark"></div><span class="choice-label">ChatGPT or Perplexity told you</span></div>
+            <div class="choice" onclick="selectChoice(this, 'source')"><div class="choice-mark"></div><span class="choice-label">Google search</span></div>
+            <div class="choice" onclick="selectChoice(this, 'source')"><div class="choice-mark"></div><span class="choice-label">Don't remember</span></div>
+          </div>
+          <div class="form-nav">
+            <button class="fn-back" onclick="goTo(5)">← Previous</button>
+            <span class="fn-hint">press ↵ to submit</span>
+            <button class="btn btn-orange" onclick="submitForm()">Mail the card →</button>
+          </div>
+        </div>
+
+        <!-- STEP 7: Confirmation -->
+        <div id="step-7" class="step-pane" style="display:none">
+          <div class="confirm-screen">
+            <div class="cs-icon">✓</div>
+            <h2 class="cs-headline">Card filed. We're<br><em style="font-style:italic">on it.</em></h2>
+            <p class="cs-sub">Someone on the team will reply within 48 hours with your visibility report and the first thing we'd change.</p>
+            <ul class="cs-steps">
+              <li><span class="cs-step-n">I.</span><span>We score you in 6 LLMs</span></li>
+              <li><span class="cs-step-n">II.</span><span>We map your top 50 prompts</span></li>
+              <li><span class="cs-step-n">III.</span><span>We send a free report + plan</span></li>
+            </ul>
+            <a href="/" class="btn btn-ghost">← Back to the homepage</a>
+          </div>
+        </div>
+
+      </div><!-- card-r -->
+    </div><!-- card-frame -->
+
+    <!-- Footer strip -->
+    <footer class="card-footer">
+      <span class="cf-site">masterful.studio · the subscriber card</span>
+      <div class="cf-progress">
+        <span id="progress-text">0% complete</span>
+        <div class="progress-track">
+          <div class="progress-fill-el" id="progress-bar" style="width:0%"></div>
+        </div>
+        <span>vol. xii</span>
+      </div>
+    </footer>
+  </main>
+
+  <script is:inline>
+  const STEPS = 7; // 0–6 = steps, 7 = confirm
+  const PROGRESS = [0, 17, 33, 50, 67, 83, 100, 100];
+  const LEFT_NUMS = ['00', '01', '02', '03', '04', '05', '06', '✓'];
+
+  let currentStep = 0;
+
+  function goTo(n) {
+    document.getElementById('step-' + currentStep).style.display = 'none';
+    currentStep = n;
+    document.getElementById('step-' + currentStep).style.display = '';
+    updateChrome(n);
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  }
+
+  function updateChrome(n) {
+    const pct = PROGRESS[n] || 0;
+    document.getElementById('progress-bar').style.width = pct + '%';
+    document.getElementById('progress-text').textContent = (n === 7 ? 'card filed ✓' : pct + '% complete');
+    document.getElementById('left-num').textContent = LEFT_NUMS[n] || '00';
+  }
+
+  function selectChoice(el, group) {
+    const parent = el.parentElement;
+    parent.querySelectorAll('.choice').forEach(c => c.classList.remove('selected'));
+    el.classList.add('selected');
+  }
+
+  function toggleChoice(el) {
+    el.classList.toggle('selected');
+  }
+
+  function submitForm() {
+    goTo(7);
+  }
+
+  // Enter key navigation
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' && currentStep < 6) {
+      const pane = document.getElementById('step-' + currentStep);
+      const primaryBtn = pane.querySelector('.btn-orange');
+      if (primaryBtn) primaryBtn.click();
+    }
+  });
+  </script>
+</BaseLayout>

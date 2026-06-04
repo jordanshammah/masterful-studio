@@ -1,0 +1,25 @@
+# Masterful
+
+> Masterful is a search visibility studio offering SEO, AEO (Answer Engine Optimization), and GEO (Generative Engine Optimization). The service helps businesses appear in AI-generated search answers across ChatGPT, Perplexity, Claude, Gemini, and Google AI Overviews.
+
+## Services
+
+- [SEO](https://masterful-app.com/services/seo/): Technical SEO, content strategy, topical authority for Google rankings.
+- [AEO](https://masterful-app.com/services/aeo/): Pages that ChatGPT, Perplexity, Claude, and Gemini cite by name. Prompt mapping, schema, model benchmarking.
+- [GEO](https://masterful-app.com/services/geo/): Entity building on Wikipedia, Wikidata, and reference sources AI models read during training.
+
+## How It Works
+
+- [Process](https://masterful-app.com/process/): Five-phase engagement from free audit through foundation work to velocity.
+- [Free Audit](https://masterful-app.com/audit/): Six-question form. 18-page visibility report within 48 hours. Covers 6 AI tools, top 50 buyer prompts, competitor citation map, 90-day roadmap.
+
+## Key Information
+
+
+- Contact: info@masterful-app.com
+- Other contact: jordanshammah@masterful-app.com
+- Calendly: https://calendly.com/jordanshammah-masterful-app/30-min-discovery-call
+
+## Journal
+
+- [Journal](https://masterful-app.com/journal/): Published methodology and insights on SEO, AEO, and GEO.

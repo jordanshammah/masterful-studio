@@ -1,0 +1,90 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../../components/Breadcrumb.astro';
+const SITE = 'https://masterful-app.com';
+const graph = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Service',
+      name: 'Technical SEO',
+      description:
+        'Crawlability, indexing, Core Web Vitals and site health, fixed so Google and AI crawlers can read your site.',
+      provider: { '@type': 'ProfessionalService', '@id': `${SITE}/#organization`, name: 'Masterful', url: SITE },
+      serviceType: 'Technical SEO',
+      url: `${SITE}/services/seo/technical-seo/`,
+      areaServed: ['United States', 'United Kingdom', 'Kenya'],
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Services', item: `${SITE}/services/` },
+        { '@type': 'ListItem', position: 2, name: 'SEO', item: `${SITE}/services/seo/` },
+        { '@type': 'ListItem', position: 3, name: 'Technical SEO', item: `${SITE}/services/seo/technical-seo/` },
+      ],
+    },
+  ],
+};
+---
+<BaseLayout
+  title="Technical SEO Services | Masterful"
+  description="Crawlability, indexing, Core Web Vitals and site health fixed so Google and AI crawlers can read your site."
+  path="/services/seo/technical-seo/"
+  navActive="services"
+>
+  <script type="application/ld+json" slot="schema" set:html={JSON.stringify(graph)} />
+  <Breadcrumb items={[{ name: 'Home', href: '/' }, { name: 'Services', href: '/services/' }, { name: 'SEO', href: '/services/seo/' }, { name: 'Technical SEO' }]} />
+
+  <main>
+  <section class="service-hero wrap">
+    <div class="kicker" style="margin-bottom:20px">SEO · Technical SEO</div>
+    <div class="sh-meta">
+      <span class="sh-meta-item">Foundation work</span>
+      <span class="sh-meta-item">Flat retainer</span>
+    </div>
+    <h1 class="sh-headline">Technical SEO</h1>
+    <p class="lead-body" style="max-width:640px;margin-bottom:32px">
+      Technical SEO is the work that lets a search engine, and now an AI crawler, read, render, and index your site without getting in its own way. We fix crawlability, indexing, Core Web Vitals, and the structured data that tells machines what each page is. It is the layer everything else compounds on: rankings, citations, and entity recognition all depend on a site that can actually be read.
+    </p>
+    <p class="sh-tagline">Most visibility problems are not content problems. They are a crawler that cannot reach, render, or trust the page.</p>
+    <a href="/audit/" class="btn btn-orange">Run a free audit</a>
+  </section>
+
+  <section class="pillars wrap">
+    <div class="kicker" style="margin-bottom:32px">What We Fix <span class="kicker-num">/ XII</span></div>
+    <div class="pillar-grid">
+      <div class="pillar">
+        <h3>Crawlability and indexing</h3>
+        <p>Robots rules, sitemaps, canonical tags, redirect chains, and orphaned pages. We make sure the pages that should be indexed are, and the ones that shouldn't aren't diluting the rest.</p>
+      </div>
+      <div class="pillar">
+        <h3>Core Web Vitals</h3>
+        <p>LCP, INP, and CLS measured on real page templates and brought inside Google's thresholds. Fast, stable pages rank better and convert better.</p>
+      </div>
+      <div class="pillar">
+        <h3>Structured data and schema</h3>
+        <p>JSON-LD that describes your organisation, services, and content so Google and AI tools can parse what each page covers, validated in the Rich Results Test.</p>
+      </div>
+      <div class="pillar">
+        <h3>Machine readability and llms.txt</h3>
+        <p>Clean HTML, server-rendered content, and an llms.txt file that points AI crawlers at your canonical pages instead of leaving them to guess.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap section-sm" style="display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--rule)">
+    <a href="/services/seo/" class="t-mono link-ul" style="font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:var(--mute)">← SEO</a>
+    <div class="silo-links">
+      <a href="/services/seo/seo-audit/" class="t-mono link-ul" style="font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:var(--orange)">SEO audit →</a>
+      <a href="/audit/" class="t-mono link-ul" style="font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:var(--mute)">Free audit →</a>
+    </div>
+  </section>
+
+  <section class="on-dark" style="padding:80px 32px;text-align:center">
+    <div class="wrap" style="max-width:600px">
+      <p style="font-size:15px;line-height:1.65;color:rgba(244,240,232,0.65);max-width:440px;margin:0 auto 24px">The audit shows which technical gaps are costing you crawl budget and citations before we quote anything.</p>
+      <a href="/audit/" class="btn btn-orange">Run a free audit</a>
+    </div>
+  </section>
+  </main>
+</BaseLayout>

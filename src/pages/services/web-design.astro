@@ -1,0 +1,89 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+const SITE = 'https://masterful-app.com';
+const graph = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Service',
+      name: 'Web Design',
+      description:
+        'Premium websites engineered from the first line for SEO, AEO and GEO: fast, crawlable, and built to convert.',
+      provider: { '@type': 'ProfessionalService', '@id': `${SITE}/#organization`, name: 'Masterful', url: SITE },
+      serviceType: 'Web Design',
+      url: `${SITE}/services/web-design/`,
+      areaServed: ['United States', 'United Kingdom', 'Kenya'],
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Services', item: `${SITE}/services/` },
+        { '@type': 'ListItem', position: 2, name: 'Web Design', item: `${SITE}/services/web-design/` },
+      ],
+    },
+  ],
+};
+---
+<BaseLayout
+  title="Web Design Built for Search Visibility | Masterful"
+  description="Premium websites engineered from the first line for SEO, AEO and GEO: fast, crawlable, and built to convert."
+  path="/services/web-design/"
+  navActive="services"
+>
+  <script type="application/ld+json" slot="schema" set:html={JSON.stringify(graph)} />
+  <Breadcrumb items={[{ name: 'Home', href: '/' }, { name: 'Services', href: '/services/' }, { name: 'Web Design' }]} />
+
+  <main>
+  <section class="service-hero wrap">
+    <div class="kicker" style="margin-bottom:20px">Services · Web Design · Premium tier</div>
+    <div class="sh-meta">
+      <span class="sh-meta-item">Premium tier</span>
+      <span class="sh-meta-item">Six-month engagement</span>
+    </div>
+    <h1 class="sh-headline">Web design built<br>to be <em>found.</em></h1>
+    <p class="lead-body" style="max-width:640px;margin-bottom:32px">
+      Most websites are designed to look right and optimised for search afterwards. We build the other way around. Every page is engineered from the first line for SEO, AEO and GEO: a structure crawlers can read, content shaped so AI tools can lift and cite it, and an entity layer that makes models confident about who you are. Fast, crawlable, and built to convert, without bolting visibility on at the end.
+    </p>
+    <p class="sh-tagline">For businesses where the current site is the constraint, not just the content on it.</p>
+    <a href="/audit/" class="btn btn-orange">Run a free audit</a>
+  </section>
+
+  <section class="pillars wrap">
+    <div class="kicker" style="margin-bottom:32px">What We Build <span class="kicker-num">/ XII</span></div>
+    <div class="pillar-grid">
+      <div class="pillar">
+        <h3>Engineered for three surfaces</h3>
+        <p>Information architecture, page templates, and content structure planned around how Google ranks, how answer engines cite, and how models recognise entities, all at once.</p>
+      </div>
+      <div class="pillar">
+        <h3>Fast and crawlable by default</h3>
+        <p>Static-fast pages, clean server-rendered HTML, Core Web Vitals inside threshold, and schema on every template. Performance is a feature, not a retrofit.</p>
+      </div>
+      <div class="pillar">
+        <h3>Built to convert</h3>
+        <p>The editorial, newspaper-grade craft you can see across this site, applied to pages that turn a visitor into a conversation.</p>
+      </div>
+      <div class="pillar">
+        <h3>Visibility from day one</h3>
+        <p>The site ships with the technical foundation already in place, so the retainer work starts from a clean base instead of fixing the launch.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap section-sm" style="display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--rule)">
+    <a href="/services/" class="t-mono link-ul" style="font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:var(--mute)">← All services</a>
+    <div class="silo-links">
+      <a href="/work/" class="t-mono link-ul" style="font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:var(--orange)">See the work →</a>
+      <a href="/audit/" class="t-mono link-ul" style="font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:var(--mute)">Free audit →</a>
+    </div>
+  </section>
+
+  <section class="on-dark" style="padding:80px 32px;text-align:center">
+    <div class="wrap" style="max-width:600px">
+      <p style="font-size:15px;line-height:1.65;color:rgba(244,240,232,0.65);max-width:440px;margin:0 auto 24px">Start with the free audit. If a rebuild is the right call, the audit is where we'll say so, with the reasons.</p>
+      <a href="/audit/" class="btn btn-orange">Run a free audit</a>
+    </div>
+  </section>
+  </main>
+</BaseLayout>

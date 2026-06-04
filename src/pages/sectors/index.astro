@@ -1,0 +1,53 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+const SITE = 'https://masterful-app.com';
+const breadcrumb = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` },
+    { '@type': 'ListItem', position: 2, name: 'Sectors', item: `${SITE}/sectors/` },
+  ],
+};
+const sectors = [
+  { href: '/sectors/law-firms/', name: 'Law firms', note: 'Search visibility for legal practices that need to be the firm AI tools name.' },
+  { href: '/sectors/saas/', name: 'SaaS', note: 'AEO and GEO for software brands competing to be cited in product comparisons.' },
+  { href: '/sectors/nairobi-businesses/', name: 'Nairobi businesses', note: 'Local and organic visibility for businesses serving the Nairobi market.' },
+];
+---
+<BaseLayout
+  title="Sectors | Masterful"
+  description="Search visibility work by sector: law firms, SaaS, and Nairobi businesses. SEO, AEO, and GEO from a search visibility studio."
+  path="/sectors/"
+  navActive=""
+>
+  <script type="application/ld+json" slot="schema" set:html={JSON.stringify(breadcrumb)} />
+  <Breadcrumb items={[{ name: 'Home', href: '/' }, { name: 'Sectors' }]} />
+
+  <main>
+  <section class="wrap" style="padding:64px 0 48px;border-bottom:1px solid var(--rule)">
+    <div class="kicker" style="margin-bottom:32px">Sectors</div>
+    <h1 style="font-family:var(--serif);font-size:clamp(40px,5vw,64px);line-height:1.0;letter-spacing:-0.02em;margin-bottom:16px">Visibility, by sector.</h1>
+    <p style="font-size:15px;line-height:1.65;color:var(--mute);max-width:540px">The same three disciplines, focused on the buying behaviour and search surfaces of a specific category. Deeper sector guides are in progress.</p>
+  </section>
+
+  <section class="wrap" style="padding:48px 0;border-bottom:1px solid var(--rule)">
+    <div class="pillar-grid">
+      {sectors.map((s) => (
+        <a href={s.href} class="pillar" style="display:block;text-decoration:none;color:inherit">
+          <h3>{s.name} →</h3>
+          <p>{s.note}</p>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section class="on-dark" style="padding:80px 32px;text-align:center">
+    <div class="wrap" style="max-width:600px">
+      <h2 style="font-family:var(--serif);font-size:clamp(36px,5vw,60px);line-height:1.0;letter-spacing:-0.02em;margin-bottom:20px">Find your sector's gap</h2>
+      <a href="/audit/" class="btn btn-orange">Run a free audit →</a>
+    </div>
+  </section>
+  </main>
+</BaseLayout>

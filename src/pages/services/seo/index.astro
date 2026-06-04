@@ -1,0 +1,119 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../../components/Breadcrumb.astro';
+const SITE = 'https://masterful-app.com';
+const graph = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Service',
+      name: 'Search Engine Optimization',
+      alternateName: 'SEO',
+      description:
+        'Search engine optimization is the practice of making a website readable, relevant, and authoritative enough for Google to rank it for specific queries. This covers technical foundations that let Google crawl and index the site cleanly, topical authority built through interconnected content clusters, and editorial content written to answer the exact questions buyers search for.',
+      provider: { '@type': 'ProfessionalService', '@id': `${SITE}/#organization`, name: 'Masterful', url: SITE },
+      serviceType: 'Search Engine Optimization',
+      url: `${SITE}/services/seo/`,
+      areaServed: ['United States', 'United Kingdom', 'Kenya'],
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Services', item: `${SITE}/services/` },
+        { '@type': 'ListItem', position: 2, name: 'SEO', item: `${SITE}/services/seo/` },
+      ],
+    },
+  ],
+};
+---
+<BaseLayout
+  title="SEO | Masterful"
+  description="Technical SEO, topical authority, and editorial content. Built for Google. Three-month minimum."
+  path="/services/seo/"
+  navActive="services"
+>
+  <script type="application/ld+json" slot="schema" set:html={JSON.stringify(graph)} />
+  <Breadcrumb items={[{ name: 'Home', href: '/' }, { name: 'Services', href: '/services/' }, { name: 'SEO' }]} />
+
+  <main>
+  <section class="service-hero wrap">
+    <div class="kicker" style="margin-bottom:20px">Service No. I · Search Engine Optimization</div>
+    <div class="sh-meta">
+      <span class="sh-meta-item">Minimum 3 months</span>
+      <span class="sh-meta-item">Flat retainer</span>
+    </div>
+    <h1 class="sh-headline">SEO:<br>the boring <em>engine.</em></h1>
+    <p class="lead-body" style="max-width:640px;margin-bottom:32px">
+      Search engine optimization is the practice of making a website readable, relevant, and authoritative enough for Google to rank it for specific queries. In 2026, this means three things: technical foundations that let Google crawl and index the site cleanly, topical authority built through a cluster of interconnected content on a subject, and editorial content written to answer the exact questions buyers type into search.
+    </p>
+    <p class="sh-tagline">Google still handles 4.8 billion searches a day. Most of those searches end on a website. SEO is infrastructure, not a campaign.</p>
+    <a href="/audit/" class="btn btn-orange">Run a free audit</a>
+  </section>
+
+  <section class="pillars wrap">
+    <div class="kicker" style="margin-bottom:32px">What We Build <span class="kicker-num">/ XII</span></div>
+    <div class="pillar-grid">
+      <div class="pillar">
+        <h3>Technical foundations</h3>
+        <p>Crawlability, Core Web Vitals, schema markup, indexation, llms.txt. The architecture Google needs to understand and rank your site.</p>
+      </div>
+      <div class="pillar">
+        <h3>Topical authority</h3>
+        <p>A cluster of interconnected content that tells Google your brand owns a subject. One article does not build authority. A 14-page anchor set does.</p>
+      </div>
+      <div class="pillar">
+        <h3>Editorial content</h3>
+        <p>Pages written to rank for specific queries at the right stage of the buyer journey. Briefed, written, and published by Masterful.</p>
+      </div>
+      <div class="pillar">
+        <h3>Monthly reporting</h3>
+        <p>Rankings, impressions, and position shifts tracked against your baseline. Every change explained. No dashboard login required.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sub-pages -->
+  <section class="wrap" style="padding:48px 0;border-bottom:1px solid var(--rule)">
+    <div class="kicker" style="margin-bottom:32px">Inside SEO <span class="kicker-num">/ XII</span></div>
+    <div class="pillar-grid">
+      <a href="/services/seo/technical-seo/" class="pillar" style="display:block;text-decoration:none;color:inherit">
+        <h3>Technical SEO →</h3>
+        <p>Crawlability, indexing, Core Web Vitals, and site health fixed so Google and AI crawlers can read your site.</p>
+      </a>
+      <a href="/services/seo/seo-audit/" class="pillar" style="display:block;text-decoration:none;color:inherit">
+        <h3>SEO audit →</h3>
+        <p>A full technical and content audit with a prioritised 90-day fix list, not a 200-page PDF nobody reads.</p>
+      </a>
+      <a href="/services/seo/local-seo-nairobi/" class="pillar" style="display:block;text-decoration:none;color:inherit">
+        <h3>Local SEO Nairobi →</h3>
+        <p>Google Business Profile, local citations, and reviews that rank you in the Nairobi map pack.</p>
+      </a>
+    </div>
+  </section>
+
+  <section class="wrap" style="padding:48px 0;border-bottom:1px solid var(--rule)">
+    <div class="kicker" style="margin-bottom:32px">What This Is Not</div>
+    <ul style="list-style:none;display:flex;flex-direction:column;gap:0">
+      <li style="font-family:var(--serif);font-size:clamp(18px,2.2vw,26px);line-height:1.2;letter-spacing:-0.01em;padding:20px 0;border-bottom:1px solid var(--rule);color:var(--mute)">Link farms.</li>
+      <li style="font-family:var(--serif);font-size:clamp(18px,2.2vw,26px);line-height:1.2;letter-spacing:-0.01em;padding:20px 0;border-bottom:1px solid var(--rule);color:var(--mute)">AI-generated bulk content.</li>
+      <li style="font-family:var(--serif);font-size:clamp(18px,2.2vw,26px);line-height:1.2;letter-spacing:-0.01em;padding:20px 0;border-bottom:1px solid var(--rule);color:var(--mute)">Keyword stuffing.</li>
+      <li style="font-family:var(--serif);font-size:clamp(18px,2.2vw,26px);line-height:1.2;letter-spacing:-0.01em;padding:20px 0;color:var(--mute)">Monthly reports with no action item attached.</li>
+    </ul>
+  </section>
+
+  <section class="wrap section-sm" style="display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--rule)">
+    <a href="/services/" class="t-mono link-ul" style="font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:var(--mute)">← All services</a>
+    <div class="silo-links">
+      <a href="/services/aeo/" class="t-mono link-ul" style="font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:var(--orange)">AEO →</a>
+      <a href="/services/geo/" class="t-mono link-ul" style="font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:var(--mute)">GEO →</a>
+    </div>
+  </section>
+
+  <section class="on-dark" style="padding:80px 32px;text-align:center">
+    <div class="wrap" style="max-width:600px">
+      <p style="font-size:15px;line-height:1.65;color:rgba(244,240,232,0.65);max-width:440px;margin:0 auto 24px">The audit tells you where the technical gaps are before we quote anything.</p>
+      <a href="/audit/" class="btn btn-orange">Run a free audit</a>
+    </div>
+  </section>
+  </main>
+</BaseLayout>

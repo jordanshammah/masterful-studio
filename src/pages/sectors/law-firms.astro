@@ -1,0 +1,40 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+const SITE = 'https://masterful-app.com';
+const breadcrumb = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` },
+    { '@type': 'ListItem', position: 2, name: 'Sectors', item: `${SITE}/sectors/` },
+    { '@type': 'ListItem', position: 3, name: 'Law firms', item: `${SITE}/sectors/law-firms/` },
+  ],
+};
+---
+<BaseLayout
+  title="SEO, AEO & GEO for Law Firms | Masterful"
+  description="Search visibility for law firms: SEO, AEO and GEO so your practice is the firm Google ranks and AI tools name."
+  path="/sectors/law-firms/"
+  navActive=""
+>
+  <script type="application/ld+json" slot="schema" set:html={JSON.stringify(breadcrumb)} />
+  <Breadcrumb items={[{ name: 'Home', href: '/' }, { name: 'Sectors', href: '/sectors/' }, { name: 'Law firms' }]} />
+
+  <main>
+  <section class="service-hero wrap">
+    <div class="kicker" style="margin-bottom:20px">Sectors · Law firms</div>
+    <h1 class="sh-headline" style="font-size:clamp(40px,5.5vw,72px)">Search visibility for law firms.</h1>
+    <p class="lead-body" style="max-width:640px;margin-bottom:24px">Clients researching legal help increasingly start with an AI tool, then check Google. We build the technical foundation, the answer-ready content, and the entity presence that get a firm ranked and cited in its practice areas. A full law-firm guide is in progress; the audit is the fastest way to see where your firm stands today.</p>
+    <a href="/audit/" class="btn btn-orange">Run a free audit</a>
+  </section>
+
+  <section class="wrap section-sm" style="display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--rule)">
+    <a href="/sectors/" class="t-mono link-ul" style="font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:var(--mute)">← All sectors</a>
+    <div class="silo-links">
+      <a href="/services/seo/" class="t-mono link-ul" style="font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:var(--mute)">SEO →</a>
+      <a href="/services/aeo/" class="t-mono link-ul" style="font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:var(--orange)">AEO →</a>
+    </div>
+  </section>
+  </main>
+</BaseLayout>

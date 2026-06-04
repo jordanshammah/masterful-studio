@@ -1,0 +1,14 @@
+# Trailing-slash normalization for directory roots.
+# Cloudflare Pages' default html_handling issues a 307 from /journal to
+# /journal/, which Google follows but treats as a weaker SEO signal than
+# a 301. These explicit rules give a deterministic single 301 to the
+# canonical slashed form, matching the canonical link tags and sitemap.
+/journal  /journal/  301
+/work     /work/     301
+/audit    /audit/    301
+
+# Service silo moved to trailing-slash canonical URLs in the Astro migration.
+# 301 the legacy no-slash pillar URLs to their slashed canonical form.
+/services/seo  /services/seo/  301
+/services/aeo  /services/aeo/  301
+/services/geo  /services/geo/  301
