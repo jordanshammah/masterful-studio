@@ -1,11 +1,11 @@
 ---
 title: "Drey Vision Marketing"
-description: "How Masterful lifted Drey Vision Marketing's organic visits 50%, search click-through rate 45%, and average ranking position by 80 places through content and technical SEO on their existing site."
+description: "How Masterful grew Drey Vision Marketing's organic visits 50%, CTR 45%, and rankings 80 places, and lifted AI search citations from 18 prompts to about 40 in six weeks."
 client: "Drey Vision Marketing"
-service: "SEO"
+service: "SEO and AEO"
 ---
 
-Drey Vision Marketing came to Masterful to get more out of organic search. The goal was straightforward: turn an existing website that was already live into a page Google could read, rank, and send qualified visitors to. We ran the work on the current site first, where the fastest wins were sitting, while a ground-up rebuild gets underway in parallel.
+Drey Vision Marketing, a digital marketing agency, came to Masterful to get more out of organic search and to start showing up when buyers ask AI tools for recommendations. The goal was straightforward: turn an existing website that was already live into a page Google could read, rank, and send qualified visitors to, and make the brand citable by the answer engines its buyers increasingly ask first. We ran the work on the current site first, where the fastest wins were sitting, while a ground-up rebuild gets underway in parallel.
 
 ## The numbers
 
@@ -27,6 +27,23 @@ Three metrics moved over the engagement, each measured against the site's own ba
 </div>
 
 Page visits rose by half. The click-through rate on the queries we targeted climbed 45%, meaning more of the people who saw the listing actually clicked it. And the site's average ranking position improved by 80 places off its starting point, moving target pages from where almost nobody looks onto the first results people read.
+
+## AI citations, in six weeks not six months
+
+The standard timeline for results like ranking and AI search citations is around six months. Drey Vision Marketing reached the citation milestone in six.
+
+<div style="display:flex;flex-wrap:wrap;gap:0;border:1px solid var(--rule);margin:32px 0">
+  <div style="flex:1;min-width:150px;padding:24px;border-right:1px solid var(--rule)">
+    <div style="font-family:var(--serif);font-size:clamp(40px,6vw,56px);line-height:1;letter-spacing:-0.02em;color:var(--orange)">~40</div>
+    <div style="font-family:var(--mono);font-size:10px;letter-spacing:0.06em;text-transform:uppercase;color:var(--mute);margin-top:8px">AI prompts citing them, from 18</div>
+  </div>
+  <div style="flex:1;min-width:150px;padding:24px">
+    <div style="font-family:var(--serif);font-size:clamp(40px,6vw,56px);line-height:1;letter-spacing:-0.02em;color:var(--orange)">6 wks</div>
+    <div style="font-family:var(--mono);font-size:10px;letter-spacing:0.06em;text-transform:uppercase;color:var(--mute);margin-top:8px">To citation gains, vs ~6 mo standard</div>
+  </div>
+</div>
+
+Through a set of targeted technical changes, the brand went from being cited in 18 AI prompts at baseline to roughly 40, so answer engines started naming it in more than twice as many of the questions its buyers actually ask, and it happened in six weeks rather than the usual six months. That side of the work is our [AEO practice](/services/aeo/).
 
 ## What we changed
 
