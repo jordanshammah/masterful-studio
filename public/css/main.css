@@ -11,6 +11,7 @@ html{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;scroll
 
 /* ─── TOKENS ─────────────────────────────────────── */
 :root{
+  color-scheme:light;
   --cream:#F4F0E8;
   --cream-2:#EAE4D8;
   --ink:#0E0E0E;
