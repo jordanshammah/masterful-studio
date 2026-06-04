@@ -1,0 +1,40 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+const SITE = 'https://masterful-app.com';
+const breadcrumb = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` },
+    { '@type': 'ListItem', position: 2, name: 'Sectors', item: `${SITE}/sectors/` },
+    { '@type': 'ListItem', position: 3, name: 'Nairobi businesses', item: `${SITE}/sectors/nairobi-businesses/` },
+  ],
+};
+---
+<BaseLayout
+  title="SEO, AEO & GEO for Nairobi Businesses | Masterful"
+  description="Search visibility for businesses serving Nairobi: local SEO, organic rankings, and presence in the AI answers your customers see."
+  path="/sectors/nairobi-businesses/"
+  navActive=""
+>
+  <script type="application/ld+json" slot="schema" set:html={JSON.stringify(breadcrumb)} />
+  <Breadcrumb items={[{ name: 'Home', href: '/' }, { name: 'Sectors', href: '/sectors/' }, { name: 'Nairobi businesses' }]} />
+
+  <main>
+  <section class="service-hero wrap">
+    <div class="kicker" style="margin-bottom:20px">Sectors · Nairobi businesses</div>
+    <h1 class="sh-headline" style="font-size:clamp(40px,5.5vw,72px)">Search visibility for Nairobi businesses.</h1>
+    <p class="lead-body" style="max-width:640px;margin-bottom:24px">Customers in Nairobi search Google, the map pack, and increasingly AI tools before they buy. We combine local SEO with organic and answer-engine work so your business shows up in all three. A full Nairobi guide is in progress; for the local side, see our local SEO service, and run the audit to see where you stand.</p>
+    <a href="/audit/" class="btn btn-orange">Run a free audit</a>
+  </section>
+
+  <section class="wrap section-sm" style="display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--rule)">
+    <a href="/sectors/" class="t-mono link-ul" style="font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:var(--mute)">← All sectors</a>
+    <div class="silo-links">
+      <a href="/services/seo/local-seo-nairobi/" class="t-mono link-ul" style="font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:var(--orange)">Local SEO Nairobi →</a>
+      <a href="/audit/" class="t-mono link-ul" style="font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:var(--mute)">Free audit →</a>
+    </div>
+  </section>
+  </main>
+</BaseLayout>

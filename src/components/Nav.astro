@@ -1,0 +1,35 @@
+---
+interface Props {
+  active?: string;
+  cta?: 'audit' | 'home';
+}
+const { active = '', cta = 'audit' } = Astro.props;
+const links = [
+  { key: 'services', href: '/services/', label: 'Services' },
+  { key: 'process', href: '/process/', label: 'Process' },
+  { key: 'work', href: '/work/', label: 'Work' },
+  { key: 'journal', href: '/journal/', label: 'Journal' },
+  { key: 'about', href: '/about/', label: 'About' },
+];
+---
+<nav class="site-nav glass-light">
+  <div class="nav-top">
+    <span class="nav-top-c"><a href="/" class="logo-mark">
+        <svg class="logo-m" viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M 195 815 L 195 185 L 305 185 L 500 720 L 695 185 L 805 185 L 805 815 Z" fill="#C4501A"/>
+        </svg>
+        <span class="logo-wordmark">Masterful</span>
+      </a></span>
+    <span class="nav-top-r">SEO · AEO · GEO</span>
+  </div>
+  <div class="nav-bottom">
+    <ul class="nav-links">
+      {links.map((l) => (
+        <li><a href={l.href} class:list={["link-ul", { active: active === l.key }]}>{l.label}</a></li>
+      ))}
+    </ul>
+    {cta === 'home'
+      ? <a href="/" class="btn btn-ghost">← Back home</a>
+      : <a href="/audit/" class="btn btn-orange">Free audit</a>}
+  </div>
+</nav>

@@ -1,0 +1,40 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+const SITE = 'https://masterful-app.com';
+const breadcrumb = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` },
+    { '@type': 'ListItem', position: 2, name: 'Sectors', item: `${SITE}/sectors/` },
+    { '@type': 'ListItem', position: 3, name: 'SaaS', item: `${SITE}/sectors/saas/` },
+  ],
+};
+---
+<BaseLayout
+  title="SEO, AEO & GEO for SaaS | Masterful"
+  description="Search visibility for SaaS brands: get cited in AI product comparisons and rank for the queries buyers run before they choose."
+  path="/sectors/saas/"
+  navActive=""
+>
+  <script type="application/ld+json" slot="schema" set:html={JSON.stringify(breadcrumb)} />
+  <Breadcrumb items={[{ name: 'Home', href: '/' }, { name: 'Sectors', href: '/sectors/' }, { name: 'SaaS' }]} />
+
+  <main>
+  <section class="service-hero wrap">
+    <div class="kicker" style="margin-bottom:20px">Sectors · SaaS</div>
+    <h1 class="sh-headline" style="font-size:clamp(40px,5.5vw,72px)">Search visibility for SaaS.</h1>
+    <p class="lead-body" style="max-width:640px;margin-bottom:24px">SaaS buyers ask AI tools which product to choose, and the comparison pages models lift from decide the shortlist. We build the answer-ready content and entity presence that put your product in those answers, alongside the SEO that still wins the high-intent queries. A full SaaS guide is in progress; the audit shows where you sit across all six models today.</p>
+    <a href="/audit/" class="btn btn-orange">Run a free audit</a>
+  </section>
+
+  <section class="wrap section-sm" style="display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--rule)">
+    <a href="/sectors/" class="t-mono link-ul" style="font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:var(--mute)">← All sectors</a>
+    <div class="silo-links">
+      <a href="/services/aeo/" class="t-mono link-ul" style="font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:var(--orange)">AEO →</a>
+      <a href="/services/geo/" class="t-mono link-ul" style="font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:var(--mute)">GEO →</a>
+    </div>
+  </section>
+  </main>
+</BaseLayout>

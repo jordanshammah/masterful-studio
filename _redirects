@@ -1,9 +1,0 @@
-# Trailing-slash normalization for directory roots.
-# Cloudflare Pages' default html_handling issues a 307 from /journal to
-# /journal/, which Google follows but treats as a weaker SEO signal than
-# a 301. These explicit rules give a deterministic single 301 to the
-# canonical slashed form, matching the canonical link tags and sitemap.
-# Listed only for the three paths currently flagged in Search Console.
-/journal  /journal/  301
-/work     /work/     301
-/audit    /audit/    301

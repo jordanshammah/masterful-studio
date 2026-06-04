@@ -1,0 +1,50 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('journal');
+  return entries.map((entry) => ({ params: { id: entry.id }, props: { entry } }));
+}
+
+const { entry } = Astro.props;
+const d = entry.data;
+const SITE = 'https://masterful-app.com';
+const url = `${SITE}/journal/${entry.id}/`;
+
+const articleLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: d.headline,
+  description: d.schemaDescription,
+  url,
+  datePublished: d.datePublished,
+  dateModified: d.dateModified,
+  author: { '@type': 'Person', '@id': `${SITE}/#jordan-shammah`, name: 'Jordan Shammah' },
+  publisher: { '@type': 'ProfessionalService', '@id': `${SITE}/#organization`, name: 'Masterful', url: SITE },
+  about: d.about,
+  articleSection: d.articleSection,
+};
+const breadcrumbLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` },
+    { '@type': 'ListItem', position: 2, name: 'Journal', item: `${SITE}/journal/` },
+    { '@type': 'ListItem', position: 3, name: d.breadcrumbName, item: url },
+  ],
+};
+---
+<BaseLayout
+  title={d.title}
+  description={d.description}
+  path={`/journal/${entry.id}/`}
+  ogType="article"
+  navActive="journal"
+>
+  <Fragment slot="schema">
+    <script type="application/ld+json" set:html={JSON.stringify(articleLd)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbLd)} />
+  </Fragment>
+  <main set:html={entry.body}></main>
+</BaseLayout>

@@ -1,0 +1,149 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const SITE = 'https://masterful-app.com';
+const orgGraph = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'ProfessionalService',
+      '@id': `${SITE}/#organization`,
+      name: 'Masterful',
+      description:
+        'A search visibility studio that builds brand presence across SEO, AEO, and GEO. Three months minimum. Flat rate. All organic.',
+      url: SITE,
+      email: 'jordanshammah@masterful-app.com',
+      founder: {
+        '@type': 'Person',
+        '@id': `${SITE}/#jordan-shammah`,
+        name: 'Jordan Shammah',
+        jobTitle: 'Founder',
+        worksFor: { '@id': `${SITE}/#organization` },
+        knowsAbout: [
+          'Answer Engine Optimization',
+          'Generative Engine Optimization',
+          'Search Engine Optimization',
+          'AI Citation Optimization',
+          'Search Visibility',
+        ],
+      },
+      areaServed: ['United States', 'United Kingdom', 'Kenya'],
+      serviceType: ['SEO', 'Answer Engine Optimization', 'Generative Engine Optimization'],
+      knowsAbout: [
+        'Answer Engine Optimization',
+        'Generative Engine Optimization',
+        'Search Engine Optimization',
+        'AI Citation Optimization',
+        'LLM Citation Building',
+        'Search Visibility',
+        'Topical Authority',
+      ],
+      logo: { '@type': 'ImageObject', url: `${SITE}/assets/og-image.png` },
+    },
+  ],
+};
+const breadcrumb = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` },
+    { '@type': 'ListItem', position: 2, name: 'About', item: `${SITE}/about/` },
+  ],
+};
+---
+<BaseLayout
+  title="About | Masterful"
+  description="A search visibility studio. SEO, AEO, GEO. Three months minimum. Flat rate. All organic."
+  path="/about/"
+  navActive="about"
+>
+  <Fragment slot="schema">
+    <script type="application/ld+json" set:html={JSON.stringify(orgGraph)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumb)} />
+  </Fragment>
+
+  <main>
+  <section class="manifesto wrap">
+    <div class="manifesto-layout" style="display:grid;grid-template-columns:1fr 320px;gap:64px;align-items:start">
+      <div data-reveal>
+        <div class="kicker" style="margin-bottom:32px">About Masterful</div>
+        <h1 style="font-family:var(--serif);font-size:clamp(36px,4.5vw,60px);line-height:1.0;letter-spacing:-0.02em;margin-bottom:28px">A studio that works<br><em style="font-style:italic">on one problem.</em></h1>
+        <p class="manifesto-body">Masterful builds search visibility across three surfaces: Google, AI answer engines, and the entity data that models read when forming recommendations. One engagement. One retainer.</p>
+        <br>
+        <p class="manifesto-body">The search surface changed. ChatGPT, Perplexity, and Gemini now answer the questions that used to send buyers to your site. Most brands do not appear in those answers. That is the gap we fill.</p>
+        <br>
+        <p class="manifesto-body">Three months minimum. Flat rate. All organic. We publish what works in the journal.</p>
+      </div>
+      <div class="glass" style="position:sticky;top:88px;padding:28px;border:1px solid var(--rule)">
+        <p style="font-family:var(--mono);font-size:9px;letter-spacing:0.06em;text-transform:uppercase;color:var(--mute);margin-bottom:16px">The Audit</p>
+        <p style="font-family:var(--serif);font-size:20px;line-height:1.3;letter-spacing:-0.01em;margin-bottom:20px">Find out how models see your brand right now.</p>
+        <a href="/audit/" class="btn btn-orange" style="width:100%;justify-content:center">Start free →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats bar -->
+  <section class="wrap" style="padding:40px 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)">
+    <div style="display:flex;gap:0">
+      <div style="padding-right:48px;border-right:1px solid var(--rule);margin-right:48px">
+        <div style="font-family:var(--serif);font-size:56px;line-height:1;letter-spacing:-0.03em">3</div>
+        <div style="font-family:var(--mono);font-size:10px;letter-spacing:0.06em;text-transform:uppercase;color:var(--mute)">Disciplines</div>
+      </div>
+      <div style="padding-right:48px;border-right:1px solid var(--rule);margin-right:48px">
+        <div style="font-family:var(--serif);font-size:56px;line-height:1;letter-spacing:-0.03em">3mo</div>
+        <div style="font-family:var(--mono);font-size:10px;letter-spacing:0.06em;text-transform:uppercase;color:var(--mute)">Minimum contract</div>
+      </div>
+      <div>
+        <div style="font-family:var(--serif);font-size:56px;line-height:1;letter-spacing:-0.03em">6</div>
+        <div style="font-family:var(--mono);font-size:10px;letter-spacing:0.06em;text-transform:uppercase;color:var(--mute)">Frontier models tracked</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- House rules -->
+  <section class="wrap">
+    <div class="kicker" style="margin:40px 0 32px">House Rules</div>
+    <div class="rules-grid">
+      <div class="rule-item">
+        <div class="ri-num">I</div>
+        <div class="ri-rule">Flat retainers only</div>
+        <p class="ri-body">Flat monthly fee. You know the number before we start.</p>
+      </div>
+      <div class="rule-item">
+        <div class="ri-num">II</div>
+        <div class="ri-rule">Three months minimum</div>
+        <p class="ri-body">Three months minimum. We take on work we can see through.</p>
+      </div>
+      <div class="rule-item">
+        <div class="ri-num">III</div>
+        <div class="ri-rule">One client per vertical</div>
+        <p class="ri-body">We work with one brand per competitive category.</p>
+      </div>
+      <div class="rule-item">
+        <div class="ri-num">IV</div>
+        <div class="ri-rule">No ads</div>
+        <p class="ri-body">We don't run paid media. We have studio contacts who do. Ask, and we'll introduce you. Organic is the discipline we're built for.</p>
+      </div>
+      <div class="rule-item">
+        <div class="ri-num">V</div>
+        <div class="ri-rule">Human replies only</div>
+        <p class="ri-body">The audit reply comes from a human. Your strategy call is with the person doing the work.</p>
+      </div>
+      <div class="rule-item">
+        <div class="ri-num">VI</div>
+        <div class="ri-rule">We publish what works</div>
+        <p class="ri-body">The methods are public. The journal covers everything we'd usually bill for. Execution is what separates the results.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="on-dark" style="padding:80px 32px;text-align:center">
+    <div class="wrap" style="max-width:600px">
+      <h2 style="font-family:var(--serif);font-size:clamp(36px,5vw,60px);line-height:1.0;letter-spacing:-0.02em;margin-bottom:12px">Want to work together?</h2>
+      <p style="font-family:var(--mono);font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:var(--mute-light);margin-bottom:32px">Start with the audit. A human replies within 48 hours.</p>
+      <a href="/audit/" class="btn btn-orange">Start the free audit →</a>
+      <p style="margin-top:20px;font-size:14px;color:var(--mute-light)">Or email us: <a href="mailto:info@masterful-app.com" style="color:var(--cream)">info@masterful-app.com</a></p>
+    </div>
+  </section>
+  </main>
+</BaseLayout>

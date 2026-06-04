@@ -2,3 +2,5 @@
 *.log
 node_modules/
 .wrangler/
+dist/
+.astro/

@@ -1,0 +1,108 @@
+---
+title: "What GEO Actually Is: Generative Engine Optimization"
+description: "GEO is the practice of becoming a recognized entity that AI models draw on when answering questions in your category. Here's what that actually involves."
+headline: "GEO in plain language: what generative engine optimization actually involves."
+schemaDescription: "Entity recognition, Wikipedia, Reddit, and training data: what GEO is, why it's slower than SEO, and why that's the point."
+datePublished: "2026-04-28"
+dateModified: "2026-04-28"
+articleSection: "GEO"
+about: ["Generative Engine Optimization","Wikipedia","Entity Recognition"]
+breadcrumbName: "What GEO Actually Is"
+---
+<header style="padding:64px 0 40px;border-bottom:1px solid var(--rule)" class="wrap">
+  <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px;flex-wrap:wrap">
+    <span class="tag tag-filled">● GEO</span>
+    <span class="t-mono" style="font-size:10px;letter-spacing:0.06em;text-transform:uppercase;color:var(--mute)">Entry No. 39</span>
+    <span class="t-mono" style="font-size:10px;letter-spacing:0.06em;text-transform:uppercase;color:var(--mute)">28 Apr 2026</span>
+    <span class="t-mono" style="font-size:10px;letter-spacing:0.06em;text-transform:uppercase;color:var(--mute)">6 min read</span>
+  </div>
+  <h1 style="font-family:var(--serif);font-size:clamp(36px,5vw,68px);line-height:1.0;letter-spacing:-0.02em;margin-bottom:20px;max-width:800px">GEO in plain language:<br>what generative engine<br><em style="font-style:italic">optimization actually involves.</em></h1>
+  <p style="font-size:16px;line-height:1.65;color:var(--mute);max-width:640px;margin-bottom:28px">The old question was "how do I rank on Google?" The new question is different. GEO is the practice of answering it, and most brands haven't started yet.</p>
+  <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px">
+    <div style="display:flex;gap:24px;flex-wrap:wrap">
+      <span class="t-mono" style="font-size:10px;letter-spacing:0.06em;text-transform:uppercase;color:var(--mute)">By Jordan Shammah, Founder</span>
+      <span class="t-mono" style="font-size:10px;letter-spacing:0.06em;text-transform:uppercase;color:var(--mute)">6 minute read</span>
+    </div>
+    <div style="display:flex;gap:16px">
+      <a href="#" class="t-mono link-ul" style="font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:var(--orange)">↗ Share</a>
+      <a href="#" class="t-mono link-ul" style="font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:var(--mute)">● Save</a>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="article-layout">
+    <article>
+      <div class="article-body">
+
+        <h2 id="new-question">§ I &nbsp; The new question</h2>
+        <p>The old question was "how do I rank on Google?" The new question is "how do I become a recognized entity that AI models draw on when answering questions in my category?" GEO is the practice of answering that second question.</p>
+        <p>This distinction matters more than it might appear. Ranking on Google is primarily a document problem: you need better content, better links, better technical structure than the page above you. Becoming a recognized entity in a model's understanding of the world is a different kind of problem. It is about what data sources the model was trained on, what structured information exists about your brand across the web, and how consistent that information is across the sources models trust.</p>
+        <p>You can rank on page one of Google for your core keyword and still be completely absent from the model's representation of your industry. We see this constantly in audits. The brand is findable on the traditional web but invisible to AI systems because the entity layer was never built. GEO is the work of building that layer.</p>
+
+        <h2 id="entity-recognition">§ II &nbsp; Why entity recognition matters</h2>
+        <p>When a model is asked about a topic, it draws on its understanding of the entities involved: the brands, people, and organizations it has built representations of during training. If you're not in that representation layer, you don't get cited, even if you have a good website. Entity recognition is built through Wikipedia, Wikidata, structured data, and the UGC sources models trust.</p>
+        <p>Think of it this way: a model's knowledge of your brand is a compressed representation built from every mention, description, and reference it encountered during training. If those mentions are sparse, inconsistent, or contradictory, the model's representation of your brand is weak. If they're rich, consistent, and cross-referenced across trustworthy sources, the model has a strong, stable entity to draw on when answering relevant questions.</p>
+        <blockquote>
+          A weak entity representation means the model hedges, omits, or misattributes. A strong one means it cites you by name, confidently, in the right context.
+        </blockquote>
+        <p>The practical sources that build entity recognition: Wikipedia (if you qualify), Wikidata (structured entity data that models explicitly draw on), schema markup on your own site, LinkedIn company profiles, Crunchbase, industry publications that reference you by name, and press coverage that establishes your brand in context. Each source adds signal to the model's understanding of what you are and where you belong.</p>
+
+        <h2 id="wikipedia">§ III &nbsp; Wikipedia is harder than it looks</h2>
+        <p>The notability standard is real. An article about a brand that has no significant press coverage will be deleted within days. Wikipedia editors are experienced at spotting promotional content and brands without genuine notability, and they have no obligation to be gentle about it. Getting a Wikipedia article that survives requires meeting the notability threshold, which means significant coverage in reliable, independent sources.</p>
+        <p>The path to Wikipedia is through coverage first: original research that gets picked up by publications, a named framework or methodology that becomes referenced in the industry, a genuine news hook that earns coverage in sources Wikipedia editors consider reliable. Once the coverage exists, the article is defensible. Without it, the article gets deleted and the attempt can actually harm your credibility with editors who remember the failed attempt.</p>
+        <p>The order matters: coverage, then Wikipedia. Never the other way around. This is a common mistake. Brands pay someone to write a Wikipedia article before they have earned the coverage that justifies it. The article gets deleted. The brand learns nothing. The right sequence is: do something notable, get covered for it, then let the Wikipedia presence follow from the coverage.</p>
+
+        <h2 id="reddit-ugc">§ IV &nbsp; Reddit and the UGC layer</h2>
+        <p>Reddit threads are crawled by models. A genuine, useful presence in the subreddits your buyers trust is worth more than most brands realize. When someone asks a model "what's the best X for Y situation?", the model's answer is often shaped by the pattern of recommendations it saw in Reddit threads during training. Reddit is one of the few sources of unfiltered, high-volume human opinion that made it into training data at scale.</p>
+        <p>The trap is trying to manufacture it. Reddit communities are very good at detecting inauthentic brand behavior, and getting caught there damages the exact credibility you're trying to build. A post from a new account that reads like marketing copy gets flagged immediately. The community memory is long. Getting banned from a subreddit your buyers frequent is worse than not being there at all.</p>
+        <p>The right approach is slow and genuine: participate in communities where you have real expertise, answer questions without pitching, build karma in the category over months, and let the brand mentions follow from actually being useful. This is not a six-week sprint: it's a background activity that runs for the duration of the engagement. Done right, it compounds significantly.</p>
+
+        <h2 id="compounding">§ V &nbsp; The compounding effect</h2>
+        <p>GEO is slow work with a long tail. A Wikipedia article, a cluster of cited research, a consistent Reddit presence: none of these pays off in month one. The model's representations of entities are built from training data that was collected over months or years, and the next training run won't happen immediately. In the short term, GEO work is largely invisible.</p>
+        <p>But by month twelve, the brand has a different relationship with the models than it did at the start. The citations in AI answers compound the way links compound in SEO. Each mention in a credible source adds to the entity representation. Each cross-reference between sources strengthens the signal. Each structured data point makes the model's understanding more confident and accurate.</p>
+        <p>The brands that start this work early have a structural advantage. Entity recognition, once established, is durable. It decays slowly and is expensive to dislodge. A brand that is a recognized entity in the model's training data from 2026 will carry that advantage into 2028, 2030, and beyond. The work doesn't expire. Plant early.</p>
+
+      </div>
+
+      <div class="filed-tags">
+        <span class="t-mono" style="font-size:10px;letter-spacing:0.06em;text-transform:uppercase;color:var(--mute);margin-right:8px">Filed under:</span>
+        <span class="tag">GEO</span>
+        <span class="tag">Entity recognition</span>
+        <span class="tag">Wikipedia</span>
+        <span class="tag">Reddit</span>
+        <span class="tag">Knowledge graph</span>
+      </div>
+
+      <div class="author-block">
+        <p class="ab-label">Written by</p>
+        <p class="ab-name">Masterful</p>
+      </div>
+
+      <div style="padding:32px 0;border-top:1px solid var(--rule)">
+        <p class="toc-label" style="font-family:var(--mono);font-size:10px;letter-spacing:0.06em;text-transform:uppercase;color:var(--mute);margin-bottom:16px">Related entries</p>
+        <ul class="related-list">
+          <li><a href="/journal/perplexity-citation/">How we got Perplexity to cite us in a category we don't rank for on Google. →</a></li>
+          <li><a href="/journal/how-llms-decide-what-to-cite/">How LLMs decide what to cite, and what your brand can do about it. →</a></li>
+          <li><a href="/journal/the-three-search-surfaces/">The three search surfaces: why SEO alone is not enough in 2026. →</a></li>
+        </ul>
+      </div>
+    </article>
+
+    <aside class="article-toc">
+      <p class="toc-label">In this entry</p>
+      <ul class="toc-list">
+        <li><a href="#new-question">§ I &nbsp; The new question</a></li>
+        <li><a href="#entity-recognition">§ II &nbsp; Entity recognition</a></li>
+        <li><a href="#wikipedia">§ III &nbsp; Wikipedia</a></li>
+        <li><a href="#reddit-ugc">§ IV &nbsp; Reddit and the UGC layer</a></li>
+        <li><a href="#compounding">§ V &nbsp; The compounding effect</a></li>
+      </ul>
+      <div style="margin-top:32px;padding:24px;background:var(--cream-2)">
+        <p class="toc-label">Get the free audit</p>
+        <p style="font-size:13px;line-height:1.55;color:var(--mute);margin-bottom:16px">Find out how the machines see your brand. 18-page report, 48 hours, no sales calls.</p>
+        <a href="/audit/" class="btn btn-orange" style="width:100%;justify-content:center">Start →</a>
+      </div>
+    </aside>
+  </div>
+</div>
