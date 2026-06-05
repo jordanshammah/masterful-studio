@@ -284,6 +284,14 @@ img{display:block;max-width:100%}
 .classified-label{font-family:var(--mono);font-size:9px;letter-spacing:0.08em;text-transform:uppercase;color:var(--mute);margin-bottom:8px}
 .classified-service{font-family:var(--sans);font-size:13px;font-weight:600;letter-spacing:0.02em;margin-bottom:6px;color:var(--orange)}
 .classified-desc{font-size:13px;line-height:1.5;color:var(--ink)}
+/* Homepage sector index cells */
+.sector-cell{display:block;padding:20px;border-right:1px solid var(--rule);color:inherit;transition:background .15s}
+.sector-cell:last-child{border-right:0}
+.sector-cell:hover{background:rgba(196,80,26,0.04)}
+@media(max-width:900px){
+  .grid-3 .sector-cell{border-right:0;border-bottom:1px solid var(--rule)}
+  .grid-3 .sector-cell:last-child{border-bottom:0}
+}
 .audit-sample{padding:64px 0;border-bottom:1px solid var(--rule)}
 .audit-header{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:40px;gap:24px}
 .audit-intro{max-width:480px}
