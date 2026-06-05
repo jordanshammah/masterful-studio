@@ -74,8 +74,25 @@ img{display:block;max-width:100%}
   white-space:nowrap;
 }
 .btn:hover{background:var(--orange);border-color:var(--orange);color:var(--cream)}
-.btn-orange{background:var(--orange);border-color:var(--orange);color:var(--cream)}
-.btn-orange:hover{background:var(--ink);border-color:var(--ink)}
+/* Primary CTA — liquid glass. Falls back to solid orange where backdrop-filter
+   is unsupported, so contrast never drops. Blur is fixed (never animated). */
+.btn-orange{
+  background:rgba(196,80,26,0.9);
+  border-color:rgba(227,102,34,0.5);
+  color:var(--cream);
+  -webkit-backdrop-filter:blur(12px) saturate(160%);
+  backdrop-filter:blur(12px) saturate(160%);
+  box-shadow:0 1px 0 rgba(255,255,255,0.22) inset, 0 6px 18px rgba(196,80,26,0.25);
+}
+.btn-orange:hover{
+  background:rgba(14,14,14,0.9);
+  border-color:rgba(14,14,14,0.6);
+  box-shadow:0 1px 0 rgba(255,255,255,0.12) inset, 0 6px 18px rgba(0,0,0,0.3);
+}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
+  .btn-orange{background:var(--orange);border-color:var(--orange)}
+  .btn-orange:hover{background:var(--ink);border-color:var(--ink)}
+}
 .btn-ghost{background:transparent;color:var(--ink)}
 .btn-ghost:hover{background:var(--ink);color:var(--cream)}
 .on-dark .btn-ghost,.m-dark .btn-ghost{color:var(--cream);border-color:var(--cream)}
@@ -285,9 +302,12 @@ img{display:block;max-width:100%}
 .classified-service{font-family:var(--sans);font-size:13px;font-weight:600;letter-spacing:0.02em;margin-bottom:6px;color:var(--orange)}
 .classified-desc{font-size:13px;line-height:1.5;color:var(--ink)}
 /* Homepage sector index cells */
-.sector-cell{display:block;padding:20px;border-right:1px solid var(--rule);color:inherit;transition:background .15s}
+.sector-cell{display:block;padding:26px 24px 30px;border-right:1px solid var(--rule);color:inherit;transition:background .15s}
 .sector-cell:last-child{border-right:0}
 .sector-cell:hover{background:rgba(196,80,26,0.04)}
+.sector-cell .classified-label{margin-bottom:12px}
+.sector-cell .classified-service{font-size:15px;margin-bottom:10px}
+.sector-cell .classified-desc{line-height:1.6;color:var(--mute)}
 @media(max-width:900px){
   .grid-3 .sector-cell{border-right:0;border-bottom:1px solid var(--rule)}
   .grid-3 .sector-cell:last-child{border-bottom:0}
