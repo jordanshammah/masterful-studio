@@ -288,6 +288,11 @@ const breadcrumb = {
 
   let currentStep = 0;
 
+  // Paste your Google Apps Script Web App URL here to log submissions to a Sheet.
+  // Leave empty and the form still works (just shows the confirmation).
+  // Setup instructions live in scripts/audit-to-sheet.gs.
+  const SHEET_ENDPOINT = '';
+
   function goTo(n) {
     document.getElementById('step-' + currentStep).style.display = 'none';
     currentStep = n;
@@ -313,7 +318,31 @@ const breadcrumb = {
     el.classList.toggle('selected');
   }
 
+  function fieldVal(id){ const el = document.getElementById(id); return el ? el.value.trim() : ''; }
+  function pickOne(id){ const el = document.querySelector('#' + id + ' .choice.selected .choice-label'); return el ? el.textContent.trim() : ''; }
+  function pickMany(id){ return Array.from(document.querySelectorAll('#' + id + ' .choice.selected .choice-label')).map(function(e){ return e.textContent.trim(); }).join('; '); }
+
   function submitForm() {
+    const data = {
+      submittedAt: new Date().toISOString(),
+      name: fieldVal('f-name'),
+      role: fieldVal('f-role'),
+      email: fieldVal('f-email'),
+      phone: fieldVal('f-phone'),
+      business: fieldVal('f-biz-name'),
+      website: fieldVal('f-url'),
+      niche: fieldVal('f-niche'),
+      revenue: pickOne('revenue-choices'),
+      budget: pickOne('budget-choices'),
+      goals: pickMany('goals-choices'),
+      source: pickOne('source-choices'),
+      page: location.href
+    };
+    if (SHEET_ENDPOINT) {
+      try {
+        fetch(SHEET_ENDPOINT, { method: 'POST', mode: 'no-cors', body: new URLSearchParams(data) });
+      } catch (err) { /* non-blocking: still show the confirmation */ }
+    }
     goTo(7);
   }
 
