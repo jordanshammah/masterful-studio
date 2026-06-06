@@ -14,7 +14,7 @@ const url = `${SITE}/journal/${entry.id}/`;
 
 const articleLd = {
   '@context': 'https://schema.org',
-  '@type': 'Article',
+  '@type': d.type ?? 'Article',
   headline: d.headline,
   description: d.schemaDescription,
   url,
@@ -24,6 +24,8 @@ const articleLd = {
   publisher: { '@type': 'ProfessionalService', '@id': `${SITE}/#organization`, name: 'Masterful', url: SITE },
   about: d.about,
   articleSection: d.articleSection,
+  // Only emitted when a post sets `image` in frontmatter; existing posts unchanged.
+  ...(d.image ? { image: d.image.startsWith('http') ? d.image : `${SITE}${d.image}`, mainEntityOfPage: url } : {}),
 };
 const breadcrumbLd = {
   '@context': 'https://schema.org',
