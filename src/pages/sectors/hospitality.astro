@@ -1,0 +1,155 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+const SITE = 'https://masterful-app.com';
+const serviceLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'AI Visibility for Boutique Hotels and Lodges',
+  serviceType: ['Answer Engine Optimization', 'Generative Engine Optimization', 'SEO'],
+  provider: { '@id': `${SITE}/#organization` },
+  areaServed: ['Kenya', 'United Kingdom', 'United States'],
+  audience: {
+    '@type': 'Audience',
+    audienceType: 'Boutique hotels, safari lodges, serviced apartments',
+  },
+  url: `${SITE}/sectors/hospitality/`,
+};
+const breadcrumb = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` },
+    { '@type': 'ListItem', position: 2, name: 'Sectors', item: `${SITE}/sectors/` },
+    { '@type': 'ListItem', position: 3, name: 'Hospitality', item: `${SITE}/sectors/hospitality/` },
+  ],
+};
+---
+<BaseLayout
+  title="AI Visibility for Boutique Hotels & Lodges | Masterful"
+  description="Your guests now ask ChatGPT and Perplexity where to stay. Masterful makes your property the one they're told to book. SEO, AEO, GEO."
+  path="/sectors/hospitality/"
+  navActive="sectors"
+>
+  <Fragment slot="schema">
+    <script type="application/ld+json" set:html={JSON.stringify(serviceLd)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumb)} />
+  </Fragment>
+
+  <Breadcrumb items={[{ name: 'Home', href: '/' }, { name: 'Sectors', href: '/sectors/' }, { name: 'Hospitality' }]} />
+
+  <main>
+  <!-- HERO · lead with the pain -->
+  <section class="service-hero wrap">
+    <div class="kicker" style="margin-bottom:20px">Sectors · Hospitality</div>
+    <h1 class="sh-headline" style="font-size:clamp(38px,5vw,68px)">Make your property the one <em>AI tells guests to book</em></h1>
+    <p style="font-size:17px;line-height:1.7;color:var(--ink);max-width:640px;margin:24px 0 20px">A traveller planning a Kenya trip used to open ten tabs. Now they open ChatGPT and ask for the best boutique lodge near the Mara. Three properties come back by name. If yours isn't one of them, you didn't lose to a better hotel. You lost to a better-understood one, and you never saw the booking that went elsewhere.</p>
+    <p style="font-size:16px;line-height:1.7;color:var(--mute);max-width:640px;margin-bottom:32px">We make boutique hotels, safari lodges, and serviced apartments the property AI tools name first, and we fix the Google foundation underneath so you rank there too.</p>
+    <a href="/audit/" class="btn btn-orange">Run the audit</a>
+  </section>
+
+  <!-- URGENCY -->
+  <section class="wrap" style="padding:48px 0;border-bottom:1px solid var(--rule)" data-reveal>
+    <div class="kicker" style="margin-bottom:20px">Why this is urgent, not interesting</div>
+    <p style="font-size:17px;line-height:1.7;color:var(--ink);max-width:660px">Every empty room is revenue you never recover. The channel your international guests now use to choose, AI answers, is deciding without you while your competitor's name is the one it reads back. This gap compounds: the longer a model has known a competitor and not you, the harder it is to overtake.</p>
+  </section>
+
+  <!-- PROOF OBJECT · visibility-score device -->
+  <section class="audit-sample">
+    <div class="wrap">
+      <div class="kicker" style="margin-bottom:32px">A Peek at the Report: How AI Sees You Today <span class="kicker-num">/ XII</span></div>
+      <div class="audit-header" data-reveal>
+        <div class="audit-intro">
+          <h2 style="font-family:var(--serif);font-size:clamp(28px,3.5vw,42px);line-height:1.1;letter-spacing:-0.02em;margin-bottom:16px">What the <em style="font-style:italic">machines</em> say about your property</h2>
+          <p style="font-size:15px;line-height:1.65;color:var(--mute);max-width:480px;margin-bottom:24px">The free audit scores how the major AI tools describe your property, which competitor they name instead, and the first fixes that change it.</p>
+          <a href="/audit/" class="btn btn-orange">Run the audit</a>
+        </div>
+        <div class="audit-report glass">
+          <div class="ar-header">
+            <span>Sample · Redacted Property</span>
+            <span>masterful / audit 2026.06</span>
+          </div>
+          <div style="font-size:9px;letter-spacing:0.08em;text-transform:uppercase;color:var(--mute-light);margin-bottom:12px">Visibility Score</div>
+          <div class="ar-score-section">
+            <div>
+              <span class="ar-score-n">31</span><span class="ar-score-denom">/100</span>
+            </div>
+            <p class="ar-score-verdict">"On Google. Absent from the answers guests actually read."</p>
+          </div>
+          <div class="ar-findings">Findings · "best boutique lodge near the Mara"</div>
+          <div class="ar-model-row">
+            <span class="ar-model-name">ChatGPT</span><span class="ar-model-badge">names a rival</span>
+          </div>
+          <div class="ar-model-row">
+            <span class="ar-model-name">Perplexity</span><span class="ar-model-badge">not cited</span>
+          </div>
+          <div class="ar-model-row" style="border:0">
+            <span class="ar-model-name">Google AI</span><span class="ar-model-badge">not cited</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT WE DO -->
+  <section class="pillars wrap">
+    <div class="kicker" style="margin-bottom:32px">What We Do for a Property <span class="kicker-num">/ XII</span></div>
+    <div class="pillar-grid">
+      <div class="pillar">
+        <h3>Get cited in AI answers (<a href="/services/aeo/" class="link-ul" style="color:var(--orange)">AEO</a>)</h3>
+        <p>We restructure your content so ChatGPT, Perplexity, Copilot, and Google's AI answers can read what you are, who you're for, and why you're the right stay, then quote it by name.</p>
+      </div>
+      <div class="pillar">
+        <h3>Build the trust signals models read (<a href="/services/geo/" class="link-ul" style="color:var(--orange)">GEO</a>)</h3>
+        <p>Your property's facts made consistent across Google, the directories, and the reference sources AI tools weight, so the model has every reason to recommend you and none to hedge.</p>
+      </div>
+      <div class="pillar">
+        <h3>Keep you ranking on Google (<a href="/services/seo/" class="link-ul" style="color:var(--orange)">SEO</a>)</h3>
+        <p>Technical foundations, room and hotel schema, and the content that holds your organic position, since Google's own AI answers pull from its index.</p>
+      </div>
+      <div class="pillar">
+        <h3>How it works</h3>
+        <p>A flat monthly rate. Organic only, no ad spend. A three-month minimum, because this work needs a runway to show. It starts with a <a href="/audit/" class="link-ul" style="color:var(--orange)">free audit</a>: in 48 hours you see exactly how the six major AI tools describe your property today, which competitor they name instead, and the plan to change it.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUESTIONS · plain on-page content, intentionally not marked up as schema -->
+  <section class="wrap" style="padding:48px 0;border-bottom:1px solid var(--rule)">
+    <div class="kicker" style="margin-bottom:32px">Questions owners ask</div>
+    <div style="display:flex;flex-direction:column;gap:28px;max-width:680px">
+      <div>
+        <h3 style="font-family:var(--serif);font-size:clamp(20px,2.4vw,26px);line-height:1.2;letter-spacing:-0.01em;margin-bottom:8px">Can I pay to appear in ChatGPT's recommendations?</h3>
+        <p style="font-size:16px;line-height:1.7;color:var(--mute)">No. There's no ad slot in an AI answer. You earn the mention by being the property the model understands and trusts.</p>
+      </div>
+      <div>
+        <h3 style="font-family:var(--serif);font-size:clamp(20px,2.4vw,26px);line-height:1.2;letter-spacing:-0.01em;margin-bottom:8px">How long until it works?</h3>
+        <p style="font-size:16px;line-height:1.7;color:var(--mute)">Readable content and consistent facts move within weeks. The reference-source work compounds over months and is the hardest for a competitor to undo.</p>
+      </div>
+      <div>
+        <h3 style="font-family:var(--serif);font-size:clamp(20px,2.4vw,26px);line-height:1.2;letter-spacing:-0.01em;margin-bottom:8px">Do I need a new website?</h3>
+        <p style="font-size:16px;line-height:1.7;color:var(--mute)">Not always. The audit tells you whether the site is the constraint or just the content on it.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SILO NAV -->
+  <section class="wrap section-sm" style="display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--rule)">
+    <a href="/sectors/" class="t-mono link-ul" style="font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:var(--mute)">← All sectors</a>
+    <div class="silo-links">
+      <a href="/services/aeo/" class="t-mono link-ul" style="font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:var(--orange)">AEO →</a>
+      <a href="/services/geo/" class="t-mono link-ul" style="font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:var(--mute)">GEO →</a>
+      <a href="/services/seo/" class="t-mono link-ul" style="font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:var(--mute)">SEO →</a>
+    </div>
+  </section>
+
+  <!-- CLOSING CTA · same wording as top -->
+  <section class="on-dark" style="padding:80px 32px;text-align:center">
+    <div class="wrap" style="max-width:600px">
+      <h2 style="font-family:var(--serif);font-size:clamp(32px,4.5vw,52px);line-height:1.05;letter-spacing:-0.02em;margin-bottom:16px">See where your property stands</h2>
+      <p style="font-size:16px;line-height:1.7;color:rgba(244,240,232,0.65);max-width:460px;margin:0 auto 28px">The free audit shows how AI tools describe you today and what's stopping them from recommending you.</p>
+      <a href="/audit/" class="btn btn-orange">Run the audit</a>
+    </div>
+  </section>
+  </main>
+</BaseLayout>
