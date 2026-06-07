@@ -19,7 +19,7 @@ const graph = {
       '@type': 'BreadcrumbList',
       itemListElement: [
         { '@type': 'ListItem', position: 1, name: 'Services', item: `${SITE}/services/` },
-        { '@type': 'ListItem', position: 2, name: 'SEO', item: `${SITE}/services/seo/` },
+        { '@type': 'ListItem', position: 2, name: 'SXO & Core SEO', item: `${SITE}/services/seo/` },
         { '@type': 'ListItem', position: 3, name: 'Technical SEO', item: `${SITE}/services/seo/technical-seo/` },
       ],
     },
@@ -33,11 +33,11 @@ const graph = {
   navActive="services"
 >
   <script type="application/ld+json" slot="schema" set:html={JSON.stringify(graph)} />
-  <Breadcrumb items={[{ name: 'Home', href: '/' }, { name: 'Services', href: '/services/' }, { name: 'SEO', href: '/services/seo/' }, { name: 'Technical SEO' }]} />
+  <Breadcrumb items={[{ name: 'Home', href: '/' }, { name: 'Services', href: '/services/' }, { name: 'SXO & Core SEO', href: '/services/seo/' }, { name: 'Technical SEO' }]} />
 
   <main>
   <section class="service-hero wrap">
-    <div class="kicker" style="margin-bottom:20px">SEO · Technical SEO</div>
+    <div class="kicker" style="margin-bottom:20px">SXO & Core SEO · Technical SEO</div>
     <div class="sh-meta">
       <span class="sh-meta-item">Foundation work</span>
       <span class="sh-meta-item">Flat retainer</span>
@@ -73,7 +73,7 @@ const graph = {
   </section>
 
   <section class="wrap section-sm" style="display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--rule)">
-    <a href="/services/seo/" class="t-mono link-ul" style="font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:var(--mute)">← SEO</a>
+    <a href="/services/seo/" class="t-mono link-ul" style="font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:var(--mute)">← SXO & Core SEO</a>
     <div class="silo-links">
       <a href="/services/seo/seo-audit/" class="t-mono link-ul" style="font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:var(--orange)">SEO audit →</a>
       <a href="/audit/" class="t-mono link-ul" style="font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:var(--mute)">Free audit →</a>

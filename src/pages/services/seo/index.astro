@@ -7,12 +7,12 @@ const graph = {
   '@graph': [
     {
       '@type': 'Service',
-      name: 'Search Engine Optimization',
-      alternateName: 'SEO',
+      name: 'SXO & Core SEO',
+      alternateName: 'SXO',
       description:
-        'Search engine optimization is the practice of making a website readable, relevant, and authoritative enough for Google to rank it for specific queries. This covers technical foundations that let Google crawl and index the site cleanly, topical authority built through interconnected content clusters, and editorial content written to answer the exact questions buyers search for.',
+        'SXO & Core SEO is one integrated package. Core SEO builds the technical and content foundation Google needs to rank a page: clean crawlability, topical authority through interconnected content clusters, and editorial pages that target what buyers search. SXO is the conversion layer: matching pages to search intent, tuning Core Web Vitals, structuring content for engagement, and building the internal-link journeys that move a visitor from click to action.',
       provider: { '@type': 'ProfessionalService', '@id': `${SITE}/#organization`, name: 'Masterful', url: SITE },
-      serviceType: 'Search Engine Optimization',
+      serviceType: 'SXO & Core SEO',
       url: `${SITE}/services/seo/`,
       areaServed: ['United States', 'United Kingdom', 'Kenya'],
     },
@@ -20,38 +20,41 @@ const graph = {
       '@type': 'BreadcrumbList',
       itemListElement: [
         { '@type': 'ListItem', position: 1, name: 'Services', item: `${SITE}/services/` },
-        { '@type': 'ListItem', position: 2, name: 'SEO', item: `${SITE}/services/seo/` },
+        { '@type': 'ListItem', position: 2, name: 'SXO & Core SEO', item: `${SITE}/services/seo/` },
       ],
     },
   ],
 };
 ---
 <BaseLayout
-  title="SEO Services for Google & AI | Masterful"
-  description="Technical SEO, topical authority and editorial content built so Google ranks you and AI crawlers can read you. Flat rate, three-month minimum."
+  title="SXO & Core SEO | Masterful"
+  description="Core SEO builds the ranking foundation. SXO turns that ranking into conversions. One integrated package: technical SEO, topical authority, landing-page UX, and engagement-signal monitoring."
   path="/services/seo/"
   navActive="services"
 >
   <script type="application/ld+json" slot="schema" set:html={JSON.stringify(graph)} />
-  <Breadcrumb items={[{ name: 'Home', href: '/' }, { name: 'Services', href: '/services/' }, { name: 'SEO' }]} />
+  <Breadcrumb items={[{ name: 'Home', href: '/' }, { name: 'Services', href: '/services/' }, { name: 'SXO & Core SEO' }]} />
 
   <main>
   <section class="service-hero wrap">
-    <div class="kicker" style="margin-bottom:20px">Service No. I · Search Engine Optimization</div>
+    <div class="kicker" style="margin-bottom:20px">Service No. I · SXO & Core SEO</div>
     <div class="sh-meta">
       <span class="sh-meta-item">Minimum 3 months</span>
       <span class="sh-meta-item">Flat retainer</span>
     </div>
-    <h1 class="sh-headline">SEO:<br>the boring <em>engine.</em></h1>
-    <p class="lead-body" style="max-width:640px;margin-bottom:32px">
-      Search engine optimization is the practice of making a website readable, relevant, and authoritative enough for Google to rank it for specific queries. In 2026, this means three things: technical foundations that let Google crawl and index the site cleanly, topical authority built through a cluster of interconnected content on a subject, and editorial content written to answer the exact questions buyers type into search.
+    <h1 class="sh-headline">SXO & Core SEO:<br>found first. <em>chosen next.</em></h1>
+    <p class="lead-body" style="max-width:640px;margin-bottom:24px">
+      SXO & Core SEO is one package. Core SEO builds the technical and content foundation Google needs to rank a page: clean crawlability, topical authority through interconnected content clusters, and editorial pages that target what buyers search. SXO is the layer that converts the visit: matching the landing experience to search intent, tuning page speed and Core Web Vitals, structuring content for engagement, and building the internal-link journeys that move a visitor from click to action.
     </p>
-    <p class="sh-tagline">Google still handles 4.8 billion searches a day. Most of those searches end on a website. SEO is infrastructure, not a campaign.</p>
+    <p class="sh-tagline">Core SEO gets you found. SXO gets you chosen.</p>
+    <p class="lead-body" style="max-width:640px;margin-bottom:32px;font-size:15px;color:var(--mute)">
+      Google now factors page experience and engagement signals into how it ranks pages. A click that leads to an immediate bounce tells Google the page failed the query. SXO addresses that: it makes pages fast, readable, and structured so visitors stay and act.
+    </p>
     <a href="/audit/" class="btn btn-orange">Run a free audit</a>
   </section>
 
   <section class="pillars wrap">
-    <div class="kicker" style="margin-bottom:32px">What We Build <span class="kicker-num">/ XII</span></div>
+    <div class="kicker" style="margin-bottom:32px">Core SEO: What We Build <span class="kicker-num">/ XII</span></div>
     <div class="pillar-grid">
       <div class="pillar">
         <h3>Technical foundations</h3>
@@ -72,9 +75,39 @@ const graph = {
     </div>
   </section>
 
+  <section class="pillars wrap" style="border-top:1px solid var(--rule)">
+    <div class="kicker" style="margin-bottom:32px">SXO: The Conversion Layer <span class="kicker-num">/ XII</span></div>
+    <div class="pillar-grid">
+      <div class="pillar">
+        <h3>Search-intent matching</h3>
+        <p>We map what searchers expect when they click, then build the page around that expectation. A visitor from "best CRM for law firms" needs a comparison, not a homepage. Wrong match, wasted click.</p>
+      </div>
+      <div class="pillar">
+        <h3>Landing-page UX and conversion path</h3>
+        <p>We audit and restructure the path from landing to action: layout, hierarchy, friction points, and the CTA sequence that moves a visitor forward without confusion.</p>
+      </div>
+      <div class="pillar">
+        <h3>Core Web Vitals and page experience</h3>
+        <p>LCP, INP, and CLS measured on real templates and brought inside Google's thresholds. Visitors leave slow pages before reading them. Google notices when they do.</p>
+      </div>
+      <div class="pillar">
+        <h3>Content structure for engagement</h3>
+        <p>Headings, paragraph length, reading level, and information hierarchy structured so visitors read further. Dwell time is a ranking signal, and poor structure is the most common cause of low dwell.</p>
+      </div>
+      <div class="pillar">
+        <h3>Internal-link journeys</h3>
+        <p>We plan the next-page sequence from every landing page: the right links, in the right positions, to the right destinations. A visitor who follows an internal link is more likely to convert and less likely to bounce back to Google.</p>
+      </div>
+      <div class="pillar">
+        <h3>Engagement-signal monitoring</h3>
+        <p>Bounce rate, dwell time, scroll depth, and pogo-sticking tracked monthly. When a signal degrades, we diagnose the page before Google penalises it.</p>
+      </div>
+    </div>
+  </section>
+
   <!-- Sub-pages -->
   <section class="wrap" style="padding:48px 0;border-bottom:1px solid var(--rule)">
-    <div class="kicker" style="margin-bottom:32px">Inside SEO <span class="kicker-num">/ XII</span></div>
+    <div class="kicker" style="margin-bottom:32px">Inside SXO & Core SEO <span class="kicker-num">/ XII</span></div>
     <div class="pillar-grid">
       <a href="/services/seo/technical-seo/" class="pillar" style="display:block;text-decoration:none;color:inherit">
         <h3>Technical SEO →</h3>
