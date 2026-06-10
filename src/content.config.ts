@@ -15,6 +15,10 @@ const journal = defineCollection({
     articleSection: z.string(),
     about: z.array(z.string()),
     breadcrumbName: z.string(),
+    // Optional: defaults preserve existing posts (Article, no image). Set
+    // type:"BlogPosting" + image to opt a post into BlogPosting + image schema.
+    type: z.string().optional(),
+    image: z.string().optional(),
   }),
 });
 
