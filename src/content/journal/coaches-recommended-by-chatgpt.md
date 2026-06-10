@@ -26,7 +26,7 @@ image: "/assets/og-image.png"
       <span class="t-mono" style="font-size:10px;letter-spacing:0.06em;text-transform:uppercase;color:var(--mute)">6 minute read</span>
     </div>
     <div style="display:flex;gap:16px">
-      <a href="/proof/" class="t-mono link-ul" style="font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:var(--orange)">The receipts →</a>
+      <a href="/audit/" class="t-mono link-ul" style="font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:var(--orange)">Run the audit →</a>
     </div>
   </div>
 </header>
@@ -56,7 +56,6 @@ image: "/assets/og-image.png"
         <p><strong>Week 2.</strong> Publish two answer pages against the weakest answers in your log.</p>
         <p><strong>Week 3.</strong> Request 5 outcome-specific reviews and publish your first LinkedIn article.</p>
         <p><strong>Week 4.</strong> Re-run the 15 questions, compare against week 1, and repeat what moved.</p>
-        <p>We run this same method on our own site in public, from a day 0 of zero citations. The log lives on <a href="/proof/">the proof page</a>, win or lose.</p>
 
         <h2>See where you stand</h2>
         <p>The <a href="/audit/">$397 audit</a> runs 50 prospect questions across 6 AI platforms and shows which coaches get named instead of you. The free scan answers the first part within 48 hours.</p>
