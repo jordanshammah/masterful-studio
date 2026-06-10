@@ -1,8 +1,8 @@
 ---
 title: "How to Get Your Business Cited by ChatGPT: What Works in 2026"
-description: "ChatGPT cites businesses it can verify across the surfaces it searches: your site, Bing's index, reviews, and third-party mentions. The 5-step process, tested in public on our own site, with dated results."
+description: "ChatGPT cites businesses it can verify across the surfaces it searches: your site, Bing's index, reviews, and third-party mentions. The 5-step process, tested on our own site."
 headline: "How to get your business cited by ChatGPT: what works in 2026"
-schemaDescription: "ChatGPT cites businesses it can verify across the surfaces it searches: your site, Bing's index, reviews, and third-party mentions. The 5-step process, tested in public, with dated results."
+schemaDescription: "ChatGPT cites businesses it can verify across the surfaces it searches: your site, Bing's index, reviews, and third-party mentions. The 5-step process, tested on our own site."
 datePublished: "2026-06-10"
 dateModified: "2026-06-10"
 articleSection: "AEO"
@@ -19,14 +19,14 @@ image: "/assets/og-image.png"
     <span class="t-mono" style="font-size:10px;letter-spacing:0.06em;text-transform:uppercase;color:var(--mute)">7 min read</span>
   </div>
   <h1 style="font-family:var(--serif);font-size:clamp(34px,5vw,64px);line-height:1.02;letter-spacing:-0.02em;margin-bottom:20px;max-width:840px">How to get your business cited by ChatGPT: <em style="font-style:italic">what works in 2026</em></h1>
-  <p style="font-size:17px;line-height:1.65;color:var(--mute);max-width:640px;margin-bottom:28px">The 5-step process, tested in public on our own site, with dated results and the receipts linked.</p>
+  <p style="font-size:17px;line-height:1.65;color:var(--mute);max-width:640px;margin-bottom:28px">Where ChatGPT actually looks, and the 5-step process we run on our own site.</p>
   <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px">
     <div style="display:flex;gap:24px;flex-wrap:wrap">
       <span class="t-mono" style="font-size:10px;letter-spacing:0.06em;text-transform:uppercase;color:var(--mute)">By Jordan, Founder</span>
       <span class="t-mono" style="font-size:10px;letter-spacing:0.06em;text-transform:uppercase;color:var(--mute)">7 minute read</span>
     </div>
     <div style="display:flex;gap:16px">
-      <a href="/proof/" class="t-mono link-ul" style="font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:var(--orange)">The receipts →</a>
+      <a href="/audit/" class="t-mono link-ul" style="font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:var(--orange)">Run the audit →</a>
     </div>
   </div>
 </header>
@@ -36,10 +36,10 @@ image: "/assets/og-image.png"
     <article>
       <div class="article-body">
 
-        <p>ChatGPT cites businesses it can find, verify, and quote across the surfaces it searches at answer time: your website, Bing's index, review platforms, and third-party mentions. You earn citations with pages that answer one buyer question each in specific, verifiable terms, indexed where the model actually looks. We are testing this process on our own site in public, day by day, and this page links <a href="/proof/">the receipts</a>.</p>
+        <p>ChatGPT cites businesses it can find, verify, and quote across the surfaces it searches at answer time: your website, Bing's index, review platforms, and third-party mentions. You earn citations with pages that answer one buyer question each in specific, verifiable terms, indexed where the model actually looks. We are testing this process on our own site, day by day.</p>
 
         <h2>Why does most advice on this query fail you?</h2>
-        <p>Two reasons. First, the playbooks are stale. Google retired FAQ and HowTo rich results in early 2026, so half the standard advice you will read is dead weight: markup that no engine rewards and checklists built for a results page that no longer exists. Second, guide authors never show their own citations. They tell you the method works and offer no logged queries, no dates, no screenshots. Demand receipts from anyone who sells this, including us. Ours are on <a href="/proof/">the proof page</a>, dated, win or lose.</p>
+        <p>Two reasons. First, the playbooks are stale. Google retired FAQ and HowTo rich results in early 2026, so half the standard advice you will read is dead weight: markup that no engine rewards and checklists built for a results page that no longer exists. Second, guide authors never show their own citations. They tell you the method works and offer no logged queries, no dates, no screenshots. Demand receipts from anyone who sells this, including us.</p>
 
         <h2>Where does ChatGPT actually look?</h2>
         <p>ChatGPT's browsing queries Bing's index. Perplexity runs its own index plus Bing. Google's AI Overviews pull from Google's index, where 62% of citations now come from outside the top 10 organic results, per Ahrefs' 2026 study. The shared dependency across the first two is Bing, and most businesses have never opened Bing Webmaster Tools. That gap is the cheapest fix in this whole discipline.</p>
@@ -63,9 +63,6 @@ image: "/assets/og-image.png"
 
         <h2>How long does it take?</h2>
         <p>First citations on long-tail queries take 2 to 4 weeks, and the documented cases cluster around week 3. Head terms take months. Nobody can schedule placement in model training data, and anyone who promises a date for that is guessing on your invoice.</p>
-
-        <h2>Where are the receipts?</h2>
-        <p>We are client zero. On day 0 we appeared in zero of 15 logged runs across 5 target queries. The screenshots are published with competitor names visible, and we post checkpoints at days 5, 10, 15, and 20, win or lose. Follow the experiment on <a href="/proof/">the self-test page</a>.</p>
 
         <h2>Want the map for your own business?</h2>
         <p>The <a href="/audit/">$397 audit</a> maps 50 buyer questions across 6 AI platforms and ends in a ranked fix list. The free 48-hour scan is the short version. Both start at the same place.</p>

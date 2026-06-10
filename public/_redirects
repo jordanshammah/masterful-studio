@@ -12,3 +12,7 @@
 /services/seo  /services/seo/  301
 /services/aeo  /services/aeo/  301
 /services/geo  /services/geo/  301
+
+# /proof/ recalled 2026-06-10; send the already-pinged URL to the citation guide.
+/proof/  /journal/get-cited-by-chatgpt/  301
+/proof   /journal/get-cited-by-chatgpt/  301

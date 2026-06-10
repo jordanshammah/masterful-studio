@@ -41,7 +41,7 @@ image: "/assets/og-image.png"
       <span class="t-mono" style="font-size:10px;letter-spacing:0.06em;text-transform:uppercase;color:var(--mute)">6 minute read</span>
     </div>
     <div style="display:flex;gap:16px">
-      <a href="/proof/" class="t-mono link-ul" style="font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:var(--orange)">The receipts →</a>
+      <a href="/audit/" class="t-mono link-ul" style="font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:var(--orange)">Run the audit →</a>
     </div>
   </div>
 </header>
@@ -94,7 +94,7 @@ image: "/assets/og-image.png"
         <p><strong>The ranked 90-day plan.</strong> Every fix sized by effort and impact, in order, so you know what to do on Monday.</p>
 
         <h2>The test that exposes a weak vendor</h2>
-        <p>Ask them to show their own AI citations. A vendor who sells citations and cannot produce their own logged queries is selling a theory. We publish our own self-test from a day 0 of zero out of 15 runs, and every checkpoint after, win or lose. The log lives on <a href="/proof/">the proof page</a>.</p>
+        <p>Ask them to show their own AI citations. A vendor who sells citations and cannot produce their own logged queries is selling a theory.</p>
 
         <h2>Audit first or fix first?</h2>
         <p>Audit first, even if you never hire anyone. The audit tells you which of the four causes applies to you, and the fixes differ by cause. A vendor pitching a retainer without running your queries is quoting blind.</p>
