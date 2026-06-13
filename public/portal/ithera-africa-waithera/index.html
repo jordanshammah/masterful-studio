@@ -147,6 +147,55 @@ html,body{background:var(--cream);color:var(--ink);font-family:var(--sans);font-
 .plan-list li:last-child{border-bottom:0}
 .plan-list li::before{content:"+";position:absolute;left:0;top:8px;font-family:var(--mono);font-size:12px;color:var(--orange);font-weight:500}
 
+/* ── Competitor compare ── */
+.compare-wrap{margin-top:28px;border:1px solid var(--light-rule);background:var(--card-bg);overflow-x:auto}
+.compare-table{width:100%;border-collapse:collapse;min-width:560px}
+.compare-table th{background:var(--ink);color:var(--cream);font-family:var(--mono);font-weight:400;font-size:10px;letter-spacing:0.06em;text-transform:uppercase;text-align:left;padding:12px 14px;border-right:1px solid rgba(244,240,232,0.12)}
+.compare-table th:last-child{border-right:0;background:#1f1f1f}
+.compare-table td{padding:13px 14px;font-size:13.5px;border-top:1px solid var(--rule);border-right:1px solid var(--rule);font-family:var(--mono)}
+.compare-table td:first-child{font-family:var(--sans);font-weight:500;color:var(--ink)}
+.compare-table td:last-child{border-right:0;background:rgba(196,80,26,0.06);border-left:3px solid var(--orange);color:var(--orange);font-weight:500}
+.compare-table tbody tr:nth-child(even) td{background-color:rgba(14,14,14,0.025)}
+.compare-table tbody tr:nth-child(even) td:last-child{background:rgba(196,80,26,0.09)}
+.compare-row{opacity:0;transform:translateY(10px);transition:opacity .5s cubic-bezier(0.22,1,0.36,1),transform .5s cubic-bezier(0.22,1,0.36,1)}
+.compare-row.in-view{opacity:1;transform:translateY(0)}
+
+/* ── Share of voice bar ── */
+.sov-wrap{margin-top:28px}
+.sov-bar{display:flex;height:64px;border:1px solid var(--light-rule);overflow:hidden;background:var(--card-bg);position:relative}
+.sov-seg{height:100%;display:flex;align-items:center;justify-content:center;flex-direction:column;color:var(--cream);font-family:var(--mono);font-size:11px;letter-spacing:0.05em;text-transform:uppercase;line-height:1.3;text-align:center;width:0;transition:width 1.2s cubic-bezier(0.22,1,0.36,1);overflow:hidden;white-space:nowrap;padding:0 8px}
+.sov-bar.in-view .sov-seg{width:var(--sov-width)}
+.sov-seg.bowmans{background:var(--ink)}
+.sov-seg.others{background:#3a3a3a;color:rgba(244,240,232,0.75)}
+.sov-seg.ithera{background:var(--orange);color:var(--cream);font-weight:500}
+.sov-legend{display:flex;justify-content:space-between;font-family:var(--mono);font-size:10px;letter-spacing:0.06em;text-transform:uppercase;color:var(--mute);margin-top:10px}
+.sov-legend span:nth-child(1){color:var(--ink)}
+.sov-legend span:nth-child(3){color:var(--orange);font-weight:500}
+.sov-line{font-size:15px;line-height:1.7;color:var(--ink);margin-top:22px;max-width:620px}
+
+/* ── Hidden asset callout ── */
+.asset-card{border-left:3px solid var(--orange);background:rgba(196,80,26,0.07);padding:28px 30px;margin-top:28px}
+.asset-eyebrow{font-family:var(--mono);font-size:10px;letter-spacing:0.09em;text-transform:uppercase;color:var(--orange);margin-bottom:14px;font-weight:500}
+.asset-body{font-size:15.5px;line-height:1.7;color:var(--ink)}
+.asset-body strong{font-weight:600}
+
+/* ── Content audit table ── */
+.audit-wrap{margin-top:28px;border:1px solid var(--light-rule);background:var(--card-bg);overflow-x:auto}
+.audit-table{width:100%;border-collapse:collapse;min-width:580px}
+.audit-table th{background:var(--ink);color:var(--cream);font-family:var(--mono);font-weight:400;font-size:10px;letter-spacing:0.06em;text-transform:uppercase;text-align:left;padding:11px 14px}
+.audit-table th.col-status{text-align:center;width:90px}
+.audit-table td{padding:12px 14px;font-size:13.5px;border-top:1px solid var(--rule);vertical-align:middle}
+.audit-table td.col-title{font-family:var(--sans);font-weight:500;color:var(--ink)}
+.audit-table td.col-status{text-align:center;font-family:var(--mono);font-size:11px;letter-spacing:0.06em;text-transform:uppercase;font-weight:500;width:90px}
+.audit-table td.col-status.yes{color:var(--green-flag)}
+.audit-table td.col-status.no{color:var(--red-flag)}
+.audit-table td.col-query{font-family:var(--serif);font-style:italic;font-size:14.5px;color:var(--ink-2);line-height:1.45}
+.audit-row{opacity:0;transform:translateY(10px);transition:opacity .5s cubic-bezier(0.22,1,0.36,1),transform .5s cubic-bezier(0.22,1,0.36,1)}
+.audit-row.in-view{opacity:1;transform:translateY(0)}
+
+/* ── Inline data note ── */
+.data-note{margin-top:26px;padding:18px 22px;border-left:3px solid var(--warm-gray);background:rgba(14,14,14,0.025);font-size:14.5px;line-height:1.7;color:var(--ink-2)}
+
 /* ── KPI table ── */
 .kpi-wrap{margin-top:24px;border:1px solid var(--light-rule);background:var(--card-bg);overflow-x:auto}
 .kpi-table{width:100%;border-collapse:collapse;min-width:480px}
@@ -208,11 +257,11 @@ html,body{background:var(--cream);color:var(--ink);font-family:var(--sans);font-
 <main class="shell">
 
   <!-- HERO -->
-  <section class="sec" data-reveal>
+  <section class="sec hero">
     <div class="h-eyebrow">Prepared for Waithera Mugo, Founder, Ithera Africa</div>
     <h1 class="h-lead">Your expertise is real.<br>Your online visibility<br>is <em>not</em>.</h1>
-    <p class="h-sub">This report measures how visible Ithera Africa is when potential clients search for tax, legal, and succession advisory in Nairobi, on Google, and on AI platforms like ChatGPT, Gemini, and Google AI Overviews. The findings are clear: Ithera has top-tier expertise and near-zero findability. The good news is that the gap is technical, not creative, which means it is fixable.</p>
-    <div class="verdict" data-reveal>
+    <p class="h-sub">This report measures how visible Ithera Africa is when potential clients search for tax, legal, and succession advisory in Nairobi, on Google, and on AI platforms like ChatGPT, Gemini, and Google AI Overviews. The findings are clear: Ithera has top-tier expertise and near-zero findability. The gap is technical. The gap is fixable.</p>
+    <div class="verdict">
       Ithera has won KES 38M in tax defences, KES 37M waived, KES 159M secured. Published 13 articles. Reached two podcast audiences. Almost none of that authority is reaching the platforms where your next client is searching.
     </div>
   </section>
@@ -282,6 +331,68 @@ html,body{background:var(--cream);color:var(--ink);font-family:var(--sans);font-
     </div>
   </section>
 
+  <!-- § III-A COMPETITOR INTELLIGENCE -->
+  <section class="sec">
+    <div class="sec-mark" data-reveal>§ III-A — Competitor Intelligence</div>
+    <h2 class="h2" data-reveal>What the top-cited firms have that Ithera does <em>not</em>.</h2>
+    <p class="intro" data-reveal>Bowmans captures 21.7% of AI conversations. CM Advocates captures 6.7%. Ithera captures 0.8%. The difference is not expertise. The difference is infrastructure.</p>
+
+    <div class="compare-wrap" data-reveal>
+      <table class="compare-table" id="compare-table">
+        <thead>
+          <tr><th>Metric</th><th>Bowmans</th><th>CM Advocates</th><th>Ithera Africa</th></tr>
+        </thead>
+        <tbody>
+          <tr class="compare-row"><td>Domain Rating</td><td>52</td><td>12</td><td>1.6</td></tr>
+          <tr class="compare-row"><td>Referring Domains</td><td>890+</td><td>45+</td><td>3</td></tr>
+          <tr class="compare-row"><td>Indexed Pages</td><td>2,400+</td><td>120+</td><td>12</td></tr>
+          <tr class="compare-row"><td>Published Articles</td><td>500+</td><td>40+</td><td>13</td></tr>
+          <tr class="compare-row"><td>Google Business Profile</td><td>Yes</td><td>Yes</td><td>No</td></tr>
+          <tr class="compare-row"><td>Structured Data</td><td>Full</td><td>Partial</td><td>None</td></tr>
+          <tr class="compare-row"><td>AI Visibility</td><td>21.7%</td><td>6.7%</td><td>0.8%</td></tr>
+          <tr class="compare-row"><td>Share of Voice</td><td>42.5%</td><td>8.9%</td><td>1.3%</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout" data-reveal>
+      <strong>The pattern is clear:</strong> Bowmans has 890 websites linking to them. Ithera has 3. Bowmans has 2,400 indexed pages. Ithera has 12. AI engines cite brands that other websites cite first. Backlinks and content volume are the input. AI visibility is the output.
+    </div>
+  </section>
+
+  <!-- § III-B SHARE OF VOICE -->
+  <section class="sec">
+    <div class="sec-mark" data-reveal>§ III-B — Share of Voice</div>
+    <h2 class="h2" data-reveal>Who owns the <em>conversation</em>.</h2>
+
+    <div class="sov-wrap" data-reveal>
+      <div class="sov-bar" id="sov-bar">
+        <div class="sov-seg bowmans" style="--sov-width:42.5%">Bowmans 42.5%</div>
+        <div class="sov-seg others" style="--sov-width:56.2%">Others 56.2%</div>
+        <div class="sov-seg ithera" style="--sov-width:1.3%" title="Ithera 1.3%">&nbsp;</div>
+      </div>
+      <div class="sov-legend">
+        <span>Bowmans 42.5%</span>
+        <span>Eleven other tracked firms 56.2%</span>
+        <span>Ithera 1.3%</span>
+      </div>
+      <p class="sov-line">For every 100 times AI recommends a Kenyan tax firm, it recommends Ithera once. It recommends Bowmans 42 times.</p>
+    </div>
+  </section>
+
+  <!-- § III-C SISTER FIRM ADVANTAGE -->
+  <section class="sec">
+    <div class="sec-mark" data-reveal>§ III-C — The Sister Firm Advantage</div>
+    <h2 class="h2" data-reveal>An asset already <em>on your side</em> of the table.</h2>
+
+    <div class="asset-card" data-reveal>
+      <div class="asset-eyebrow">Untapped Asset</div>
+      <div class="asset-body">
+        <strong>wmcoadvocates.co.ke has a Domain Rating of 3.0. Ithera has 1.6.</strong> Waithera controls both domains. An internal link from the Waithera M &amp; Co site to Ithera transfers domain authority at zero cost. This is one of three things we can do in week one that requires no content creation, no outreach, and no third-party approval.
+      </div>
+    </div>
+  </section>
+
   <!-- § III PLATFORM BREAKDOWN -->
   <section class="sec">
     <div class="sec-mark" data-reveal>§ III — Platform Breakdown</div>
@@ -348,7 +459,7 @@ html,body{background:var(--cream);color:var(--ink);font-family:var(--sans);font-
   <section class="sec">
     <div class="sec-mark" data-reveal>§ IV — Real AI Responses</div>
     <h2 class="h2" data-reveal>What happens when a prospect asks AI for a <em>recommendation</em>.</h2>
-    <p class="intro" data-reveal>We asked ChatGPT, Gemini, and Perplexity four questions your ideal client would ask. Here is who they recommended.</p>
+    <p class="intro" data-reveal>We asked ChatGPT, Gemini, and Perplexity eight questions your ideal client would ask. Here is who they recommended.</p>
 
     <div class="prompt-list">
       <div class="prompt-card" data-reveal>
@@ -371,6 +482,70 @@ html,body{background:var(--cream);color:var(--ink);font-family:var(--sans);font-
         <div class="prompt-rec"><span class="prompt-rec-label">AI recommended</span>Adamjee Auditors, Grant Thornton, PKF Eastern Africa, Gichuri &amp; Partners</div>
         <div class="prompt-miss">→ Ithera Africa: not mentioned</div>
       </div>
+      <div class="prompt-card" data-reveal>
+        <div class="prompt-q">"Best integrated legal and tax advisor in Kenya."</div>
+        <div class="prompt-rec"><span class="prompt-rec-label">AI recommended</span>PKF Kenya, KPMG East Africa, Ernst &amp; Young Kenya</div>
+        <div class="prompt-miss">→ Ithera Africa: not mentioned</div>
+      </div>
+      <div class="prompt-card" data-reveal>
+        <div class="prompt-q">"How to avoid family disputes over inheritance in Kenya."</div>
+        <div class="prompt-rec"><span class="prompt-rec-label">AI recommended</span>Rachier &amp; Amollo, MMS Advocates, Havi &amp; Company</div>
+        <div class="prompt-miss">→ Ithera Africa: not mentioned</div>
+      </div>
+      <div class="prompt-card" data-reveal>
+        <div class="prompt-q">"Family trust vs will in Kenya, which is better for wealth protection."</div>
+        <div class="prompt-rec"><span class="prompt-rec-label">AI recommended</span>CM Advocates, WKA Advocates, Anyanzwa J.S</div>
+        <div class="prompt-miss">→ Ithera Africa: not mentioned</div>
+      </div>
+      <div class="prompt-card" data-reveal>
+        <div class="prompt-q">"Cross-border tax planning for Kenyans with diaspora assets."</div>
+        <div class="prompt-rec"><span class="prompt-rec-label">AI recommended</span>Deloitte East Africa, PKF Kenya, KPMG</div>
+        <div class="prompt-miss">→ Ithera Africa: not mentioned</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- § IV-A CONTENT AUDIT -->
+  <section class="sec">
+    <div class="sec-mark" data-reveal>§ IV-A — Content Audit</div>
+    <h2 class="h2" data-reveal>Your content library is larger than AI <em>knows</em>.</h2>
+    <p class="intro" data-reveal>Ithera has published 13 articles. The Resources page only shows 6. Seven pieces sit on the site but link to nothing. Below is each article, whether it is discoverable, and which high-intent query it maps to.</p>
+
+    <div class="audit-wrap" data-reveal>
+      <table class="audit-table" id="audit-table">
+        <thead>
+          <tr><th>Article</th><th class="col-status">On Resources Page</th><th>Maps to Query</th></tr>
+        </thead>
+        <tbody>
+          <tr class="audit-row"><td class="col-title">Family Trust Setup in Kenya</td><td class="col-status yes">Yes</td><td class="col-query">"How do I set up a family trust in Kenya"</td></tr>
+          <tr class="audit-row"><td class="col-title">Tax Assessment Defence Guide</td><td class="col-status yes">Yes</td><td class="col-query">"How to defend against a KRA tax assessment"</td></tr>
+          <tr class="audit-row"><td class="col-title">Finance Bill 2026 Alert #1</td><td class="col-status no">No</td><td class="col-query">"Kenya Finance Bill 2026 tax changes"</td></tr>
+          <tr class="audit-row"><td class="col-title">Finance Bill 2026 Alert #2</td><td class="col-status no">No</td><td class="col-query">"Kenya Finance Bill 2026 impact"</td></tr>
+          <tr class="audit-row"><td class="col-title">Succession Planning Framework</td><td class="col-status yes">Yes</td><td class="col-query">"Best succession planning advocate Kenya"</td></tr>
+          <tr class="audit-row"><td class="col-title">Corporate Tax Structuring</td><td class="col-status yes">Yes</td><td class="col-query">"How to structure a Kenyan holding company"</td></tr>
+          <tr class="audit-row"><td class="col-title">KRA Dispute Resolution</td><td class="col-status no">No</td><td class="col-query">"Best tax lawyers Nairobi KRA disputes"</td></tr>
+          <tr class="audit-row"><td class="col-title">Cross-border Tax Guide</td><td class="col-status no">No</td><td class="col-query">"Cross-border tax planning Kenya diaspora"</td></tr>
+          <tr class="audit-row"><td class="col-title">Wealth Protection Strategies</td><td class="col-status yes">Yes</td><td class="col-query">"Family trust vs will Kenya"</td></tr>
+          <tr class="audit-row"><td class="col-title">Estate Planning Primer</td><td class="col-status yes">Yes</td><td class="col-query">"Best estate planning lawyer Kenya"</td></tr>
+          <tr class="audit-row"><td class="col-title">Tax Compliance Toolkit</td><td class="col-status no">No</td><td class="col-query">"How to legally pay less tax Kenya"</td></tr>
+          <tr class="audit-row"><td class="col-title">LLP vs Limited Company</td><td class="col-status no">No</td><td class="col-query">"LLP vs limited company Kenya startup"</td></tr>
+          <tr class="audit-row"><td class="col-title">Alternative Dispute Resolution</td><td class="col-status no">No</td><td class="col-query">"KRA Alternative Dispute Resolution"</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout" data-reveal>
+      <strong>The gap is reachable in week one:</strong> Seven articles are published and invisible. Each one maps to a query where Ithera currently gets zero AI citations. Fixing the Resources page and adding internal links to these articles costs nothing and ships in week one.
+    </div>
+  </section>
+
+  <!-- § IV-B SENTIMENT SCORE -->
+  <section class="sec">
+    <div class="sec-mark" data-reveal>§ IV-B — Sentiment Score</div>
+    <h2 class="h2" data-reveal>How AI <em>describes</em> Ithera, when it does.</h2>
+
+    <div class="data-note" data-reveal>
+      When AI mentions Ithera, the sentiment score lands at <strong>60 out of 100</strong>. The industry average for professional services firms sits between <strong>65 and 85</strong>. AI describes Ithera in neutral terms rather than authoritative ones. The byline change and structured data fixes raise how AI characterises the firm.
     </div>
   </section>
 
@@ -515,51 +690,100 @@ html,body{background:var(--cream);color:var(--ink);font-family:var(--sans);font-
         revealObs.unobserve(e.target);
       }
     });
-  },{threshold:0.12});
+  },{threshold:0.1});
   document.querySelectorAll('[data-reveal]').forEach(el=>revealObs.observe(el));
 
   // Staggered cards (stat / engine / topic / plan)
   document.querySelectorAll('.stat-card, .engine-card, .topic-card, .plan-card').forEach(el=>revealObs.observe(el));
 
-  // Bar chart: animate all bars together when chart enters view
-  const chart = document.getElementById('bar-chart');
-  if(chart){
-    const chartObs = new IntersectionObserver((entries)=>{
+  // Bar chart bars: stagger animate widths when chart enters view
+  function staggerBars(id, step){
+    const root = document.getElementById(id);
+    if(!root) return;
+    const obs = new IntersectionObserver((entries)=>{
       entries.forEach(e=>{
         if(e.isIntersecting){
-          chart.querySelectorAll('.bar-row').forEach((row,i)=>{
-            setTimeout(()=>row.classList.add('in-view'), i*80);
+          root.querySelectorAll('.bar-row').forEach((row,i)=>{
+            setTimeout(()=>row.classList.add('in-view'), i*step);
           });
-          chartObs.unobserve(chart);
+          obs.unobserve(root);
         }
       });
     },{threshold:0.2});
-    chartObs.observe(chart);
+    obs.observe(root);
+  }
+  staggerBars('bar-chart', 60);
+
+  // Share of voice bar: animate width left to right when in view
+  const sov = document.getElementById('sov-bar');
+  if(sov){
+    const sovObs = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting){ sov.classList.add('in-view'); sovObs.unobserve(sov); }
+      });
+    },{threshold:0.3});
+    sovObs.observe(sov);
   }
 
-  // Counter animation
+  // Stagger compare rows + audit rows
+  function staggerRows(id, sel, step){
+    const root = document.getElementById(id);
+    if(!root) return;
+    const obs = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting){
+          root.querySelectorAll(sel).forEach((row,i)=>{
+            setTimeout(()=>row.classList.add('in-view'), i*step);
+          });
+          obs.unobserve(root);
+        }
+      });
+    },{threshold:0.15});
+    obs.observe(root);
+  }
+  staggerRows('compare-table', '.compare-row', 40);
+  staggerRows('audit-table', '.audit-row', 40);
+
+  // Counter animation. Stats above the fold on load show final value
+  // immediately. Stats below the fold animate when scrolled into view.
+  function finalText(el){
+    const target = parseFloat(el.dataset.counter);
+    const suffix = el.dataset.suffix || '';
+    const isFloat = String(el.dataset.counter).includes('.');
+    return (isFloat ? target.toFixed(1) : Math.round(target)) + suffix;
+  }
+  function animateCounter(el){
+    const target = parseFloat(el.dataset.counter);
+    const suffix = el.dataset.suffix || '';
+    const isFloat = String(el.dataset.counter).includes('.');
+    const duration = 800;
+    const start = performance.now();
+    function tick(now){
+      const t = Math.min(1, (now-start)/duration);
+      const eased = 1 - Math.pow(1-t, 3);
+      const val = target * eased;
+      el.textContent = (isFloat ? val.toFixed(1) : Math.round(val)) + suffix;
+      if(t<1) requestAnimationFrame(tick);
+      else el.textContent = finalText(el);
+    }
+    requestAnimationFrame(tick);
+  }
   const countObs = new IntersectionObserver((entries)=>{
     entries.forEach(e=>{
       if(!e.isIntersecting) return;
-      const el = e.target;
-      const target = parseFloat(el.dataset.counter);
-      const suffix = el.dataset.suffix || '';
-      const isFloat = String(el.dataset.counter).includes('.');
-      const duration = 800;
-      const start = performance.now();
-      function tick(now){
-        const t = Math.min(1, (now-start)/duration);
-        const eased = 1 - Math.pow(1-t, 3);
-        const val = target * eased;
-        el.textContent = (isFloat ? val.toFixed(1) : Math.round(val)) + suffix;
-        if(t<1) requestAnimationFrame(tick);
-        else el.textContent = (isFloat ? target.toFixed(1) : Math.round(target)) + suffix;
-      }
-      requestAnimationFrame(tick);
-      countObs.unobserve(el);
+      animateCounter(e.target);
+      countObs.unobserve(e.target);
     });
   },{threshold:0.5});
-  document.querySelectorAll('[data-counter]').forEach(el=>countObs.observe(el));
+  document.querySelectorAll('[data-counter]').forEach(el=>{
+    // Pre-set final text so no element ever shows a stale 0.
+    el.textContent = finalText(el);
+    const rect = el.getBoundingClientRect();
+    const aboveFold = rect.top < window.innerHeight && rect.bottom > 0;
+    if(aboveFold) return; // visible on load, keep final value
+    el.textContent = '0' + (el.dataset.suffix || '');
+    countObs.observe(el);
+  });
 })();
 </script>
 </body>

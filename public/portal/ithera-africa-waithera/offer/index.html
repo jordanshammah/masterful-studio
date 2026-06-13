@@ -6,7 +6,7 @@
 <meta name="robots" content="noindex, nofollow">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <title>Service Proposal · Ithera Africa · Masterful</title>
-<meta name="description" content="A private service proposal and rate card prepared for Waithera Mugo, founder of Ithera Africa.">
+<meta name="description" content="A private service proposal prepared for Waithera Mugo, founder of Ithera Africa.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -45,8 +45,8 @@ html,body{background:var(--cream);color:var(--ink);font-family:var(--sans);font-
   [data-reveal]{opacity:1;transform:none;transition:none}
 }
 
-.sec{padding:56px 0;border-top:1px solid var(--rule)}
-.sec:first-of-type{border-top:0}
+.sec{padding:56px 0;border-top:1px solid var(--rule);position:relative}
+.sec.hero{border-top:0}
 .sec-mark{font-family:var(--mono);font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:var(--orange);margin-bottom:18px}
 .h-eyebrow{font-family:var(--mono);font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:var(--warm-gray);margin-bottom:22px}
 .h-lead{font-family:var(--serif);font-size:clamp(34px,5.6vw,56px);line-height:1.04;letter-spacing:-0.02em}
@@ -55,9 +55,60 @@ html,body{background:var(--cream);color:var(--ink);font-family:var(--sans);font-
 .h2{font-family:var(--serif);font-size:clamp(28px,4.2vw,42px);line-height:1.08;letter-spacing:-0.018em;margin-bottom:8px}
 .h2 em{font-style:italic}
 .intro{font-size:15px;line-height:1.7;color:var(--mute);margin-bottom:28px;max-width:620px}
+.lead-p{font-size:15px;line-height:1.72;color:var(--ink);margin:18px 0;max-width:620px}
+
+/* ── Cost of inaction stats ── */
+.coi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:8px}
+.coi-card{background:var(--card-bg);border:1px solid var(--light-rule);padding:22px 18px;display:flex;flex-direction:column;gap:8px}
+.coi-num{font-family:var(--mono);font-weight:500;font-size:clamp(32px,5vw,44px);line-height:1;letter-spacing:-0.02em;color:var(--ink)}
+.coi-num.orange{color:var(--orange)}
+.coi-num.red{color:var(--red-flag)}
+.coi-lead{font-size:13.5px;line-height:1.5;color:var(--ink-2);font-weight:500}
+.coi-sub{font-family:var(--mono);font-size:10px;letter-spacing:0.05em;text-transform:uppercase;color:var(--mute);margin-top:4px}
+
+.coi-body{font-size:15px;line-height:1.72;color:var(--ink);margin-top:26px;max-width:620px}
+
+/* ── Revenue callout ── */
+.rev-callout{background:var(--ink);color:var(--cream);padding:28px 30px;border-left:3px solid var(--orange);margin-top:30px;position:relative;overflow:hidden;font-family:var(--serif);font-size:clamp(17px,2.2vw,20px);line-height:1.45}
+.rev-callout::before{content:"";position:absolute;inset:0;background-image:repeating-linear-gradient(0deg,rgba(196,80,26,0.04) 0 1px,transparent 1px 40px),repeating-linear-gradient(90deg,rgba(196,80,26,0.04) 0 1px,transparent 1px 40px);pointer-events:none}
+.rev-callout>*{position:relative}
+
+/* ── Referral ticker ── */
+.ticker{position:absolute;bottom:20px;right:24px;font-family:var(--mono);font-size:0.6875rem;letter-spacing:0.05em;color:var(--mute);max-width:260px;text-align:right;line-height:1.4}
+.ticker strong{color:var(--orange);font-weight:500}
+@media (max-width: 768px){
+  .ticker{position:static;text-align:left;margin-top:28px}
+}
+
+/* ── KPI table ── */
+.kpi-wrap{margin-top:24px;border:1px solid var(--light-rule);background:var(--card-bg);overflow-x:auto}
+.kpi-table{width:100%;border-collapse:collapse;min-width:480px}
+.kpi-table th{background:var(--ink);color:var(--cream);font-family:var(--mono);font-weight:400;font-size:10px;letter-spacing:0.06em;text-transform:uppercase;text-align:left;padding:11px 14px}
+.kpi-table th:not(:first-child){text-align:right}
+.kpi-table td{padding:13px 14px;font-size:13.5px;border-top:1px solid var(--rule)}
+.kpi-table td:not(:first-child){text-align:right;font-family:var(--mono)}
+.kpi-table tbody tr:first-child td{border-top:0}
+.kpi-table .kpi-metric{font-weight:500}
+.kpi-today{color:var(--red-flag)}
+.kpi-future{color:var(--green-flag)}
+.kpi-row{opacity:0;transform:translateY(8px);transition:opacity .5s cubic-bezier(0.22,1,0.36,1),transform .5s cubic-bezier(0.22,1,0.36,1)}
+.kpi-row.in-view{opacity:1;transform:translateY(0)}
+
+.kpi-body{font-size:14.5px;line-height:1.7;color:var(--ink);margin-top:24px;max-width:620px}
+
+/* ── Effort reducers ── */
+.eff-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:30px}
+.eff-card{background:var(--card-bg);border:1px solid var(--light-rule);padding:20px;display:flex;flex-direction:column;gap:8px;opacity:0;transform:translateY(20px);transition:opacity .6s cubic-bezier(0.22,1,0.36,1),transform .6s cubic-bezier(0.22,1,0.36,1);transition-delay:calc(var(--i) * 80ms)}
+.eff-card.in-view{opacity:1;transform:translateY(0)}
+.eff-label{font-family:var(--mono);font-size:10px;letter-spacing:0.07em;text-transform:uppercase;color:var(--orange);font-weight:500}
+.eff-text{font-size:14px;line-height:1.55;color:var(--ink)}
+
+/* ── Programme intro ── */
+.prog-name{font-family:var(--serif);font-style:italic;font-size:clamp(30px,4.5vw,46px);line-height:1.05;color:var(--ink);margin-bottom:14px}
+.prog-sub{font-size:clamp(15px,1.85vw,17px);line-height:1.6;color:var(--ink-2);max-width:620px;margin-bottom:30px}
 
 /* ── Offer card ── */
-.offer-card{background:var(--card-bg);border:1px solid var(--light-rule);padding:0;margin-top:8px;position:relative}
+.offer-card{background:var(--card-bg);border:1px solid var(--light-rule);padding:0;margin-top:14px;position:relative}
 .offer-card.recommended{border-color:var(--orange);box-shadow:0 6px 18px rgba(196,80,26,0.08)}
 .rec-badge{position:absolute;top:-12px;left:24px;background:var(--orange);color:var(--cream);font-family:var(--mono);font-size:10px;letter-spacing:0.08em;text-transform:uppercase;padding:5px 12px}
 .offer-head{padding:26px 28px 22px;border-bottom:1px solid var(--rule);display:flex;justify-content:space-between;align-items:baseline;gap:20px;flex-wrap:wrap}
@@ -75,7 +126,49 @@ html,body{background:var(--cream);color:var(--ink);font-family:var(--sans);font-
 .offer-total-label{font-family:var(--mono);font-size:11px;letter-spacing:0.08em;text-transform:uppercase}
 .offer-total-val{font-family:var(--mono);font-size:18px;font-weight:500;letter-spacing:-0.01em}
 
-/* ── Addon table ── */
+/* ── Bonus block ── */
+.bonus-block{margin:0 28px;padding:22px 0 24px;border-top:2px solid var(--orange);position:relative;opacity:0;transform:translateX(-20px);transition:opacity .5s cubic-bezier(0.22,1,0.36,1),transform .5s cubic-bezier(0.22,1,0.36,1)}
+.offer-card.in-view .bonus-block{opacity:1;transform:translateX(0);transition-delay:.1s}
+.bonus-eyebrow{font-family:var(--mono);font-size:10px;letter-spacing:0.09em;text-transform:uppercase;color:var(--orange);font-weight:500;margin-bottom:14px}
+.bonus-item{display:flex;justify-content:space-between;align-items:baseline;gap:14px;padding:10px 0;font-size:13.5px;line-height:1.55;border-bottom:1px dotted rgba(196,80,26,0.18)}
+.bonus-item:last-child{border-bottom:0}
+.bonus-name{flex:1;color:var(--ink)}
+.bonus-name strong{font-weight:500}
+.bonus-val{font-family:var(--mono);font-size:12px;color:var(--orange);text-align:right;white-space:nowrap}
+.bonus-total{font-family:var(--mono);font-size:11px;letter-spacing:0.06em;color:var(--mute);margin-top:14px;text-align:right}
+
+/* ── Guarantee ── */
+.guarantee{border-left:3px solid var(--orange);background:var(--card-bg);padding:28px 32px;margin-top:8px;font-size:15px;line-height:1.7;color:var(--ink)}
+.guarantee strong{font-weight:600}
+
+/* ── Q&A blocks ── */
+.qa-list{display:flex;flex-direction:column;margin-top:12px}
+.qa-block{padding:26px 0;border-top:1px solid var(--rule);opacity:0;transform:translateY(16px);transition:opacity .5s cubic-bezier(0.22,1,0.36,1),transform .5s cubic-bezier(0.22,1,0.36,1);transition-delay:calc(var(--i) * 120ms)}
+.qa-block.in-view{opacity:1;transform:translateY(0)}
+.qa-block:first-child{border-top:0}
+.qa-q{font-family:var(--serif);font-style:italic;font-size:clamp(19px,2.3vw,23px);line-height:1.35;color:var(--ink);margin-bottom:12px}
+.qa-a{font-size:15px;line-height:1.7;color:var(--ink-2)}
+
+/* ── Value anchor ── */
+.anchor-wrap{margin-top:16px;padding:30px 0 22px;text-align:center;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.anchor-label{font-family:var(--mono);font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:var(--mute);margin-bottom:14px;max-width:480px;margin-left:auto;margin-right:auto;line-height:1.5}
+.anchor-num{font-family:var(--serif);font-style:italic;font-size:clamp(54px,9vw,86px);line-height:1;letter-spacing:-0.02em;color:var(--orange)}
+.anchor-investment{font-family:var(--mono);font-size:13px;letter-spacing:0.04em;color:var(--ink-2);margin-top:14px}
+
+/* ── Summary card ── */
+.summary-card{background:var(--ink);color:var(--cream);padding:30px 32px;margin-top:24px;position:relative;overflow:hidden}
+.summary-card::before{content:"";position:absolute;inset:0;background-image:repeating-linear-gradient(0deg,rgba(196,80,26,0.04) 0 1px,transparent 1px 40px),repeating-linear-gradient(90deg,rgba(196,80,26,0.04) 0 1px,transparent 1px 40px);pointer-events:none}
+.summary-card>*{position:relative}
+.sum-row{display:flex;justify-content:space-between;align-items:baseline;gap:14px;padding:12px 0;border-bottom:1px solid rgba(244,240,232,0.16);font-size:15px}
+.sum-row:last-of-type{border-bottom:0}
+.sum-label{color:rgba(244,240,232,0.85)}
+.sum-val{font-family:var(--mono);font-weight:500}
+.sum-total{margin-top:8px;padding-top:16px;border-top:2px solid var(--orange);display:flex;justify-content:space-between;align-items:baseline;gap:14px}
+.sum-total-label{font-family:var(--mono);font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--orange)}
+.sum-total-val{font-family:var(--serif);font-style:italic;font-size:clamp(22px,3.2vw,28px)}
+.pay-note{font-family:var(--mono);font-size:11px;letter-spacing:0.04em;color:var(--mute);margin-top:18px;line-height:1.55}
+
+/* ── Addon ── */
 .addon-wrap{margin-top:8px;border:1px solid var(--light-rule);background:var(--card-bg)}
 .addon-row{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:16px 22px;border-bottom:1px solid rgba(14,14,14,0.07);font-size:14px}
 .addon-row:last-child{border-bottom:0}
@@ -95,21 +188,13 @@ html,body{background:var(--cream);color:var(--ink);font-family:var(--sans);font-
 .incl-list li:last-child{border-bottom:0}
 .incl-list li::before{content:"+";position:absolute;left:0;top:11px;font-family:var(--mono);font-size:14px;color:var(--orange);font-weight:500}
 
-/* ── Summary ── */
-.summary-card{background:var(--ink);color:var(--cream);padding:30px 32px;margin-top:8px;position:relative;overflow:hidden}
-.summary-card::before{content:"";position:absolute;inset:0;background-image:repeating-linear-gradient(0deg,rgba(196,80,26,0.04) 0 1px,transparent 1px 40px),repeating-linear-gradient(90deg,rgba(196,80,26,0.04) 0 1px,transparent 1px 40px);pointer-events:none}
-.summary-card>*{position:relative}
-.sum-row{display:flex;justify-content:space-between;align-items:baseline;gap:14px;padding:12px 0;border-bottom:1px solid rgba(244,240,232,0.16);font-size:15px}
-.sum-row:last-of-type{border-bottom:0}
-.sum-label{color:rgba(244,240,232,0.85)}
-.sum-val{font-family:var(--mono);font-weight:500}
-.sum-total{margin-top:8px;padding-top:16px;border-top:2px solid var(--orange);display:flex;justify-content:space-between;align-items:baseline;gap:14px}
-.sum-total-label{font-family:var(--mono);font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--orange)}
-.sum-total-val{font-family:var(--serif);font-style:italic;font-size:clamp(22px,3.2vw,28px)}
-
-/* ── Callout ── */
-.callout{border-left:3px solid var(--orange);background:rgba(196,80,26,0.06);padding:20px 22px;margin-top:26px;font-size:14.5px;line-height:1.7;color:var(--ink)}
-.callout strong{font-weight:600}
+/* ── Closing panel ── */
+.closing-panel{background:var(--ink);color:var(--cream);padding:96px 24px;position:relative;overflow:hidden;margin-top:64px}
+.closing-panel::before{content:"";position:absolute;inset:0;background-image:repeating-linear-gradient(0deg,rgba(196,80,26,0.04) 0 1px,transparent 1px 40px),repeating-linear-gradient(90deg,rgba(196,80,26,0.04) 0 1px,transparent 1px 40px);pointer-events:none}
+.closing-inner{position:relative;max-width:720px;margin:0 auto;text-align:center}
+.closing-h{font-family:var(--serif);font-size:clamp(34px,5.6vw,56px);line-height:1.04;letter-spacing:-0.02em;color:var(--cream)}
+.closing-p{font-size:clamp(15px,1.85vw,17px);line-height:1.6;color:rgba(244,240,232,0.7);margin:20px auto 0;max-width:560px}
+.closing-panel + .site-foot{margin-top:0;border-top:0}
 
 /* ── Footer ── */
 .site-foot{padding:48px 0 56px;border-top:1px solid var(--rule);margin-top:64px}
@@ -119,11 +204,14 @@ html,body{background:var(--cream);color:var(--ink);font-family:var(--sans);font-
 .foot-link:hover{color:var(--ink)}
 
 @media (max-width: 768px){
+  .coi-grid{grid-template-columns:1fr}
+  .eff-grid{grid-template-columns:1fr}
   .terms-grid{grid-template-columns:repeat(2,1fr)}
   .sec{padding:44px 0}
   .offer-head{padding:22px 22px 18px}
   .offer-body{padding:8px 22px}
   .offer-total{padding:16px 22px}
+  .bonus-block{margin:0 22px}
 }
 @media (max-width: 480px){
   .terms-grid{grid-template-columns:1fr}
@@ -133,6 +221,7 @@ html,body{background:var(--cream);color:var(--ink);font-family:var(--sans);font-
   .offer-head{flex-direction:column;align-items:flex-start;gap:6px}
   .offer-price{text-align:left}
   .summary-card{padding:24px}
+  .guarantee{padding:24px}
 }
 </style>
 </head>
@@ -148,22 +237,99 @@ html,body{background:var(--cream);color:var(--ink);font-family:var(--sans);font-
 
 <main class="shell">
 
-  <!-- HERO -->
-  <section class="sec" data-reveal>
+  <!-- HERO (no data-reveal, visible on load) -->
+  <section class="sec hero">
     <div class="h-eyebrow">Prepared for Waithera Mugo, Founder, Ithera Africa</div>
-    <h1 class="h-lead">Search visibility, <em>itemized</em> and priced.</h1>
-    <p class="h-sub">Below is the full scope of work to take Ithera Africa from invisible to category-defining in Google Search and AI platforms. The proposal is structured in two parts: a one-time foundation sprint to fix everything identified in the audit, followed by a monthly retainer to build and maintain authority over time.</p>
+    <h1 class="h-lead">What it costs to fix this.<br>What it costs <em>not</em> to.</h1>
+    <p class="h-sub">You asked for the rate card. Before the numbers, two data points worth seeing first: what Ithera loses each month at current visibility, and what the 12-month projection looks like after execution.</p>
   </section>
 
-  <!-- § I FOUNDATION SPRINT -->
-  <section class="sec">
-    <div class="sec-mark" data-reveal>§ I — Foundation Sprint (One-Time)</div>
-    <h2 class="h2" data-reveal>Everything from the audit, <em>fixed once</em>.</h2>
-    <p class="intro" data-reveal>A 30-day sprint to repair every technical and structural issue identified in the visibility report.</p>
+  <!-- § I COST OF INACTION -->
+  <section class="sec" id="sec-coi">
+    <div class="sec-mark" data-reveal>§ I — The Cost of Inaction</div>
+    <h2 class="h2" data-reveal>What 0.8% visibility costs you every <em>month</em>.</h2>
+    <div class="intro" data-reveal>Three numbers explain why the audit lands the way it does.</div>
 
-    <div class="offer-card" data-reveal>
+    <div class="coi-grid">
+      <div class="coi-card" data-reveal>
+        <div class="coi-num"><span data-counter="17">0</span></div>
+        <div class="coi-lead">questions your ideal clients ask AI each month</div>
+        <div class="coi-sub">in your practice areas</div>
+      </div>
+      <div class="coi-card" data-reveal>
+        <div class="coi-num red"><span data-counter="0.8" data-suffix="%">0%</span></div>
+        <div class="coi-lead">of those conversations mention Ithera</div>
+        <div class="coi-sub">506 tracked, 4 mentions</div>
+      </div>
+      <div class="coi-card" data-reveal>
+        <div class="coi-num orange"><span data-counter="42.5" data-suffix="%">0%</span></div>
+        <div class="coi-lead">mention Bowmans instead</div>
+        <div class="coi-sub">your nearest tracked competitor</div>
+      </div>
+    </div>
+
+    <p class="coi-body" data-reveal>Each of those 17 prompts represents a high-net-worth individual or a corporate treasurer asking AI who they should hire for tax advisory, succession planning, or KRA dispute resolution in Nairobi. When AI answers, it recommends firms with strong domain authority, structured data, and published content. Right now, it recommends Bowmans 42 times for every 1 time it mentions Ithera.</p>
+
+    <div class="rev-callout" data-reveal>
+      Conservative model: if 5% of those AI conversations convert to a discovery call, and Ithera's average engagement runs around KES 500,000, every month at 0.8% visibility is a monthly revenue gap you can model yourself. We do not fabricate revenue projections. We show the input levers. You run the numbers.
+    </div>
+
+    <div class="ticker" id="ref-ticker" aria-live="polite">
+      <strong id="ref-count">0</strong> referrals went to competitors since you opened this page
+    </div>
+  </section>
+
+  <!-- § II 12-MONTH OUTCOME -->
+  <section class="sec">
+    <div class="sec-mark" data-reveal>§ II — The 12-Month Outcome</div>
+    <h2 class="h2" data-reveal>Where the numbers go after 90 days of <em>execution</em>.</h2>
+
+    <div class="kpi-wrap" data-reveal>
+      <table class="kpi-table" id="kpi-table">
+        <thead>
+          <tr><th>Metric</th><th>Today</th><th>Day 90</th><th>Day 365</th></tr>
+        </thead>
+        <tbody>
+          <tr class="kpi-row"><td class="kpi-metric">AI Citation Rate</td><td class="kpi-today">0.8%</td><td>10 – 15%</td><td class="kpi-future">50 – 65%</td></tr>
+          <tr class="kpi-row"><td class="kpi-metric">Monthly Organic Visitors</td><td class="kpi-today">&lt;50</td><td>250 – 400</td><td class="kpi-future">1,500 – 2,500</td></tr>
+          <tr class="kpi-row"><td class="kpi-metric">Domain Rating</td><td class="kpi-today">1.6</td><td>5 – 8</td><td class="kpi-future">15 – 20</td></tr>
+          <tr class="kpi-row"><td class="kpi-metric">Monthly Inbound Enquiries</td><td class="kpi-today">baseline</td><td>+2 – 4</td><td class="kpi-future">+15 – 25</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="kpi-body" data-reveal>These projections come from comparable Kenyan professional-services engagements, calibrated against the specific gaps identified in Ithera's audit. Masterful handles execution, tracking, and reporting. Ithera supplies approvals and subject-matter input.</p>
+
+    <div class="eff-grid">
+      <div class="eff-card" style="--i:0">
+        <div class="eff-label">Done for you</div>
+        <div class="eff-text">Masterful handles every technical fix, schema deployment, and directory submission.</div>
+      </div>
+      <div class="eff-card" style="--i:1">
+        <div class="eff-label">No new writing required in month 1</div>
+        <div class="eff-text">The Foundation Sprint uses content Ithera already published.</div>
+      </div>
+      <div class="eff-card" style="--i:2">
+        <div class="eff-label">Weekly AI tracking</div>
+        <div class="eff-text">You see the same dashboard data we see, refreshed every 7 days.</div>
+      </div>
+      <div class="eff-card" style="--i:3">
+        <div class="eff-label">30-minute monthly call</div>
+        <div class="eff-text">One call per month to review progress. No meetings for the sake of meetings.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- § III THE OFFER -->
+  <section class="sec">
+    <div class="sec-mark" data-reveal>§ III — The Offer</div>
+    <h2 class="h2 prog-name" data-reveal>The Citation Architecture Programme</h2>
+    <p class="prog-sub" data-reveal>A 90-day system to make Ithera Africa the first firm AI recommends for tax, succession, and estate advisory in Kenya.</p>
+
+    <!-- PHASE 1 -->
+    <div class="offer-card" data-reveal id="card-phase1">
       <div class="offer-head">
-        <div class="offer-name">Foundation Sprint</div>
+        <div class="offer-name">Phase 1: Foundation Sprint</div>
         <div class="offer-price">USD 1,500 one-time</div>
       </div>
       <div class="offer-body">
@@ -197,23 +363,26 @@ html,body{background:var(--cream);color:var(--ink);font-family:var(--sans);font-
           <div class="line-item"><span class="line-desc">Baseline AI citation report</span><span class="line-qty">1 report</span></div>
         </div>
       </div>
+
+      <div class="bonus-block">
+        <div class="bonus-eyebrow">Included at no additional cost</div>
+        <div class="bonus-item"><span class="bonus-name"><strong>AI Monitoring Dashboard</strong> (17 prompts, 12 competitors, 3 engines, live data)</span><span class="bonus-val">Value USD 397 / quarter</span></div>
+        <div class="bonus-item"><span class="bonus-name"><strong>Competitor Intelligence Brief</strong> (Bowmans, CM Advocates, JMK Advocates backlink and content analysis)</span><span class="bonus-val">Value USD 250</span></div>
+        <div class="bonus-item"><span class="bonus-name"><strong>Content Audit and Query Mapping</strong> (13 articles mapped to 17 high-intent search prompts)</span><span class="bonus-val">Value USD 150</span></div>
+        <div class="bonus-total">Bonus value: USD 797</div>
+      </div>
+
       <div class="offer-total">
-        <span class="offer-total-label">Foundation Total</span>
+        <span class="offer-total-label">Phase 1 Total</span>
         <span class="offer-total-val">USD 1,500</span>
       </div>
     </div>
-  </section>
 
-  <!-- § II GROWTH RETAINER -->
-  <section class="sec">
-    <div class="sec-mark" data-reveal>§ II — Growth Retainer (Monthly)</div>
-    <h2 class="h2" data-reveal>Compounding visibility, <em>month by month</em>.</h2>
-    <p class="intro" data-reveal>Ongoing execution that builds on the foundation sprint. New content, fresh links, weekly AI citation tracking.</p>
-
-    <div class="offer-card recommended" data-reveal>
+    <!-- PHASE 2 -->
+    <div class="offer-card recommended" data-reveal id="card-phase2" style="margin-top:32px">
       <div class="rec-badge">Recommended</div>
       <div class="offer-head">
-        <div class="offer-name">Growth Retainer</div>
+        <div class="offer-name">Phase 2: Growth Retainer</div>
         <div class="offer-price">USD 800 / month</div>
       </div>
       <div class="offer-body">
@@ -244,66 +413,66 @@ html,body{background:var(--cream);color:var(--ink);font-family:var(--sans);font-
           <div class="line-item"><span class="line-desc">30-minute monthly strategy call</span><span class="line-qty">1 call / mo</span></div>
         </div>
       </div>
+
+      <div class="bonus-block">
+        <div class="bonus-eyebrow">Included with every month</div>
+        <div class="bonus-item"><span class="bonus-name"><strong>Weekly AI Citation Report</strong> (delivered every Monday, 4 per month)</span><span class="bonus-val">Value USD 100 / month</span></div>
+        <div class="bonus-item"><span class="bonus-name"><strong>Live Dashboard Access</strong> (real-time competitor tracking, retained for the engagement)</span><span class="bonus-val">Value USD 99 / month</span></div>
+        <div class="bonus-total">Monthly bonus value: USD 199 / month</div>
+      </div>
+
       <div class="offer-total">
-        <span class="offer-total-label">Retainer Total</span>
+        <span class="offer-total-label">Phase 2 Total</span>
         <span class="offer-total-val">USD 800 / month</span>
       </div>
     </div>
   </section>
 
-  <!-- § III ADD-ONS -->
+  <!-- § IV GUARANTEE -->
   <section class="sec">
-    <div class="sec-mark" data-reveal>§ III — Add-On Services</div>
-    <h2 class="h2" data-reveal>Pick what fits, <em>priced by piece</em>.</h2>
-    <p class="intro" data-reveal>Discrete projects that sit outside the retainer. Quote on selection.</p>
+    <div class="sec-mark" data-reveal>§ IV — The Guarantee</div>
+    <h2 class="h2" data-reveal>The deliverable <em>guarantee</em>.</h2>
 
-    <div class="addon-wrap" data-reveal>
-      <div class="addon-row"><span class="addon-svc">Case study landing page (designed, schema-marked, SEO-optimized)</span><span class="addon-price">USD 350 / page</span></div>
-      <div class="addon-row"><span class="addon-svc">Website performance overhaul (CSS / JS consolidation, sub-2.5s LCP)</span><span class="addon-price">USD 600</span></div>
-      <div class="addon-row"><span class="addon-svc">Newsletter setup and launch</span><span class="addon-price">USD 400</span></div>
-      <div class="addon-row"><span class="addon-svc">Chambers and Legal 500 submission preparation</span><span class="addon-price">USD 500</span></div>
-      <div class="addon-row"><span class="addon-svc">Additional cornerstone article</span><span class="addon-price">USD 250 / article</span></div>
-      <div class="addon-row"><span class="addon-svc">PR and media outreach (Business Daily, The Star, Nation op-ed)</span><span class="addon-price">USD 300 / placement</span></div>
+    <div class="guarantee" data-reveal>
+      The Foundation Sprint has a fixed scope: 12 pages optimized, 6 schema types deployed, 5 directory listings submitted, 1 Google Business Profile verified, 13 bylines updated. If any deliverable from the Sprint is incomplete at Day 30, we extend the timeline at zero additional cost until every line item ships. <strong>You pay for completed work.</strong>
     </div>
   </section>
 
-  <!-- § IV TERMS -->
+  <!-- § V ACCUSATION AUDIT -->
   <section class="sec">
-    <div class="sec-mark" data-reveal>§ IV — Terms</div>
-    <h2 class="h2" data-reveal>The fine print, <em>up front</em>.</h2>
+    <div class="sec-mark" data-reveal>§ V — Questions you should be asking</div>
+    <h2 class="h2" data-reveal>The four we expect, answered <em>up front</em>.</h2>
 
-    <div class="terms-grid">
-      <div class="term-card" style="--i:0"><div class="term-label">Foundation Sprint</div><div class="term-val">One-time, due on kickoff</div></div>
-      <div class="term-card" style="--i:1"><div class="term-label">Monthly Retainer</div><div class="term-val">Billed monthly, 3-month minimum</div></div>
-      <div class="term-card" style="--i:2"><div class="term-label">Payment</div><div class="term-val">Wire transfer or M-Pesa</div></div>
-      <div class="term-card" style="--i:3"><div class="term-label">Notice Period</div><div class="term-val">30 days written notice</div></div>
-      <div class="term-card" style="--i:4"><div class="term-label">Reporting</div><div class="term-val">Weekly AI reports, monthly full report</div></div>
-      <div class="term-card" style="--i:5"><div class="term-label">Ownership</div><div class="term-val">All content and assets belong to Ithera</div></div>
+    <div class="qa-list">
+      <div class="qa-block" style="--i:0">
+        <div class="qa-q">"USD 11,100 for a year is a meaningful commitment for a boutique firm."</div>
+        <div class="qa-a">It is. The investment recovers if the work produces one or two additional client engagements at Ithera's fee level. The 12-month projection targets 15 to 25 net new inbound enquiries per month. At a 15% conversion rate, the maths resolves within the first quarter of steady inbound.</div>
+      </div>
+      <div class="qa-block" style="--i:1">
+        <div class="qa-q">"How do I know this will produce results for a Kenyan law firm specifically?"</div>
+        <div class="qa-a">The audit data is Kenyan. The 17 prompts are Kenyan queries. The 12 competitors are Nairobi firms. The dashboard tracks Kenyan AI conversations. Every recommendation in this programme comes from what the data showed about this market. Nothing here was imported from another geography.</div>
+      </div>
+      <div class="qa-block" style="--i:2">
+        <div class="qa-q">"What happens if I cancel after 3 months?"</div>
+        <div class="qa-a">You keep everything. Every article, every schema, every OG image, every directory listing, and the full handoff documentation. The retainer pays for ongoing execution. The assets belong to Ithera permanently.</div>
+      </div>
+      <div class="qa-block" style="--i:3">
+        <div class="qa-q">"Can I start with the Foundation Sprint and decide on the retainer later?"</div>
+        <div class="qa-a">Yes. The Sprint is priced and scoped as a standalone engagement. You evaluate the results at Day 30 and choose whether to continue with the retainer. No pressure. No lock-in on the retainer until you choose it.</div>
+      </div>
     </div>
-
-    <div class="callout" data-reveal>
-      <strong>What you keep if you cancel:</strong> Every piece of content, every schema markup, every directory listing, and every OG image. Ithera retains 100% of the work product. The retainer pays for the ongoing execution. The assets are yours permanently.
-    </div>
-  </section>
-
-  <!-- § V ALWAYS INCLUDED -->
-  <section class="sec">
-    <div class="sec-mark" data-reveal>§ V — What Is Always Included</div>
-    <h2 class="h2" data-reveal>Standard with <em>every</em> engagement.</h2>
-
-    <ul class="incl-list" data-reveal>
-      <li>Direct access to Jordan via WhatsApp</li>
-      <li>All work delivered directly to your site</li>
-      <li>Transparent reporting: same data you see, we see</li>
-      <li>Hand-off documentation if you bring work in-house</li>
-      <li>No lock-in beyond the 3-month minimum</li>
-    </ul>
   </section>
 
   <!-- § VI INVESTMENT SUMMARY -->
   <section class="sec">
     <div class="sec-mark" data-reveal>§ VI — Investment Summary</div>
     <h2 class="h2" data-reveal>The full picture, <em>in one card</em>.</h2>
+
+    <div class="anchor-wrap" data-reveal>
+      <div class="anchor-label">Total value of the Citation Architecture Programme<br>(Sprint plus 12 months of retainer plus monitoring plus intelligence)</div>
+      <div class="anchor-num">USD <span data-counter="14288" data-anchor>0</span></div>
+      <div class="anchor-investment">Your investment: USD 11,100 for Year 1 (Sprint plus 12 months retainer)</div>
+    </div>
 
     <div class="summary-card" data-reveal>
       <div class="sum-row">
@@ -315,7 +484,7 @@ html,body{background:var(--cream);color:var(--ink);font-family:var(--sans);font-
         <span class="sum-val">USD 800 / mo</span>
       </div>
       <div class="sum-row">
-        <span class="sum-label">Total Year 1 (sprint plus 12 months)</span>
+        <span class="sum-label">Total Year 1 (Sprint plus 12 months)</span>
         <span class="sum-val">USD 11,100</span>
       </div>
       <div class="sum-total">
@@ -324,12 +493,61 @@ html,body{background:var(--cream);color:var(--ink);font-family:var(--sans);font-
       </div>
     </div>
 
-    <div class="callout" data-reveal>
-      <strong>The ROI frame:</strong> At Ithera's engagement value, the entire annual investment is recovered if the work generates 1 to 2 additional client engagements. The 12-month projection targets 15 to 25 net new inbound enquiries per month by month 12.
+    <div class="pay-note" data-reveal>Payment terms available. The Sprint and retainer split into monthly instalments. Ask Jordan for a schedule that fits.</div>
+  </section>
+
+  <!-- § VII TERMS -->
+  <section class="sec">
+    <div class="sec-mark" data-reveal>§ VII — Terms</div>
+    <h2 class="h2" data-reveal>The fine print, <em>up front</em>.</h2>
+
+    <div class="terms-grid">
+      <div class="term-card" style="--i:0"><div class="term-label">Foundation Sprint</div><div class="term-val">One-time, due on kickoff</div></div>
+      <div class="term-card" style="--i:1"><div class="term-label">Monthly Retainer</div><div class="term-val">Billed monthly, 3-month minimum</div></div>
+      <div class="term-card" style="--i:2"><div class="term-label">Payment</div><div class="term-val">Wire transfer or M-Pesa</div></div>
+      <div class="term-card" style="--i:3"><div class="term-label">Notice Period</div><div class="term-val">30 days written notice</div></div>
+      <div class="term-card" style="--i:4"><div class="term-label">Reporting</div><div class="term-val">Weekly AI reports, monthly full report</div></div>
+      <div class="term-card" style="--i:5"><div class="term-label">Ownership</div><div class="term-val">All content and assets belong to Ithera</div></div>
+    </div>
+  </section>
+
+  <!-- § VIII ALWAYS INCLUDED -->
+  <section class="sec">
+    <div class="sec-mark" data-reveal>§ VIII — What Is Always Included</div>
+    <h2 class="h2" data-reveal>Standard with <em>every</em> engagement.</h2>
+
+    <ul class="incl-list" data-reveal>
+      <li>Direct access to Jordan via WhatsApp</li>
+      <li>All work delivered directly to your site</li>
+      <li>Transparent reporting: same data you see, we see</li>
+      <li>Hand-off documentation if you bring work in-house</li>
+      <li>No lock-in beyond the 3-month minimum</li>
+    </ul>
+  </section>
+
+  <!-- § IX ADD-ONS -->
+  <section class="sec">
+    <div class="sec-mark" data-reveal>§ IX — Add-On Services</div>
+    <h2 class="h2" data-reveal>Discrete projects, <em>priced by piece</em>.</h2>
+
+    <div class="addon-wrap" data-reveal>
+      <div class="addon-row"><span class="addon-svc">Case study landing page (designed, schema-marked, SEO-optimized)</span><span class="addon-price">USD 350 / page</span></div>
+      <div class="addon-row"><span class="addon-svc">Website performance overhaul (CSS / JS consolidation, sub-2.5s LCP)</span><span class="addon-price">USD 600</span></div>
+      <div class="addon-row"><span class="addon-svc">Newsletter setup and launch</span><span class="addon-price">USD 400</span></div>
+      <div class="addon-row"><span class="addon-svc">Chambers and Legal 500 submission preparation</span><span class="addon-price">USD 500</span></div>
+      <div class="addon-row"><span class="addon-svc">Additional cornerstone article</span><span class="addon-price">USD 250 / article</span></div>
+      <div class="addon-row"><span class="addon-svc">PR and media outreach (Business Daily, The Star, Nation op-ed)</span><span class="addon-price">USD 300 / placement</span></div>
     </div>
   </section>
 
 </main>
+
+<section class="closing-panel">
+  <div class="closing-inner">
+    <h2 class="closing-h" data-reveal>You read the data. The scope is clear.</h2>
+    <p class="closing-p" data-reveal>Jordan is available on WhatsApp to answer anything before you decide.</p>
+  </div>
+</section>
 
 <footer class="site-foot">
   <div class="shell">
@@ -341,6 +559,7 @@ html,body{background:var(--cream);color:var(--ink);font-family:var(--sans);font-
 
 <script>
 (function(){
+  // Reveal observer
   const revealObs = new IntersectionObserver((entries)=>{
     entries.forEach(e=>{
       if(e.isIntersecting){
@@ -348,9 +567,90 @@ html,body{background:var(--cream);color:var(--ink);font-family:var(--sans);font-
         revealObs.unobserve(e.target);
       }
     });
-  },{threshold:0.12});
+  },{threshold:0.1});
   document.querySelectorAll('[data-reveal]').forEach(el=>revealObs.observe(el));
-  document.querySelectorAll('.term-card').forEach(el=>revealObs.observe(el));
+  document.querySelectorAll('.term-card, .eff-card').forEach(el=>revealObs.observe(el));
+
+  // KPI rows stagger
+  const kpi = document.getElementById('kpi-table');
+  if(kpi){
+    const obs = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting){
+          kpi.querySelectorAll('.kpi-row').forEach((r,i)=>setTimeout(()=>r.classList.add('in-view'), i*40));
+          obs.unobserve(kpi);
+        }
+      });
+    },{threshold:0.2});
+    obs.observe(kpi);
+  }
+
+  // Counter animation. Stats above the fold on load show final value
+  // immediately. Stats below the fold animate when scrolled into view.
+  function finalText(el){
+    const target = parseFloat(el.dataset.counter);
+    const suffix = el.dataset.suffix || '';
+    const isFloat = String(el.dataset.counter).includes('.');
+    if(target >= 1000) return Math.round(target).toLocaleString() + suffix;
+    return (isFloat ? target.toFixed(1) : Math.round(target)) + suffix;
+  }
+  function animateCounter(el, duration){
+    duration = duration || 800;
+    const target = parseFloat(el.dataset.counter);
+    const suffix = el.dataset.suffix || '';
+    const isFloat = String(el.dataset.counter).includes('.');
+    const start = performance.now();
+    function tick(now){
+      const t = Math.min(1, (now-start)/duration);
+      const eased = 1 - Math.pow(1-t, 3);
+      const val = target * eased;
+      let txt;
+      if(target >= 1000) txt = Math.round(val).toLocaleString() + suffix;
+      else txt = (isFloat ? val.toFixed(1) : Math.round(val)) + suffix;
+      el.textContent = txt;
+      if(t<1) requestAnimationFrame(tick);
+      else el.textContent = finalText(el);
+    }
+    requestAnimationFrame(tick);
+  }
+  const countObs = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(!e.isIntersecting) return;
+      const dur = e.target.hasAttribute('data-anchor') ? 1000 : 800;
+      animateCounter(e.target, dur);
+      countObs.unobserve(e.target);
+    });
+  },{threshold:0.5});
+  document.querySelectorAll('[data-counter]').forEach(el=>{
+    el.textContent = finalText(el);
+    const rect = el.getBoundingClientRect();
+    const aboveFold = rect.top < window.innerHeight && rect.bottom > 0;
+    if(aboveFold) return;
+    el.textContent = '0' + (el.dataset.suffix || '');
+    countObs.observe(el);
+  });
+
+  // Referral ticker. Starts when § I scrolls into view, ticks every 8s, caps at 50.
+  const tickerSec = document.getElementById('sec-coi');
+  const refCount = document.getElementById('ref-count');
+  if(tickerSec && refCount){
+    let started = false;
+    const tObs = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting && !started){
+          started = true;
+          let n = 0;
+          const id = setInterval(()=>{
+            n++;
+            refCount.textContent = n;
+            if(n >= 50) clearInterval(id);
+          }, 8000);
+          tObs.unobserve(tickerSec);
+        }
+      });
+    },{threshold:0.3});
+    tObs.observe(tickerSec);
+  }
 })();
 </script>
 </body>
