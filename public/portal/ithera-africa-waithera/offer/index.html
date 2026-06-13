@@ -569,7 +569,7 @@ html,body{background:var(--cream);color:var(--ink);font-family:var(--sans);font-
     });
   },{threshold:0.1});
   document.querySelectorAll('[data-reveal]').forEach(el=>revealObs.observe(el));
-  document.querySelectorAll('.term-card, .eff-card').forEach(el=>revealObs.observe(el));
+  document.querySelectorAll('.term-card, .eff-card, .qa-block').forEach(el=>revealObs.observe(el));
 
   // KPI rows stagger
   const kpi = document.getElementById('kpi-table');
