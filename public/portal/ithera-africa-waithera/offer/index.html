@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<title>Service Proposal · Ithera Africa · Masterful</title>
+<meta name="description" content="A private service proposal and rate card prepared for Waithera Mugo, founder of Ithera Africa.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/main.css">
+<style>
+:root{
+  --cream:#F4F0E8;
+  --cream-2:#EAE4D8;
+  --ink:#0E0E0E;
+  --ink-2:#1A1A1A;
+  --orange:#C4501A;
+  --orange-2:#E36622;
+  --orange-light:#E8713D;
+  --mute:rgba(14,14,14,0.52);
+  --rule:rgba(14,14,14,0.13);
+  --warm-gray:#A69E94;
+  --light-rule:#D6D0C6;
+  --card-bg:#FFFDF8;
+  --red-flag:#B91C1C;
+  --amber-flag:#D97706;
+  --green-flag:#15803D;
+}
+html,body{background:var(--cream);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+.top-rule{height:2px;background:var(--orange);position:sticky;top:0;z-index:50}
+.shell{max-width:720px;margin:0 auto;padding:0 24px}
+
+.site-head{padding:18px 0;border-bottom:1px solid var(--rule)}
+.site-head-inner{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.wordmark{font-family:var(--sans);font-size:0.8125rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink)}
+.head-meta{font-family:var(--mono);font-size:10px;letter-spacing:0.06em;text-transform:uppercase;color:var(--mute);text-align:right}
+
+[data-reveal]{opacity:0;transform:translateY(20px);transition:opacity .6s cubic-bezier(0.22,1,0.36,1),transform .6s cubic-bezier(0.22,1,0.36,1)}
+[data-reveal].in-view{opacity:1;transform:translateY(0)}
+@media (prefers-reduced-motion: reduce){
+  [data-reveal]{opacity:1;transform:none;transition:none}
+}
+
+.sec{padding:56px 0;border-top:1px solid var(--rule)}
+.sec:first-of-type{border-top:0}
+.sec-mark{font-family:var(--mono);font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:var(--orange);margin-bottom:18px}
+.h-eyebrow{font-family:var(--mono);font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:var(--warm-gray);margin-bottom:22px}
+.h-lead{font-family:var(--serif);font-size:clamp(34px,5.6vw,56px);line-height:1.04;letter-spacing:-0.02em}
+.h-lead em{font-style:italic}
+.h-sub{font-size:clamp(15px,1.85vw,17px);line-height:1.65;color:var(--ink-2);margin-top:22px;max-width:620px}
+.h2{font-family:var(--serif);font-size:clamp(28px,4.2vw,42px);line-height:1.08;letter-spacing:-0.018em;margin-bottom:8px}
+.h2 em{font-style:italic}
+.intro{font-size:15px;line-height:1.7;color:var(--mute);margin-bottom:28px;max-width:620px}
+
+/* ── Offer card ── */
+.offer-card{background:var(--card-bg);border:1px solid var(--light-rule);padding:0;margin-top:8px;position:relative}
+.offer-card.recommended{border-color:var(--orange);box-shadow:0 6px 18px rgba(196,80,26,0.08)}
+.rec-badge{position:absolute;top:-12px;left:24px;background:var(--orange);color:var(--cream);font-family:var(--mono);font-size:10px;letter-spacing:0.08em;text-transform:uppercase;padding:5px 12px}
+.offer-head{padding:26px 28px 22px;border-bottom:1px solid var(--rule);display:flex;justify-content:space-between;align-items:baseline;gap:20px;flex-wrap:wrap}
+.offer-name{font-family:var(--serif);font-style:italic;font-size:clamp(24px,3.5vw,30px);line-height:1.1;color:var(--ink)}
+.offer-price{font-family:var(--mono);font-size:clamp(16px,2.2vw,20px);font-weight:500;letter-spacing:-0.01em;color:var(--orange);text-align:right;white-space:nowrap}
+.offer-body{padding:8px 28px 8px}
+.scope-group{padding:20px 0;border-bottom:1px solid rgba(14,14,14,0.06)}
+.scope-group:last-child{border-bottom:0}
+.scope-label{font-family:var(--mono);font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:var(--mute);margin-bottom:12px}
+.line-item{display:flex;justify-content:space-between;align-items:baseline;gap:14px;padding:7px 0;font-size:14px;line-height:1.5;border-bottom:1px dotted rgba(14,14,14,0.08)}
+.line-item:last-child{border-bottom:0}
+.line-desc{color:var(--ink-2);flex:1}
+.line-qty{font-family:var(--mono);font-size:12px;color:var(--mute);text-align:right;white-space:nowrap}
+.offer-total{padding:18px 28px;background:var(--ink);color:var(--cream);display:flex;justify-content:space-between;align-items:baseline}
+.offer-total-label{font-family:var(--mono);font-size:11px;letter-spacing:0.08em;text-transform:uppercase}
+.offer-total-val{font-family:var(--mono);font-size:18px;font-weight:500;letter-spacing:-0.01em}
+
+/* ── Addon table ── */
+.addon-wrap{margin-top:8px;border:1px solid var(--light-rule);background:var(--card-bg)}
+.addon-row{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:16px 22px;border-bottom:1px solid rgba(14,14,14,0.07);font-size:14px}
+.addon-row:last-child{border-bottom:0}
+.addon-svc{color:var(--ink-2);flex:1}
+.addon-price{font-family:var(--mono);font-size:13px;font-weight:500;color:var(--orange);white-space:nowrap}
+
+/* ── Terms grid ── */
+.terms-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:8px}
+.term-card{background:var(--card-bg);border:1px solid var(--light-rule);padding:18px;opacity:0;transform:translateY(20px);transition:opacity .6s cubic-bezier(0.22,1,0.36,1),transform .6s cubic-bezier(0.22,1,0.36,1);transition-delay:calc(var(--i) * 80ms)}
+.term-card.in-view{opacity:1;transform:translateY(0)}
+.term-label{font-family:var(--mono);font-size:10px;letter-spacing:0.07em;text-transform:uppercase;color:var(--mute);margin-bottom:8px}
+.term-val{font-family:var(--serif);font-size:17px;line-height:1.3;color:var(--ink);font-style:italic}
+
+/* ── Included list ── */
+.incl-list{list-style:none;padding:0;margin:8px 0 0}
+.incl-list li{font-size:14.5px;line-height:1.65;padding:11px 0 11px 26px;position:relative;border-bottom:1px solid rgba(14,14,14,0.07)}
+.incl-list li:last-child{border-bottom:0}
+.incl-list li::before{content:"+";position:absolute;left:0;top:11px;font-family:var(--mono);font-size:14px;color:var(--orange);font-weight:500}
+
+/* ── Summary ── */
+.summary-card{background:var(--ink);color:var(--cream);padding:30px 32px;margin-top:8px;position:relative;overflow:hidden}
+.summary-card::before{content:"";position:absolute;inset:0;background-image:repeating-linear-gradient(0deg,rgba(196,80,26,0.04) 0 1px,transparent 1px 40px),repeating-linear-gradient(90deg,rgba(196,80,26,0.04) 0 1px,transparent 1px 40px);pointer-events:none}
+.summary-card>*{position:relative}
+.sum-row{display:flex;justify-content:space-between;align-items:baseline;gap:14px;padding:12px 0;border-bottom:1px solid rgba(244,240,232,0.16);font-size:15px}
+.sum-row:last-of-type{border-bottom:0}
+.sum-label{color:rgba(244,240,232,0.85)}
+.sum-val{font-family:var(--mono);font-weight:500}
+.sum-total{margin-top:8px;padding-top:16px;border-top:2px solid var(--orange);display:flex;justify-content:space-between;align-items:baseline;gap:14px}
+.sum-total-label{font-family:var(--mono);font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--orange)}
+.sum-total-val{font-family:var(--serif);font-style:italic;font-size:clamp(22px,3.2vw,28px)}
+
+/* ── Callout ── */
+.callout{border-left:3px solid var(--orange);background:rgba(196,80,26,0.06);padding:20px 22px;margin-top:26px;font-size:14.5px;line-height:1.7;color:var(--ink)}
+.callout strong{font-weight:600}
+
+/* ── Footer ── */
+.site-foot{padding:48px 0 56px;border-top:1px solid var(--rule);margin-top:64px}
+.foot-mono{font-family:var(--mono);font-size:11px;letter-spacing:0.07em;text-transform:uppercase;color:var(--mute);text-align:center}
+.foot-note{font-family:var(--sans);font-size:13px;line-height:1.6;color:var(--mute);text-align:center;margin-top:14px}
+.foot-link{display:block;text-align:center;margin-top:32px;font-family:var(--mono);font-size:11px;letter-spacing:0.07em;text-transform:uppercase;color:var(--orange)}
+.foot-link:hover{color:var(--ink)}
+
+@media (max-width: 768px){
+  .terms-grid{grid-template-columns:repeat(2,1fr)}
+  .sec{padding:44px 0}
+  .offer-head{padding:22px 22px 18px}
+  .offer-body{padding:8px 22px}
+  .offer-total{padding:16px 22px}
+}
+@media (max-width: 480px){
+  .terms-grid{grid-template-columns:1fr}
+  .shell{padding:0 18px}
+  .site-head-inner{flex-direction:column;align-items:flex-start;gap:6px}
+  .head-meta{text-align:left}
+  .offer-head{flex-direction:column;align-items:flex-start;gap:6px}
+  .offer-price{text-align:left}
+  .summary-card{padding:24px}
+}
+</style>
+</head>
+<body>
+<div class="top-rule"></div>
+
+<header class="site-head">
+  <div class="shell site-head-inner">
+    <a href="https://masterful-app.com" class="wordmark">Masterful</a>
+    <div class="head-meta">Service Proposal<br>June 2026</div>
+  </div>
+</header>
+
+<main class="shell">
+
+  <!-- HERO -->
+  <section class="sec" data-reveal>
+    <div class="h-eyebrow">Prepared for Waithera Mugo, Founder, Ithera Africa</div>
+    <h1 class="h-lead">Search visibility, <em>itemized</em> and priced.</h1>
+    <p class="h-sub">Below is the full scope of work to take Ithera Africa from invisible to category-defining in Google Search and AI platforms. The proposal is structured in two parts: a one-time foundation sprint to fix everything identified in the audit, followed by a monthly retainer to build and maintain authority over time.</p>
+  </section>
+
+  <!-- § I FOUNDATION SPRINT -->
+  <section class="sec">
+    <div class="sec-mark" data-reveal>§ I — Foundation Sprint (One-Time)</div>
+    <h2 class="h2" data-reveal>Everything from the audit, <em>fixed once</em>.</h2>
+    <p class="intro" data-reveal>A 30-day sprint to repair every technical and structural issue identified in the visibility report.</p>
+
+    <div class="offer-card" data-reveal>
+      <div class="offer-head">
+        <div class="offer-name">Foundation Sprint</div>
+        <div class="offer-price">USD 1,500 one-time</div>
+      </div>
+      <div class="offer-body">
+        <div class="scope-group">
+          <div class="scope-label">Technical SEO</div>
+          <div class="line-item"><span class="line-desc">Title tag and meta description rewrite</span><span class="line-qty">12 pages</span></div>
+          <div class="line-item"><span class="line-desc">JSON-LD structured data deployment</span><span class="line-qty">6 schemas</span></div>
+          <div class="line-item"><span class="line-desc">Open Graph and Twitter Card meta tags</span><span class="line-qty">12 pages</span></div>
+          <div class="line-item"><span class="line-desc">Custom OG images</span><span class="line-qty">5 images</span></div>
+          <div class="line-item"><span class="line-desc">H1 tag audit and heading hierarchy fixes</span><span class="line-qty">All pages</span></div>
+          <div class="line-item"><span class="line-desc">Delete WordPress sample page and clean sitemap</span><span class="line-qty">1 fix</span></div>
+          <div class="line-item"><span class="line-desc">Fix escaped apostrophe encoding bug</span><span class="line-qty">1 fix</span></div>
+          <div class="line-item"><span class="line-desc">Image alt-text audit</span><span class="line-qty">All images</span></div>
+        </div>
+        <div class="scope-group">
+          <div class="scope-label">Content &amp; Authority</div>
+          <div class="line-item"><span class="line-desc">Author byline overhaul</span><span class="line-qty">13 posts</span></div>
+          <div class="line-item"><span class="line-desc">100-word author bio template</span><span class="line-qty">1 bio</span></div>
+          <div class="line-item"><span class="line-desc">Resources page restructure into 4 topic clusters</span><span class="line-qty">1 rebuild</span></div>
+          <div class="line-item"><span class="line-desc">Internal cross-linking strategy</span><span class="line-qty">All posts</span></div>
+        </div>
+        <div class="scope-group">
+          <div class="scope-label">Local SEO</div>
+          <div class="line-item"><span class="line-desc">Google Business Profile creation and verification</span><span class="line-qty">1 profile</span></div>
+          <div class="line-item"><span class="line-desc">Directory listing submissions</span><span class="line-qty">5 directories</span></div>
+          <div class="line-item"><span class="line-desc">LinkedIn Company Page optimization</span><span class="line-qty">1 profile</span></div>
+        </div>
+        <div class="scope-group">
+          <div class="scope-label">AI Visibility Baseline</div>
+          <div class="line-item"><span class="line-desc">Peec.ai monitoring dashboard (17 prompts, 12 competitors, 3 engines)</span><span class="line-qty">Live</span></div>
+          <div class="line-item"><span class="line-desc">Baseline AI citation report</span><span class="line-qty">1 report</span></div>
+        </div>
+      </div>
+      <div class="offer-total">
+        <span class="offer-total-label">Foundation Total</span>
+        <span class="offer-total-val">USD 1,500</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- § II GROWTH RETAINER -->
+  <section class="sec">
+    <div class="sec-mark" data-reveal>§ II — Growth Retainer (Monthly)</div>
+    <h2 class="h2" data-reveal>Compounding visibility, <em>month by month</em>.</h2>
+    <p class="intro" data-reveal>Ongoing execution that builds on the foundation sprint. New content, fresh links, weekly AI citation tracking.</p>
+
+    <div class="offer-card recommended" data-reveal>
+      <div class="rec-badge">Recommended</div>
+      <div class="offer-head">
+        <div class="offer-name">Growth Retainer</div>
+        <div class="offer-price">USD 800 / month</div>
+      </div>
+      <div class="offer-body">
+        <div class="scope-group">
+          <div class="scope-label">Content &amp; SEO</div>
+          <div class="line-item"><span class="line-desc">1 new search-optimized cornerstone article</span><span class="line-qty">~1,500 words</span></div>
+          <div class="line-item"><span class="line-desc">On-page optimization of existing posts</span><span class="line-qty">2 posts / mo</span></div>
+          <div class="line-item"><span class="line-desc">Content calendar and keyword research</span><span class="line-qty">1 plan / mo</span></div>
+        </div>
+        <div class="scope-group">
+          <div class="scope-label">Link Building &amp; Authority</div>
+          <div class="line-item"><span class="line-desc">Quality backlink acquisitions</span><span class="line-qty">2 – 3 links / mo</span></div>
+          <div class="line-item"><span class="line-desc">Google Business Profile management</span><span class="line-qty">Ongoing</span></div>
+          <div class="line-item"><span class="line-desc">Competitor backlink monitoring</span><span class="line-qty">Monthly</span></div>
+        </div>
+        <div class="scope-group">
+          <div class="scope-label">AI Visibility</div>
+          <div class="line-item"><span class="line-desc">Weekly AI citation tracking from Peec.ai</span><span class="line-qty">4 reports / mo</span></div>
+          <div class="line-item"><span class="line-desc">Prompt-specific content engineering</span><span class="line-qty">Ongoing</span></div>
+          <div class="line-item"><span class="line-desc">Competitor citation analysis</span><span class="line-qty">Monthly</span></div>
+        </div>
+        <div class="scope-group">
+          <div class="scope-label">Performance &amp; Maintenance</div>
+          <div class="line-item"><span class="line-desc">Site speed and Core Web Vitals tracking</span><span class="line-qty">Monthly</span></div>
+          <div class="line-item"><span class="line-desc">Technical SEO health check</span><span class="line-qty">Monthly</span></div>
+          <div class="line-item"><span class="line-desc">Monthly performance report with KPI tracking</span><span class="line-qty">1 report / mo</span></div>
+          <div class="line-item"><span class="line-desc">30-minute monthly strategy call</span><span class="line-qty">1 call / mo</span></div>
+        </div>
+      </div>
+      <div class="offer-total">
+        <span class="offer-total-label">Retainer Total</span>
+        <span class="offer-total-val">USD 800 / month</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- § III ADD-ONS -->
+  <section class="sec">
+    <div class="sec-mark" data-reveal>§ III — Add-On Services</div>
+    <h2 class="h2" data-reveal>Pick what fits, <em>priced by piece</em>.</h2>
+    <p class="intro" data-reveal>Discrete projects that sit outside the retainer. Quote on selection.</p>
+
+    <div class="addon-wrap" data-reveal>
+      <div class="addon-row"><span class="addon-svc">Case study landing page (designed, schema-marked, SEO-optimized)</span><span class="addon-price">USD 350 / page</span></div>
+      <div class="addon-row"><span class="addon-svc">Website performance overhaul (CSS / JS consolidation, sub-2.5s LCP)</span><span class="addon-price">USD 600</span></div>
+      <div class="addon-row"><span class="addon-svc">Newsletter setup and launch</span><span class="addon-price">USD 400</span></div>
+      <div class="addon-row"><span class="addon-svc">Chambers and Legal 500 submission preparation</span><span class="addon-price">USD 500</span></div>
+      <div class="addon-row"><span class="addon-svc">Additional cornerstone article</span><span class="addon-price">USD 250 / article</span></div>
+      <div class="addon-row"><span class="addon-svc">PR and media outreach (Business Daily, The Star, Nation op-ed)</span><span class="addon-price">USD 300 / placement</span></div>
+    </div>
+  </section>
+
+  <!-- § IV TERMS -->
+  <section class="sec">
+    <div class="sec-mark" data-reveal>§ IV — Terms</div>
+    <h2 class="h2" data-reveal>The fine print, <em>up front</em>.</h2>
+
+    <div class="terms-grid">
+      <div class="term-card" style="--i:0"><div class="term-label">Foundation Sprint</div><div class="term-val">One-time, due on kickoff</div></div>
+      <div class="term-card" style="--i:1"><div class="term-label">Monthly Retainer</div><div class="term-val">Billed monthly, 3-month minimum</div></div>
+      <div class="term-card" style="--i:2"><div class="term-label">Payment</div><div class="term-val">Wire transfer or M-Pesa</div></div>
+      <div class="term-card" style="--i:3"><div class="term-label">Notice Period</div><div class="term-val">30 days written notice</div></div>
+      <div class="term-card" style="--i:4"><div class="term-label">Reporting</div><div class="term-val">Weekly AI reports, monthly full report</div></div>
+      <div class="term-card" style="--i:5"><div class="term-label">Ownership</div><div class="term-val">All content and assets belong to Ithera</div></div>
+    </div>
+
+    <div class="callout" data-reveal>
+      <strong>What you keep if you cancel:</strong> Every piece of content, every schema markup, every directory listing, every OG image, and the full Peec.ai dashboard history. Ithera retains 100% of the work product. The retainer pays for the ongoing execution. The assets are yours permanently.
+    </div>
+  </section>
+
+  <!-- § V ALWAYS INCLUDED -->
+  <section class="sec">
+    <div class="sec-mark" data-reveal>§ V — What Is Always Included</div>
+    <h2 class="h2" data-reveal>Standard with <em>every</em> engagement.</h2>
+
+    <ul class="incl-list" data-reveal>
+      <li>Direct access to Jordan via WhatsApp</li>
+      <li>All work delivered directly to your site</li>
+      <li>Peec.ai AI visibility monitoring dashboard access</li>
+      <li>Transparent reporting: same data you see, we see</li>
+      <li>Hand-off documentation if you bring work in-house</li>
+      <li>No lock-in beyond the 3-month minimum</li>
+    </ul>
+  </section>
+
+  <!-- § VI INVESTMENT SUMMARY -->
+  <section class="sec">
+    <div class="sec-mark" data-reveal>§ VI — Investment Summary</div>
+    <h2 class="h2" data-reveal>The full picture, <em>in one card</em>.</h2>
+
+    <div class="summary-card" data-reveal>
+      <div class="sum-row">
+        <span class="sum-label">Foundation Sprint (one-time, 30 days)</span>
+        <span class="sum-val">USD 1,500</span>
+      </div>
+      <div class="sum-row">
+        <span class="sum-label">Growth Retainer (monthly, 3-month minimum)</span>
+        <span class="sum-val">USD 800 / mo</span>
+      </div>
+      <div class="sum-row">
+        <span class="sum-label">Total Year 1 (sprint plus 12 months)</span>
+        <span class="sum-val">USD 11,100</span>
+      </div>
+      <div class="sum-total">
+        <span class="sum-total-label">First 3 Months</span>
+        <span class="sum-total-val">USD 3,900</span>
+      </div>
+    </div>
+
+    <div class="callout" data-reveal>
+      <strong>The ROI frame:</strong> At Ithera's engagement value, the entire annual investment is recovered if the work generates 1 to 2 additional client engagements. The 12-month projection targets 15 to 25 net new inbound enquiries per month by month 12.
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-foot">
+  <div class="shell">
+    <div class="foot-mono">Masterful / Search Visibility Studio / Nairobi</div>
+    <div class="foot-note">Jordan | Masterful</div>
+    <a href="../" class="foot-link">← Back to the visibility report</a>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const revealObs = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        e.target.classList.add('in-view');
+        revealObs.unobserve(e.target);
+      }
+    });
+  },{threshold:0.12});
+  document.querySelectorAll('[data-reveal]').forEach(el=>revealObs.observe(el));
+  document.querySelectorAll('.term-card').forEach(el=>revealObs.observe(el));
+})();
+</script>
+</body>
+</html>

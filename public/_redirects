@@ -16,3 +16,10 @@
 # /proof/ recalled 2026-06-10; send the already-pinged URL to the citation guide.
 /proof/  /journal/get-cited-by-chatgpt/  301
 /proof   /journal/get-cited-by-chatgpt/  301
+
+# /portal/ is a private namespace for client report deliverables. Only the
+# full per-client deep links are intended to be shared. Bare /portal/ and
+# anything that would enumerate it gets 301'd home so the directory cannot
+# be browsed.
+/portal   /  301
+/portal/  /  301

@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /portal/
 
 Sitemap: https://masterful-app.com/sitemap-index.xml

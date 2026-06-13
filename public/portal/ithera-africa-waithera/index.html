@@ -1,0 +1,546 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<title>Search Visibility Report · Ithera Africa · Masterful</title>
+<meta name="description" content="A private search visibility report prepared for Waithera Mugo, founder of Ithera Africa.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/main.css">
+<style>
+:root{
+  --cream:#F4F0E8;
+  --cream-2:#EAE4D8;
+  --ink:#0E0E0E;
+  --ink-2:#1A1A1A;
+  --orange:#C4501A;
+  --orange-2:#E36622;
+  --orange-light:#E8713D;
+  --mute:rgba(14,14,14,0.52);
+  --rule:rgba(14,14,14,0.13);
+  --mute-dark:rgba(244,240,232,0.6);
+  --warm-gray:#A69E94;
+  --light-rule:#D6D0C6;
+  --card-bg:#FFFDF8;
+  --red-flag:#B91C1C;
+  --amber-flag:#D97706;
+  --green-flag:#15803D;
+}
+html,body{background:var(--cream);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+.top-rule{height:2px;background:var(--orange);position:sticky;top:0;z-index:50}
+.shell{max-width:720px;margin:0 auto;padding:0 24px}
+
+/* ── Header ── */
+.site-head{padding:18px 0;border-bottom:1px solid var(--rule)}
+.site-head-inner{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.wordmark{font-family:var(--sans);font-size:0.8125rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink)}
+.head-meta{font-family:var(--mono);font-size:10px;letter-spacing:0.06em;text-transform:uppercase;color:var(--mute);text-align:right}
+
+/* ── Reveal ── */
+[data-reveal]{opacity:0;transform:translateY(20px);transition:opacity .6s cubic-bezier(0.22,1,0.36,1),transform .6s cubic-bezier(0.22,1,0.36,1)}
+[data-reveal].in-view{opacity:1;transform:translateY(0)}
+@media (prefers-reduced-motion: reduce){
+  [data-reveal]{opacity:1;transform:none;transition:none}
+  .bar-fill{transition:none !important}
+}
+
+/* ── Sections ── */
+.sec{padding:56px 0;border-top:1px solid var(--rule)}
+.sec:first-of-type{border-top:0}
+.sec-mark{font-family:var(--mono);font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:var(--orange);margin-bottom:18px}
+.h-eyebrow{font-family:var(--mono);font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:var(--warm-gray);margin-bottom:22px}
+.h-lead{font-family:var(--serif);font-size:clamp(34px,5.6vw,56px);line-height:1.04;letter-spacing:-0.02em;color:var(--ink)}
+.h-lead em{font-style:italic}
+.h-sub{font-size:clamp(15px,1.85vw,17px);line-height:1.65;color:var(--ink-2);margin-top:22px;max-width:620px}
+.h2{font-family:var(--serif);font-size:clamp(28px,4.2vw,42px);line-height:1.08;letter-spacing:-0.018em;margin-bottom:18px}
+.h2 em{font-style:italic}
+.lead-p{font-size:15px;line-height:1.72;color:var(--ink);margin-bottom:18px;max-width:620px}
+.intro{font-size:15px;line-height:1.7;color:var(--ink);margin-bottom:28px;max-width:620px}
+
+/* ── Verdict block ── */
+.verdict{background:var(--ink);color:var(--cream);padding:28px 28px 28px 26px;border-left:3px solid var(--orange);font-family:var(--serif);font-style:italic;font-size:clamp(18px,2.4vw,22px);line-height:1.4;margin-top:32px;position:relative;overflow:hidden}
+.verdict::before{content:"";position:absolute;inset:0;background-image:repeating-linear-gradient(0deg,rgba(196,80,26,0.04) 0 1px,transparent 1px 40px),repeating-linear-gradient(90deg,rgba(196,80,26,0.04) 0 1px,transparent 1px 40px);pointer-events:none}
+.verdict>*{position:relative}
+
+/* ── Stat grid ── */
+.stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:6px}
+.stat-card{background:var(--card-bg);border:1px solid var(--light-rule);padding:22px 18px;display:flex;flex-direction:column;gap:10px;opacity:0;transform:translateY(20px);transition:opacity .6s cubic-bezier(0.22,1,0.36,1),transform .6s cubic-bezier(0.22,1,0.36,1);transition-delay:calc(var(--i) * 80ms)}
+.stat-card.in-view{opacity:1;transform:translateY(0)}
+.stat-label{font-family:var(--mono);font-size:9px;letter-spacing:0.07em;text-transform:uppercase;color:var(--mute)}
+.stat-num{font-family:var(--mono);font-weight:500;font-size:clamp(28px,4.5vw,40px);line-height:1;letter-spacing:-0.02em}
+.stat-num.red{color:var(--red-flag)}
+.stat-num.amber{color:var(--amber-flag)}
+.stat-num.green{color:var(--green-flag)}
+.stat-desc{font-size:12px;line-height:1.5;color:var(--ink-2)}
+
+/* ── Callout ── */
+.callout{border-left:3px solid var(--orange);background:rgba(196,80,26,0.06);padding:20px 22px;margin-top:26px;font-size:14.5px;line-height:1.7;color:var(--ink)}
+.callout strong{font-weight:600}
+
+/* ── Bar chart ── */
+.bar-chart{margin-top:28px;display:flex;flex-direction:column;gap:14px}
+.bar-row{display:grid;grid-template-columns:1fr;gap:6px}
+.bar-meta{display:flex;justify-content:space-between;align-items:baseline;font-size:13px}
+.bar-name{font-family:var(--sans);font-weight:500;color:var(--ink)}
+.bar-val{font-family:var(--mono);font-size:12px;color:var(--ink-2)}
+.bar-track{height:14px;background:rgba(14,14,14,0.06);position:relative;overflow:hidden}
+.bar-fill{height:100%;width:0;background:var(--ink);transition:width 1s cubic-bezier(0.22,1,0.36,1)}
+.bar-row.in-view .bar-fill{width:var(--bar-width)}
+.bar-row.is-ithera .bar-name,.bar-row.is-ithera .bar-val{color:var(--orange);font-weight:600}
+.bar-row.is-ithera .bar-fill{background:var(--orange)}
+.chart-source{font-family:var(--mono);font-size:10px;letter-spacing:0.05em;color:var(--warm-gray);margin-top:18px}
+
+/* ── Engine + Topic cards ── */
+.engine-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:24px}
+.engine-card{background:var(--card-bg);border:1px solid var(--light-rule);padding:20px 18px;opacity:0;transform:translateY(20px);transition:opacity .6s cubic-bezier(0.22,1,0.36,1),transform .6s cubic-bezier(0.22,1,0.36,1);transition-delay:calc(var(--i) * 80ms)}
+.engine-card.in-view{opacity:1;transform:translateY(0)}
+.engine-name{font-family:var(--mono);font-size:10px;letter-spacing:0.07em;text-transform:uppercase;color:var(--mute);margin-bottom:10px}
+.engine-score{font-family:var(--mono);font-weight:500;font-size:clamp(26px,3.5vw,32px);line-height:1;margin-bottom:12px;letter-spacing:-0.01em}
+.engine-status{font-family:var(--mono);font-size:10px;letter-spacing:0.06em;text-transform:uppercase}
+.status-red{color:var(--red-flag)}
+.status-amber{color:var(--amber-flag)}
+.status-green{color:var(--green-flag)}
+
+.topic-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:24px}
+.topic-card{background:var(--card-bg);border:1px solid var(--light-rule);padding:18px;display:flex;flex-direction:column;gap:8px;opacity:0;transform:translateY(20px);transition:opacity .6s cubic-bezier(0.22,1,0.36,1),transform .6s cubic-bezier(0.22,1,0.36,1);transition-delay:calc(var(--i) * 80ms)}
+.topic-card.in-view{opacity:1;transform:translateY(0)}
+.topic-head{display:flex;align-items:center;gap:10px}
+.topic-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.topic-dot.red{background:var(--red-flag)}
+.topic-dot.amber{background:var(--amber-flag)}
+.topic-name{font-family:var(--sans);font-weight:500;font-size:14px;color:var(--ink)}
+.topic-status{font-family:var(--mono);font-size:9px;letter-spacing:0.06em;text-transform:uppercase}
+.topic-detail{font-size:13px;color:var(--mute);line-height:1.55}
+
+/* ── Prompt results ── */
+.prompt-list{display:flex;flex-direction:column;gap:26px;margin-top:24px}
+.prompt-card{border-top:1px solid var(--rule);padding-top:22px}
+.prompt-q{font-family:var(--serif);font-style:italic;font-size:clamp(18px,2.3vw,22px);line-height:1.35;color:var(--ink);margin-bottom:14px}
+.prompt-rec{font-size:14px;line-height:1.65;color:var(--ink-2);margin-bottom:8px}
+.prompt-rec-label{font-family:var(--mono);font-size:10px;letter-spacing:0.07em;text-transform:uppercase;color:var(--mute);margin-right:6px}
+.prompt-miss{font-family:var(--mono);font-size:12px;color:var(--red-flag);letter-spacing:0.01em}
+.prompt-miss em{font-style:normal;color:var(--mute);font-family:var(--sans);font-size:13px;letter-spacing:0;margin-left:6px}
+
+/* ── Issue list ── */
+.issue-list{display:flex;flex-direction:column;gap:18px;margin-top:24px}
+.issue{display:grid;grid-template-columns:14px 1fr;gap:14px;align-items:start}
+.issue-dot{width:10px;height:10px;border-radius:50%;margin-top:6px}
+.issue-dot.red{background:var(--red-flag)}
+.issue-dot.amber{background:var(--amber-flag)}
+.issue-body strong{display:block;font-weight:600;color:var(--ink);font-size:14.5px;line-height:1.5;margin-bottom:4px}
+.issue-body p{font-size:14px;line-height:1.62;color:var(--mute)}
+
+/* ── Plan cards ── */
+.plan-grid{display:grid;grid-template-columns:1fr;gap:18px;margin-top:24px}
+.plan-card{background:var(--card-bg);border:1px solid var(--light-rule);padding:24px 24px 24px 24px;opacity:0;transform:translateY(20px);transition:opacity .6s cubic-bezier(0.22,1,0.36,1),transform .6s cubic-bezier(0.22,1,0.36,1);transition-delay:calc(var(--i) * 80ms)}
+.plan-card.in-view{opacity:1;transform:translateY(0)}
+.plan-head{display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid var(--rule);padding-bottom:12px;margin-bottom:14px;gap:14px}
+.plan-name{font-family:var(--serif);font-style:italic;font-size:22px;color:var(--ink)}
+.plan-days{font-family:var(--mono);font-size:10px;letter-spacing:0.07em;text-transform:uppercase;color:var(--mute)}
+.plan-list{list-style:none;padding:0;margin:0}
+.plan-list li{font-size:14px;line-height:1.6;padding:8px 0 8px 22px;position:relative;border-bottom:1px solid rgba(14,14,14,0.06)}
+.plan-list li:last-child{border-bottom:0}
+.plan-list li::before{content:"+";position:absolute;left:0;top:8px;font-family:var(--mono);font-size:12px;color:var(--orange);font-weight:500}
+
+/* ── KPI table ── */
+.kpi-wrap{margin-top:24px;border:1px solid var(--light-rule);background:var(--card-bg);overflow-x:auto}
+.kpi-table{width:100%;border-collapse:collapse;min-width:480px}
+.kpi-table th{background:var(--ink);color:var(--cream);font-family:var(--mono);font-weight:400;font-size:10px;letter-spacing:0.06em;text-transform:uppercase;text-align:left;padding:11px 14px}
+.kpi-table th:not(:first-child){text-align:right}
+.kpi-table td{padding:13px 14px;font-size:13.5px;border-top:1px solid var(--rule)}
+.kpi-table td:not(:first-child){text-align:right;font-family:var(--mono)}
+.kpi-table tr:first-child td{border-top:0}
+.kpi-table .kpi-metric{font-weight:500}
+.kpi-today{color:var(--red-flag)}
+.kpi-future{color:var(--green-flag)}
+
+/* ── Footer ── */
+.site-foot{padding:48px 0 56px;border-top:1px solid var(--rule);margin-top:64px}
+.foot-mono{font-family:var(--mono);font-size:11px;letter-spacing:0.07em;text-transform:uppercase;color:var(--mute);text-align:center}
+.foot-note{font-family:var(--sans);font-size:13px;line-height:1.6;color:var(--mute);text-align:center;margin-top:14px}
+.foot-link{display:block;text-align:center;margin-top:32px;font-family:var(--mono);font-size:11px;letter-spacing:0.07em;text-transform:uppercase;color:var(--orange)}
+.foot-link:hover{color:var(--ink)}
+
+/* ── Mobile ── */
+@media (max-width: 768px){
+  .stat-grid{grid-template-columns:repeat(2,1fr)}
+  .engine-grid{grid-template-columns:1fr}
+  .topic-grid{grid-template-columns:1fr}
+  .head-meta{font-size:9px}
+  .sec{padding:44px 0}
+}
+@media (max-width: 480px){
+  .stat-grid{grid-template-columns:1fr}
+  .shell{padding:0 18px}
+  .site-head-inner{flex-direction:column;align-items:flex-start;gap:6px}
+  .head-meta{text-align:left}
+}
+</style>
+</head>
+<body>
+<div class="top-rule"></div>
+
+<header class="site-head">
+  <div class="shell site-head-inner">
+    <a href="https://masterful-app.com" class="wordmark">Masterful</a>
+    <div class="head-meta">Search Visibility Report<br>June 2026</div>
+  </div>
+</header>
+
+<main class="shell">
+
+  <!-- HERO -->
+  <section class="sec" data-reveal>
+    <div class="h-eyebrow">Prepared for Waithera Mugo, Founder, Ithera Africa</div>
+    <h1 class="h-lead">Your expertise is real.<br>Your online visibility<br>is <em>not</em>.</h1>
+    <p class="h-sub">This report measures how visible Ithera Africa is when potential clients search for tax, legal, and succession advisory in Nairobi, on Google, and on AI platforms like ChatGPT, Gemini, and Google AI Overviews. The findings are clear: Ithera has top-tier expertise and near-zero findability. The good news is that the gap is technical, not creative, which means it is fixable.</p>
+    <div class="verdict" data-reveal>
+      Ithera has won KES 38M in tax defences, KES 37M waived, KES 159M secured. Published 13 articles. Reached two podcast audiences. Almost none of that authority is reaching the platforms where your next client is searching.
+    </div>
+  </section>
+
+  <!-- § I SNAPSHOT -->
+  <section class="sec">
+    <div class="sec-mark" data-reveal>§ I — The Snapshot</div>
+    <h2 class="h2" data-reveal>The numbers, before any spin.</h2>
+    <div class="stat-grid">
+      <div class="stat-card" style="--i:0">
+        <div class="stat-label">AI Visibility Score</div>
+        <div class="stat-num red" data-counter="0.8" data-suffix="%">0%</div>
+        <div class="stat-desc">of AI conversations mention Ithera</div>
+      </div>
+      <div class="stat-card" style="--i:1">
+        <div class="stat-label">Domain Rating</div>
+        <div class="stat-num red" data-counter="1.6">0</div>
+        <div class="stat-desc">out of 100</div>
+      </div>
+      <div class="stat-card" style="--i:2">
+        <div class="stat-label">Pages with Meta Tags</div>
+        <div class="stat-num red" data-counter="0" data-suffix="/12">0/12</div>
+        <div class="stat-desc">pages optimized for search</div>
+      </div>
+      <div class="stat-card" style="--i:3">
+        <div class="stat-label">Pages with Schema Data</div>
+        <div class="stat-num red" data-counter="0" data-suffix="/12">0/12</div>
+        <div class="stat-desc">pages readable by AI</div>
+      </div>
+      <div class="stat-card" style="--i:4">
+        <div class="stat-label">CSS Files on Homepage</div>
+        <div class="stat-num amber" data-counter="30">0</div>
+        <div class="stat-desc">industry benchmark: 4 to 8</div>
+      </div>
+      <div class="stat-card" style="--i:5">
+        <div class="stat-label">Monthly Organic Visitors</div>
+        <div class="stat-num red">&lt;50</div>
+        <div class="stat-desc">estimated</div>
+      </div>
+    </div>
+    <div class="callout" data-reveal>
+      <strong>What these numbers mean in plain language:</strong> When someone in Nairobi Googles "tax advisory," "family trust Kenya," or "succession planning advocate," Ithera does not appear. When they ask ChatGPT or Gemini the same question, Ithera is mentioned less than 1% of the time. Your competitors are showing up instead.
+    </div>
+  </section>
+
+  <!-- § II AI SEARCH PRESENCE -->
+  <section class="sec">
+    <div class="sec-mark" data-reveal>§ II — AI Search Presence</div>
+    <h2 class="h2" data-reveal>When a client asks AI for help, who gets <em>recommended</em>?</h2>
+    <p class="intro" data-reveal>In 2026, the first second opinion most high-net-worth clients get is from an AI engine. ChatGPT, Gemini, and Google AI Overviews have replaced "asking around." We tracked 17 questions a prospective client would ask across these platforms. Here is how often each firm gets mentioned.</p>
+
+    <div class="bar-chart" id="bar-chart">
+      <div class="bar-row" style="--bar-width:100%"><div class="bar-meta"><span class="bar-name">Bowmans</span><span class="bar-val">21.7%</span></div><div class="bar-track"><div class="bar-fill"></div></div></div>
+      <div class="bar-row" style="--bar-width:30.9%"><div class="bar-meta"><span class="bar-name">CM Advocates LLP</span><span class="bar-val">6.7%</span></div><div class="bar-track"><div class="bar-fill"></div></div></div>
+      <div class="bar-row" style="--bar-width:30.0%"><div class="bar-meta"><span class="bar-name">JMK Advocates</span><span class="bar-val">6.5%</span></div><div class="bar-track"><div class="bar-fill"></div></div></div>
+      <div class="bar-row" style="--bar-width:27.2%"><div class="bar-meta"><span class="bar-name">CR Advocates LLP</span><span class="bar-val">5.9%</span></div><div class="bar-track"><div class="bar-fill"></div></div></div>
+      <div class="bar-row" style="--bar-width:25.3%"><div class="bar-meta"><span class="bar-name">WKA Advocates</span><span class="bar-val">5.5%</span></div><div class="bar-track"><div class="bar-fill"></div></div></div>
+      <div class="bar-row" style="--bar-width:22.6%"><div class="bar-meta"><span class="bar-name">Grant Thornton KE</span><span class="bar-val">4.9%</span></div><div class="bar-track"><div class="bar-fill"></div></div></div>
+      <div class="bar-row" style="--bar-width:21.7%"><div class="bar-meta"><span class="bar-name">Cliffe Dekker Hofmeyr</span><span class="bar-val">4.7%</span></div><div class="bar-track"><div class="bar-fill"></div></div></div>
+      <div class="bar-row is-ithera" style="--bar-width:3.7%"><div class="bar-meta"><span class="bar-name">Ithera Africa</span><span class="bar-val">0.8%</span></div><div class="bar-track"><div class="bar-fill"></div></div></div>
+      <div class="bar-row" style="--bar-width:0%"><div class="bar-meta"><span class="bar-name">Viva Africa LLP</span><span class="bar-val">0.0%</span></div><div class="bar-track"><div class="bar-fill"></div></div></div>
+    </div>
+    <div class="chart-source">Data from Peec.ai monitoring dashboard. 506 AI conversations tracked across ChatGPT, Gemini, and Google AI Overviews. 12-13 June 2026.</div>
+
+    <div class="callout" data-reveal>
+      <strong>What this means for Ithera:</strong> Bowmans gets recommended in roughly 1 out of every 5 AI conversations about Kenyan tax and legal advisory. Ithera gets recommended in fewer than 1 out of 100. The firms getting cited often have less real expertise than Ithera. They have more machine-readable signal. That is the gap we close.
+    </div>
+  </section>
+
+  <!-- § III PLATFORM BREAKDOWN -->
+  <section class="sec">
+    <div class="sec-mark" data-reveal>§ III — Platform Breakdown</div>
+    <h2 class="h2" data-reveal>Where Ithera shows up, and where it does <em>not</em>.</h2>
+    <p class="intro" data-reveal>We tested Ithera's presence across three major AI platforms. Only ChatGPT mentioned Ithera at all, and even there, in fewer than 3% of conversations. Gemini and Google AI Overviews returned zero mentions.</p>
+
+    <div class="engine-grid">
+      <div class="engine-card" style="--i:0">
+        <div class="engine-name">ChatGPT</div>
+        <div class="engine-score" style="color:var(--amber-flag)">2.4%</div>
+        <div class="engine-status status-amber">Rare mentions</div>
+      </div>
+      <div class="engine-card" style="--i:1">
+        <div class="engine-name">Gemini</div>
+        <div class="engine-score" style="color:var(--red-flag)">0%</div>
+        <div class="engine-status status-red">Not cited</div>
+      </div>
+      <div class="engine-card" style="--i:2">
+        <div class="engine-name">Google AI Overview</div>
+        <div class="engine-score" style="color:var(--red-flag)">0%</div>
+        <div class="engine-status status-red">Not cited</div>
+      </div>
+    </div>
+
+    <div class="topic-grid">
+      <div class="topic-card" style="--i:0">
+        <div class="topic-head"><span class="topic-dot red"></span><span class="topic-name">Tax Disputes &amp; KRA</span></div>
+        <div class="topic-status status-red">Absent</div>
+        <div class="topic-detail">Not cited in any of 119 conversations.</div>
+      </div>
+      <div class="topic-card" style="--i:1">
+        <div class="topic-head"><span class="topic-dot red"></span><span class="topic-name">Family Trust &amp; Estate</span></div>
+        <div class="topic-status status-red">Absent</div>
+        <div class="topic-detail">Not cited in any of 90 conversations.</div>
+      </div>
+      <div class="topic-card" style="--i:2">
+        <div class="topic-head"><span class="topic-dot red"></span><span class="topic-name">Cross-border Tax</span></div>
+        <div class="topic-status status-red">Absent</div>
+        <div class="topic-detail">Not cited in any of 60 conversations.</div>
+      </div>
+      <div class="topic-card" style="--i:3">
+        <div class="topic-head"><span class="topic-dot red"></span><span class="topic-name">Corporate Structuring</span></div>
+        <div class="topic-status status-red">Absent</div>
+        <div class="topic-detail">Not cited in any of 60 conversations.</div>
+      </div>
+      <div class="topic-card" style="--i:4">
+        <div class="topic-head"><span class="topic-dot amber"></span><span class="topic-name">Tax Advisory (General)</span></div>
+        <div class="topic-status status-amber">Minimal</div>
+        <div class="topic-detail">Cited in 3 of 90 conversations (3.3%).</div>
+      </div>
+      <div class="topic-card" style="--i:5">
+        <div class="topic-head"><span class="topic-dot amber"></span><span class="topic-name">Succession Planning</span></div>
+        <div class="topic-status status-amber">Minimal</div>
+        <div class="topic-detail">Cited in 1 of 87 conversations (1.2%).</div>
+      </div>
+    </div>
+
+    <div class="callout" data-reveal>
+      <strong>The key finding:</strong> Ithera's flagship services, family trusts and KRA dispute resolution, are the exact areas where AI gives zero visibility. These are also the highest-intent queries, where a single recommendation converts to a strategy call. Every day this stays unfixed, those referrals go to CM Advocates, WKA Advocates, and JMK Advocates instead.
+    </div>
+  </section>
+
+  <!-- § IV REAL AI RESPONSES -->
+  <section class="sec">
+    <div class="sec-mark" data-reveal>§ IV — Real AI Responses</div>
+    <h2 class="h2" data-reveal>What happens when a prospect asks AI for a <em>recommendation</em>.</h2>
+    <p class="intro" data-reveal>We asked ChatGPT, Gemini, and Perplexity four questions your ideal client would ask. Here is who they recommended.</p>
+
+    <div class="prompt-list">
+      <div class="prompt-card" data-reveal>
+        <div class="prompt-q">"Who are the best tax lawyers in Nairobi for KRA disputes?"</div>
+        <div class="prompt-rec"><span class="prompt-rec-label">AI recommended</span>Kariuki Muigua, Bond Advocates, CR Advocates, Njoroge Regeru, Dentons</div>
+        <div class="prompt-miss">→ Ithera Africa: not mentioned</div>
+      </div>
+      <div class="prompt-card" data-reveal>
+        <div class="prompt-q">"How do I set up a family trust in Kenya, step by step?"</div>
+        <div class="prompt-rec"><span class="prompt-rec-label">AI recommended</span>WKA Advocates, CM Advocates, Anyanzwa J.S, MMS Advocates, AMG Advocates</div>
+        <div class="prompt-miss">→ Ithera Africa: not mentioned <em>despite publishing a full guide on this topic.</em></div>
+      </div>
+      <div class="prompt-card" data-reveal>
+        <div class="prompt-q">"Best succession planning advocate in Kenya for a family business."</div>
+        <div class="prompt-rec"><span class="prompt-rec-label">AI recommended</span>Waithaka Advocates, KNK Advocates, JMK Advocates, B.I.K Advocates, CR Advocates</div>
+        <div class="prompt-miss">→ Ithera Africa: not mentioned <em>despite this being the flagship service.</em></div>
+      </div>
+      <div class="prompt-card" data-reveal>
+        <div class="prompt-q">"Top tax advisory firms in Nairobi 2026."</div>
+        <div class="prompt-rec"><span class="prompt-rec-label">AI recommended</span>Adamjee Auditors, Grant Thornton, PKF Eastern Africa, Gichuri &amp; Partners</div>
+        <div class="prompt-miss">→ Ithera Africa: not mentioned</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- § V ROOT CAUSE -->
+  <section class="sec">
+    <div class="sec-mark" data-reveal>§ V — The Root Cause</div>
+    <h2 class="h2" data-reveal>Why Ithera is invisible, and why it is <em>fixable</em>.</h2>
+    <p class="lead-p" data-reveal>The problem is not the quality of Ithera's work. The problem is that none of it is formatted in a way that search engines and AI platforms can read. Think of it this way: Ithera has a superb library, but the catalogue is empty. The books are there. The index cards are missing.</p>
+
+    <div class="issue-list">
+      <div class="issue" data-reveal>
+        <span class="issue-dot red"></span>
+        <div class="issue-body"><strong>No meta descriptions on any page.</strong><p>Meta descriptions tell Google what each page is about. Without them, Google writes its own summary, usually poorly.</p></div>
+      </div>
+      <div class="issue" data-reveal>
+        <span class="issue-dot red"></span>
+        <div class="issue-body"><strong>No structured data (JSON-LD schema) on any page.</strong><p>Structured data is how you tell AI engines "this is a legal service, this is the founder, these are the services offered." Without it, AI ignores you.</p></div>
+      </div>
+      <div class="issue" data-reveal>
+        <span class="issue-dot red"></span>
+        <div class="issue-body"><strong>No Open Graph images.</strong><p>When someone shares an Ithera link on WhatsApp or LinkedIn, no preview image appears. Missing previews reduce click-through by 40 to 60%.</p></div>
+      </div>
+      <div class="issue" data-reveal>
+        <span class="issue-dot red"></span>
+        <div class="issue-body"><strong>Blog posts authored as "Ithera" instead of "Waithera Mugo".</strong><p>Google and AI look for named human authors with verifiable credentials. "Ithera" is generic. "Waithera Mugo, Advocate of the High Court" is authority.</p></div>
+      </div>
+      <div class="issue" data-reveal>
+        <span class="issue-dot red"></span>
+        <div class="issue-body"><strong>No Google Business Profile.</strong><p>When someone searches "tax advisory near me" in Nairobi, the local map results cannot show Ithera.</p></div>
+      </div>
+      <div class="issue" data-reveal>
+        <span class="issue-dot amber"></span>
+        <div class="issue-body"><strong>Half the published content is hidden.</strong><p>The Resources page shows 6 of 13 published articles. Seven of Ithera's strongest pieces are published but invisible.</p></div>
+      </div>
+      <div class="issue" data-reveal>
+        <span class="issue-dot amber"></span>
+        <div class="issue-body"><strong>Homepage loads 30 stylesheets and 27 scripts.</strong><p>Industry benchmark: 4 to 8 stylesheets. Current load time: 4.5 to 7 seconds on Nairobi 4G.</p></div>
+      </div>
+      <div class="issue" data-reveal>
+        <span class="issue-dot amber"></span>
+        <div class="issue-body"><strong>WordPress "Sample Page" still live and indexed.</strong><p>The default WordPress placeholder is in the sitemap. To a serious buyer, it reads as unfinished.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- § VI 90-DAY PLAN -->
+  <section class="sec">
+    <div class="sec-mark" data-reveal>§ VI — The 90-Day Plan</div>
+    <h2 class="h2" data-reveal>How we close the gap, <em>step by step</em>.</h2>
+    <p class="intro" data-reveal>The work below uses what Ithera already has: the case wins, the published posts, the sister-firm relationship, the podcast appearances. No new content is required in the first 30 days.</p>
+
+    <div class="plan-grid">
+      <div class="plan-card" style="--i:0">
+        <div class="plan-head"><div class="plan-name">Foundation</div><div class="plan-days">Days 0 – 30</div></div>
+        <ul class="plan-list">
+          <li>Rewrite all 12 page titles and add meta descriptions</li>
+          <li>Add Open Graph images for branded link sharing</li>
+          <li>Deploy structured data (LegalService, Person, Article, FAQPage)</li>
+          <li>Delete the WordPress sample page</li>
+          <li>Surface all 13 articles on the Resources page</li>
+          <li>Claim and verify Google Business Profile</li>
+          <li>Submit 5 directory listings</li>
+          <li>Replace "Ithera" byline with "Waithera Mugo, Advocate" plus author bio</li>
+          <li>Fix the contact page encoding bug</li>
+        </ul>
+      </div>
+      <div class="plan-card" style="--i:1">
+        <div class="plan-head"><div class="plan-name">Capture</div><div class="plan-days">Days 31 – 60</div></div>
+        <ul class="plan-list">
+          <li>Rebuild Family Trust, KRA Disputes, and Succession pages for search</li>
+          <li>Publish 3 case study landing pages (KES 38M, 37M, 159M wins)</li>
+          <li>Reclaim podcast backlinks from Founder Diaries and Financially Incorrect</li>
+          <li>Internal link transfer from wmcoadvocates.co.ke to Ithera</li>
+          <li>Performance pass: reduce CSS files from 30 to 4 or 6</li>
+          <li>Secure 3 high-authority backlinks</li>
+        </ul>
+      </div>
+      <div class="plan-card" style="--i:2">
+        <div class="plan-head"><div class="plan-name">Compound</div><div class="plan-days">Days 61 – 90</div></div>
+        <ul class="plan-list">
+          <li>Publish 4 new evergreen pages engineered for AI citation</li>
+          <li>Weekly AI citation tracking via Peec.ai</li>
+          <li>Begin overtaking Viva Africa LLP (target DR 8 to 14)</li>
+          <li>Launch Ithera Tax Pulse newsletter</li>
+          <li>Prepare Chambers and Legal 500 submission</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- § VII PROJECTION -->
+  <section class="sec">
+    <div class="sec-mark" data-reveal>§ VII — 12-Month Projection</div>
+    <h2 class="h2" data-reveal>What the numbers look like <em>after execution</em>.</h2>
+
+    <div class="kpi-wrap" data-reveal>
+      <table class="kpi-table">
+        <thead>
+          <tr><th>Metric</th><th>Today</th><th>Day 90</th><th>Day 365</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="kpi-metric">Domain Rating</td><td class="kpi-today">1.6</td><td>5 – 8</td><td class="kpi-future">15 – 20</td></tr>
+          <tr><td class="kpi-metric">AI Citation Rate</td><td class="kpi-today">0.8%</td><td>10 – 15%</td><td class="kpi-future">50 – 65%</td></tr>
+          <tr><td class="kpi-metric">Monthly Organic Visitors</td><td class="kpi-today">&lt;50</td><td>250 – 400</td><td class="kpi-future">1,500 – 2,500</td></tr>
+          <tr><td class="kpi-metric">Ranking Keywords (Kenya)</td><td class="kpi-today">~5</td><td>30 – 50</td><td class="kpi-future">200 – 300</td></tr>
+          <tr><td class="kpi-metric">Monthly Inbound Enquiries</td><td class="kpi-today">baseline</td><td>+2 – 4</td><td class="kpi-future">+15 – 25</td></tr>
+          <tr><td class="kpi-metric">Homepage Load Time</td><td class="kpi-today">~5 – 7s</td><td>~3s</td><td class="kpi-future">&lt;1.8s</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout" data-reveal>
+      <strong>What this means commercially:</strong> At Day-365 targets, monthly inbound qualified enquiries increase by an estimated 15 to 25 new conversations per month. At a 15 to 25% conversion rate, the ROI calculation becomes yours to model against the value of a single client engagement.
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-foot">
+  <div class="shell">
+    <div class="foot-mono">Masterful / Search Visibility Studio / Nairobi / June 2026</div>
+    <div class="foot-note">This report is the product. Ithera retains it with or without engagement.</div>
+    <a href="offer/" class="foot-link">View the service proposal →</a>
+    <div class="foot-note" style="margin-top:32px">Jordan | Masterful</div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // Reveal observer
+  const revealObs = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        e.target.classList.add('in-view');
+        revealObs.unobserve(e.target);
+      }
+    });
+  },{threshold:0.12});
+  document.querySelectorAll('[data-reveal]').forEach(el=>revealObs.observe(el));
+
+  // Staggered cards (stat / engine / topic / plan)
+  document.querySelectorAll('.stat-card, .engine-card, .topic-card, .plan-card').forEach(el=>revealObs.observe(el));
+
+  // Bar chart: animate all bars together when chart enters view
+  const chart = document.getElementById('bar-chart');
+  if(chart){
+    const chartObs = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting){
+          chart.querySelectorAll('.bar-row').forEach((row,i)=>{
+            setTimeout(()=>row.classList.add('in-view'), i*80);
+          });
+          chartObs.unobserve(chart);
+        }
+      });
+    },{threshold:0.2});
+    chartObs.observe(chart);
+  }
+
+  // Counter animation
+  const countObs = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(!e.isIntersecting) return;
+      const el = e.target;
+      const target = parseFloat(el.dataset.counter);
+      const suffix = el.dataset.suffix || '';
+      const isFloat = String(el.dataset.counter).includes('.');
+      const duration = 800;
+      const start = performance.now();
+      function tick(now){
+        const t = Math.min(1, (now-start)/duration);
+        const eased = 1 - Math.pow(1-t, 3);
+        const val = target * eased;
+        el.textContent = (isFloat ? val.toFixed(1) : Math.round(val)) + suffix;
+        if(t<1) requestAnimationFrame(tick);
+        else el.textContent = (isFloat ? target.toFixed(1) : Math.round(target)) + suffix;
+      }
+      requestAnimationFrame(tick);
+      countObs.unobserve(el);
+    });
+  },{threshold:0.5});
+  document.querySelectorAll('[data-counter]').forEach(el=>countObs.observe(el));
+})();
+</script>
+</body>
+</html>
