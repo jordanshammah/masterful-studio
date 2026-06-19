@@ -1,6 +1,6 @@
 ---
 title: "How Coaches Get Recommended by ChatGPT in 2026"
-description: "When prospects ask ChatGPT for the best coach, the model names coaches it can verify across your site, reviews, directories, LinkedIn, podcasts, and press. The 5 surfaces in priority order, plus a 30-day starting plan."
+description: "When prospects ask ChatGPT for the best coach, it names ones it can verify across reviews, directories, LinkedIn and press. The five surfaces, ranked."
 headline: "How coaches get recommended by ChatGPT in 2026"
 schemaDescription: "ChatGPT names coaches it can verify across your site, reviews, directories, LinkedIn, podcasts, and press. The 5 surfaces in priority order, plus a 30-day starting plan."
 datePublished: "2026-06-10"

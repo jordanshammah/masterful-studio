@@ -1,17 +1,33 @@
-# Trailing-slash normalization for directory roots.
-# Cloudflare Pages' default html_handling issues a 307 from /journal to
-# /journal/, which Google follows but treats as a weaker SEO signal than
-# a 301. These explicit rules give a deterministic single 301 to the
-# canonical slashed form, matching the canonical link tags and sitemap.
+# Trailing-slash normalization. Cloudflare Pages' default html_handling
+# issues a weaker temporary redirect from /journal to /journal/, and the
+# naked URLs Google indexed without an explicit rule landed in a redirect
+# chain. These explicit rules give every flagged naked URL a deterministic
+# single 301 to the canonical slashed form, matching the canonical link
+# tags and the sitemap. One policy, one hop, https, no loop.
+/about    /about/    301
+/process  /process/  301
 /journal  /journal/  301
 /work     /work/     301
 /audit    /audit/    301
 
-# Service silo moved to trailing-slash canonical URLs in the Astro migration.
-# 301 the legacy no-slash pillar URLs to their slashed canonical form.
-/services/seo  /services/seo/  301
-/services/aeo  /services/aeo/  301
-/services/geo  /services/geo/  301
+# Sectors: index plus every live spoke. These were the naked URLs GSC
+# reported as redirect errors; pin each to a single 301.
+/sectors                     /sectors/                     301
+/sectors/saas                /sectors/saas/                301
+/sectors/law-firms           /sectors/law-firms/           301
+/sectors/hospitality         /sectors/hospitality/         301
+/sectors/nairobi-businesses  /sectors/nairobi-businesses/  301
+
+# Journal article flagged by GSC (the rest are normalized by Pages' built-in
+# directory handling; this one was indexed without a slash and erroring).
+/journal/google-replaced-the-search-bar  /journal/google-replaced-the-search-bar/  301
+
+# Service silo: index, pillars, and spokes on trailing-slash canonical URLs.
+/services            /services/            301
+/services/seo        /services/seo/        301
+/services/aeo        /services/aeo/        301
+/services/geo        /services/geo/        301
+/services/web-design /services/web-design/ 301
 
 # /proof/ recalled 2026-06-10; send the already-pinged URL to the citation guide.
 /proof/  /journal/get-cited-by-chatgpt/  301

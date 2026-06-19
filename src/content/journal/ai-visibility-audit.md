@@ -1,6 +1,6 @@
 ---
 title: "AI Visibility Audit: What It Should Include in 2026"
-description: "A real AI visibility audit runs your buyer questions through the major AI platforms, logs every citation, and ends in a prioritized fix list. What to demand, what it costs, and the test that exposes a weak vendor."
+description: "A real AI visibility audit runs your buyer questions through the major AI platforms, logs every citation and ends in a prioritized fix list."
 headline: "AI visibility audit: what it should include in 2026"
 schemaDescription: "A real AI visibility audit runs your buyer questions through the major AI platforms, logs every citation, and ends in a prioritized fix list. What to demand and what it costs."
 datePublished: "2026-06-10"

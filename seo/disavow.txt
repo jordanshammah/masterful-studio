@@ -1,0 +1,18 @@
+# Google disavow file for masterful-app.com
+#
+# Status: TEMPLATE. No Ahrefs referring-domains export was present in the repo
+# when this was generated (2026-06-19), so no domains are listed yet.
+#
+# To finish:
+#   1. In Ahrefs, open Site Explorer for masterful-app.com > Referring domains.
+#   2. Export the referring domains and review for spam (PBNs, link farms,
+#      scraper mirrors, irrelevant foreign-language link networks, etc.).
+#   3. Add one entry per spam domain below, in the form:  domain:example.com
+#   4. Upload this file in the Google Search Console Disavow Links tool.
+#
+# Only disavow links you are confident are harmful. Disavowing good links
+# can reduce rankings. When unsure, leave it out.
+#
+# Example (remove before uploading):
+# domain:spammy-link-farm.example
+# domain:scraper-mirror.example

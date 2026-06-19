@@ -20,6 +20,26 @@ const breadcrumb = {
     { '@type': 'ListItem', position: 2, name: 'Free Audit', item: `${SITE}/audit/` },
   ],
 };
+// Service + Offer for the paid full audit ($397), which this page sells via the
+// ?type=full variant. Price is shown in the welcome step so the markup matches
+// visible copy.
+const serviceLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'AI Visibility Audit',
+  provider: { '@type': 'Organization', '@id': `${SITE}/#organization`, name: 'Masterful', url: `${SITE}/` },
+  description:
+    'Audit of how a brand appears across AI search engines and Google, with a prioritised list of fixes.',
+  areaServed: 'Worldwide',
+  url: `${SITE}/audit/`,
+  offers: {
+    '@type': 'Offer',
+    price: '397',
+    priceCurrency: 'USD',
+    availability: 'https://schema.org/InStock',
+    url: `${SITE}/audit/`,
+  },
+};
 ---
 <BaseLayout
   title="Free AI Visibility Audit | Masterful"
@@ -34,6 +54,7 @@ const breadcrumb = {
   <Fragment slot="schema">
     <script type="application/ld+json" set:html={JSON.stringify(orgLd)} />
     <script type="application/ld+json" set:html={JSON.stringify(breadcrumb)} />
+    <script type="application/ld+json" set:html={JSON.stringify(serviceLd)} />
   </Fragment>
 
   <main class="audit-shell">
@@ -74,7 +95,8 @@ const breadcrumb = {
           </div>
           <button class="btn btn-orange" onclick="goTo(1)" style="align-self:flex-start">Let's begin →</button>
           <p style="font-family:var(--mono);font-size:9px;letter-spacing:0.06em;text-transform:uppercase;color:var(--mute);margin-top:12px">or press ↵ Enter</p>
-          <p style="font-size:12px;line-height:1.6;color:var(--mute);margin-top:16px">Comparing options first? Read <a href="/journal/ai-visibility-audit/" class="link-ul" style="color:var(--orange)">what an AI visibility audit should include</a>.</p>
+          <p style="font-size:12px;line-height:1.6;color:var(--mute);margin-top:16px">This snapshot is free. The full audit covers 50 prompts across 6 AI tools, a competitor citation map and a 90-day plan, for $397.</p>
+          <p style="font-size:12px;line-height:1.6;color:var(--mute);margin-top:8px">Comparing options first? Read <a href="/journal/ai-visibility-audit/" class="link-ul" style="color:var(--orange)">what an AI visibility audit should include</a>.</p>
         </div>
 
         <!-- STEP 1: Who -->

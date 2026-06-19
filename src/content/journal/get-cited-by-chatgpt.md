@@ -1,6 +1,6 @@
 ---
 title: "How to Get Your Business Cited by ChatGPT: What Works in 2026"
-description: "ChatGPT cites businesses it can verify across the surfaces it searches: your site, Bing's index, reviews, and third-party mentions. The 5-step process, tested on our own site."
+description: "ChatGPT cites businesses it can verify across your site, Bing, reviews and third-party mentions. The five-step process, tested on our own site."
 headline: "How to get your business cited by ChatGPT: what works in 2026"
 schemaDescription: "ChatGPT cites businesses it can verify across the surfaces it searches: your site, Bing's index, reviews, and third-party mentions. The 5-step process, tested on our own site."
 datePublished: "2026-06-10"
