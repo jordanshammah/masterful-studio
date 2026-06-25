@@ -6,6 +6,12 @@
 
 - [SEO](https://masterful-app.com/services/seo/): Technical SEO, content strategy, topical authority for Google rankings.
 - [AEO](https://masterful-app.com/services/aeo/): Pages that ChatGPT, Perplexity, Claude, and Gemini cite by name. Prompt mapping, schema, model benchmarking.
+  - [AEO for ChatGPT](https://masterful-app.com/services/aeo/chatgpt/): Citation work tuned to ChatGPT's retrieval signals: Reddit, Wikipedia, and editorial publications.
+  - [AEO for Perplexity](https://masterful-app.com/services/aeo/perplexity/): Earning the editorial and primary-source slots Perplexity attributes next to every answer.
+  - [AEO for Google AI Overviews](https://masterful-app.com/services/aeo/google-ai-overviews/): Appearing above the blue links when Google's AI Overviews replace the click.
+  - [AEO for Gemini](https://masterful-app.com/services/aeo/gemini/): Visibility across Google's AI Overviews, the Gemini app, and Workspace.
+  - [AEO for Microsoft Copilot](https://masterful-app.com/services/aeo/copilot/): LinkedIn-led citation work for Copilot inside Microsoft 365, Edge, and Windows.
+  - [AEO for Claude](https://masterful-app.com/services/aeo/claude/): Verifiable expertise signals that earn citation from the AI technical buyers trust.
 - [GEO](https://masterful-app.com/services/geo/): Entity building on Wikipedia, Wikidata, and reference sources AI models read during training.
 
 ## How It Works
