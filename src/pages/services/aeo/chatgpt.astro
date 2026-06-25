@@ -1,0 +1,165 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../../components/Breadcrumb.astro';
+const SITE = 'https://masterful-app.com';
+const graph = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Service',
+      name: 'ChatGPT Citation Optimization',
+      alternateName: 'ChatGPT AEO',
+      description:
+        'Citation optimization for ChatGPT. We build the entity signals, content structure, and third-party presence that earns brand citation by name inside ChatGPT answers.',
+      provider: { '@type': 'ProfessionalService', '@id': `${SITE}/#organization`, name: 'Masterful', url: SITE },
+      serviceType: 'Answer Engine Optimization',
+      url: `${SITE}/services/aeo/chatgpt/`,
+      areaServed: ['Kenya', 'Nigeria', 'South Africa', 'Egypt', 'United Arab Emirates', 'United Kingdom', 'United States'],
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: [
+        { '@type': 'Question', name: 'Why does my brand rank on Google but not show up in ChatGPT?', acceptedAnswer: { '@type': 'Answer', text: 'The signals are different. Google rewards on-page optimization and backlinks. ChatGPT rewards branded mentions across the editorial and community web. A brand with a strong backlink profile and zero third-party discussion will rank in Google and remain invisible in ChatGPT.' } },
+        { '@type': 'Question', name: 'How fast can I expect to appear in ChatGPT after starting work?', acceptedAnswer: { '@type': 'Answer', text: 'Citation work shows measurable mention-rate movement within 8 to 14 weeks, depending on existing third-party presence and category competitiveness. ChatGPT updates its retrieval index continuously, so changes compound rather than waiting on a refresh.' } },
+        { '@type': 'Question', name: 'Does Citation Architecture work for non-English queries?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. The signal categories are the same. The sources differ per language. We build citation density in the publications and communities ChatGPT trusts in the target language.' } },
+      ],
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` },
+        { '@type': 'ListItem', position: 2, name: 'Services', item: `${SITE}/services/` },
+        { '@type': 'ListItem', position: 3, name: 'AEO', item: `${SITE}/services/aeo/` },
+        { '@type': 'ListItem', position: 4, name: 'ChatGPT', item: `${SITE}/services/aeo/chatgpt/` },
+      ],
+    },
+  ],
+};
+---
+<BaseLayout
+  title="ChatGPT Citation: Get Cited by Name in 900M Weekly Queries | Masterful"
+  description="Get your brand cited in ChatGPT answers. We build the entity signals, content structure, and third-party presence that earns ChatGPT citation by name."
+  path="/services/aeo/chatgpt/"
+  navActive="services"
+>
+  <script type="application/ld+json" slot="schema" set:html={JSON.stringify(graph)} />
+  <Breadcrumb items={[{ name: 'Home', href: '/' }, { name: 'Services', href: '/services/' }, { name: 'AEO', href: '/services/aeo/' }, { name: 'ChatGPT' }]} />
+
+  <main>
+  <section class="service-hero wrap">
+    <div class="kicker" style="margin-bottom:20px">AEO Subpage · ChatGPT Visibility</div>
+    <div class="sh-meta">
+      <span class="sh-meta-item">Minimum 3 months</span>
+      <span class="sh-meta-item">Flat retainer</span>
+    </div>
+    <h1 class="sh-headline">Cited by <em>ChatGPT</em>.</h1>
+    <p class="lead-body" style="max-width:640px;margin-bottom:32px">ChatGPT reaches around 900 million weekly active users. Your buyers ask it before they build a shortlist. If it does not name you, you are out of the running before the first sales conversation. ChatGPT decides who to name based on signals that have nothing to do with where you rank on Google.</p>
+    <p class="sh-tagline">ChatGPT favors Reddit, Wikipedia, and editorial publications. Most brands appear in none of them.</p>
+    <a href="/audit/" class="btn btn-orange">Run a free audit</a>
+  </section>
+
+  <section class="pillars wrap">
+    <div class="kicker" style="margin-bottom:32px">What We Build for ChatGPT <span class="kicker-num">/ 4</span></div>
+    <div class="pillar-grid">
+      <div class="pillar">
+        <h3>Inclusion</h3>
+        <p>Entity foundations. Organization schema, consistent brand data, Knowledge Graph presence. ChatGPT must identify your brand as distinct before it can cite you.</p>
+      </div>
+      <div class="pillar">
+        <h3>Targeting</h3>
+        <p>Prompt and query research. We map the phrasing buyers use when they ask ChatGPT about your category, then prioritize prompts that drive revenue.</p>
+      </div>
+      <div class="pillar">
+        <h3>Retrieval</h3>
+        <p>Content structured for extraction. Direct answers in the first third of every page. Q&amp;A formatting. Clean prose without inline-link clutter.</p>
+      </div>
+      <div class="pillar">
+        <h3>Authority</h3>
+        <p>Off-site presence. Branded mentions in the editorial, community, and reference sources ChatGPT already trusts.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="pillars wrap" data-reveal>
+    <div class="kicker" style="margin-bottom:32px">How ChatGPT decides what to cite <span class="kicker-num">/ 3</span></div>
+    <div class="pillar-grid">
+      <div class="pillar">
+        <h3>Community discussion</h3>
+        <p>Reddit threads, niche forums, and Hacker News conversations where real users name brands and compare options in their own words.</p>
+      </div>
+      <div class="pillar">
+        <h3>Reference sources</h3>
+        <p>Wikipedia, Wikidata, and structured directories that confirm a brand is a distinct, established entity.</p>
+      </div>
+      <div class="pillar">
+        <h3>Editorial media</h3>
+        <p>Industry publications, podcasts, and expert roundups that carry the topical credibility ChatGPT leans on.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap" style="padding:48px 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)" data-reveal>
+    <div class="kicker" style="margin-bottom:24px">Common questions about ChatGPT citation</div>
+    <div style="max-width:760px">
+      <details style="border-bottom:1px solid var(--rule);padding:20px 0">
+        <summary style="font-family:var(--serif);font-size:22px;line-height:1.3;cursor:pointer;color:var(--ink)">Why does my brand rank on Google but not show up in ChatGPT?</summary>
+        <p style="font-size:15px;line-height:1.65;color:var(--mute);margin-top:16px">The signals are different. Google rewards on-page optimization and backlinks. ChatGPT rewards branded mentions across the editorial and community web. A brand with a strong backlink profile and zero third-party discussion will rank in Google and remain invisible in ChatGPT.</p>
+      </details>
+      <details style="border-bottom:1px solid var(--rule);padding:20px 0">
+        <summary style="font-family:var(--serif);font-size:22px;line-height:1.3;cursor:pointer;color:var(--ink)">How fast can I expect to appear in ChatGPT after starting work?</summary>
+        <p style="font-size:15px;line-height:1.65;color:var(--mute);margin-top:16px">Citation work shows measurable mention-rate movement within 8 to 14 weeks, depending on existing third-party presence and category competitiveness. ChatGPT updates its retrieval index continuously, so changes compound rather than waiting on a refresh.</p>
+      </details>
+      <details style="padding:20px 0">
+        <summary style="font-family:var(--serif);font-size:22px;line-height:1.3;cursor:pointer;color:var(--ink)">Does Citation Architecture work for non-English queries?</summary>
+        <p style="font-size:15px;line-height:1.65;color:var(--mute);margin-top:16px">Yes. The signal categories are the same. The sources differ per language. We build citation density in the publications and communities ChatGPT trusts in the target language.</p>
+      </details>
+    </div>
+  </section>
+
+  <section class="wrap section-sm" data-reveal>
+    <div class="kicker" style="margin-bottom:24px">Other engines we optimize for</div>
+    <div class="grid-3" style="gap:0;border:1px solid var(--rule)">
+      <a href="/services/aeo/perplexity/" class="sector-cell">
+        <div class="classified-label">AEO</div>
+        <div class="classified-service">Perplexity</div>
+        <p class="classified-desc">Earn the sources Perplexity attributes next to its answers.</p>
+      </a>
+      <a href="/services/aeo/google-ai-overviews/" class="sector-cell">
+        <div class="classified-label">AEO</div>
+        <div class="classified-service">AI Overviews</div>
+        <p class="classified-desc">Appear above the blue links in Google AI Overviews.</p>
+      </a>
+      <a href="/services/aeo/gemini/" class="sector-cell">
+        <div class="classified-label">AEO</div>
+        <div class="classified-service">Gemini</div>
+        <p class="classified-desc">Show up across Google's 750M-user Gemini ecosystem.</p>
+      </a>
+      <a href="/services/aeo/copilot/" class="sector-cell">
+        <div class="classified-label">AEO</div>
+        <div class="classified-service">Copilot</div>
+        <p class="classified-desc">Be visible inside Microsoft 365, LinkedIn, and Edge.</p>
+      </a>
+      <a href="/services/aeo/claude/" class="sector-cell">
+        <div class="classified-label">AEO</div>
+        <div class="classified-service">Claude</div>
+        <p class="classified-desc">Earn citations from the model technical buyers trust.</p>
+      </a>
+      <a href="/services/aeo/" class="sector-cell">
+        <div class="classified-label">AEO</div>
+        <div class="classified-service">All engines</div>
+        <p class="classified-desc">The Citation Architecture method, across every major model.</p>
+      </a>
+    </div>
+    <div class="silo-links" style="margin-top:24px">
+      <a href="/services/aeo/" class="t-mono link-ul" style="font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:var(--orange)">← Back to AEO overview</a>
+    </div>
+  </section>
+
+  <section class="on-dark" style="padding:80px 32px;text-align:center">
+    <div class="wrap" style="max-width:600px">
+      <p style="font-size:15px;line-height:1.65;color:rgba(244,240,232,0.65);max-width:440px;margin:0 auto 24px">The free audit shows your current ChatGPT citation count across the prompts your buyers ask.</p>
+      <a href="/audit/" class="btn btn-orange">Run a free audit</a>
+    </div>
+  </section>
+  </main>
+</BaseLayout>

@@ -1,0 +1,165 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../../components/Breadcrumb.astro';
+const SITE = 'https://masterful-app.com';
+const graph = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Service',
+      name: 'Google AI Overviews Citation Optimization',
+      alternateName: 'AI Overviews AEO',
+      description:
+        'Citation optimization for Google AI Overviews. We build the entity signals and content depth that earn citation inside the Overview itself.',
+      provider: { '@type': 'ProfessionalService', '@id': `${SITE}/#organization`, name: 'Masterful', url: SITE },
+      serviceType: 'Answer Engine Optimization',
+      url: `${SITE}/services/aeo/google-ai-overviews/`,
+      areaServed: ['Kenya', 'Nigeria', 'South Africa', 'Egypt', 'United Arab Emirates', 'United Kingdom', 'United States'],
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: [
+        { '@type': 'Question', name: 'Will improving traditional SEO automatically improve AI Overview visibility?', acceptedAnswer: { '@type': 'Answer', text: 'Partially. Traditional SEO is the foundation. Without on-page topical authority and clean technical SEO, AI Overview placement is unlikely. Topping organic rankings does not guarantee Overview citation. The entity-clarity layer matters separately.' } },
+        { '@type': 'Question', name: 'How is AI Mode different from AI Overviews?', acceptedAnswer: { '@type': 'Answer', text: 'AI Mode is the dedicated chat experience inside Google Search. AI Overviews are the AI-generated answer box that appears above traditional results. They use overlapping but not identical retrieval systems. Citation overlap runs around 30 to 35 percent.' } },
+        { '@type': 'Question', name: 'Can I exclude my site from AI Overview citation?', acceptedAnswer: { '@type': 'Answer', text: 'Yes, via robots.txt directives and the nosnippet meta tag. Most brands would not choose to exclude themselves, since Overview citations drive significant downstream brand recognition even when click-through declines.' } },
+      ],
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` },
+        { '@type': 'ListItem', position: 2, name: 'Services', item: `${SITE}/services/` },
+        { '@type': 'ListItem', position: 3, name: 'AEO', item: `${SITE}/services/aeo/` },
+        { '@type': 'ListItem', position: 4, name: 'Google AI Overviews', item: `${SITE}/services/aeo/google-ai-overviews/` },
+      ],
+    },
+  ],
+};
+---
+<BaseLayout
+  title="Google AI Overviews Citation: Appear Above the Blue Links | Masterful"
+  description="When AI Overviews appear, organic clicks drop by more than half. We build the entity signals and content depth that earn citation inside the Overview itself."
+  path="/services/aeo/google-ai-overviews/"
+  navActive="services"
+>
+  <script type="application/ld+json" slot="schema" set:html={JSON.stringify(graph)} />
+  <Breadcrumb items={[{ name: 'Home', href: '/' }, { name: 'Services', href: '/services/' }, { name: 'AEO', href: '/services/aeo/' }, { name: 'Google AI Overviews' }]} />
+
+  <main>
+  <section class="service-hero wrap">
+    <div class="kicker" style="margin-bottom:20px">AEO Subpage · Google AI Overviews Visibility</div>
+    <div class="sh-meta">
+      <span class="sh-meta-item">Minimum 3 months</span>
+      <span class="sh-meta-item">Flat retainer</span>
+    </div>
+    <h1 class="sh-headline">Cited <em>above</em> the blue links.</h1>
+    <p class="lead-body" style="max-width:640px;margin-bottom:32px">When AI Overviews appear on a Google search result page, organic click-through drops by more than half. The brands cited inside the Overview keep most of the attention. AI Overviews mirror traditional Google ranking signals more closely than any other AI surface, which means strong SEO is the foundation, but not the whole picture.</p>
+    <p class="sh-tagline">Around 68% of US Google searches now end without a click.</p>
+    <a href="/audit/" class="btn btn-orange">Run a free audit</a>
+  </section>
+
+  <section class="pillars wrap">
+    <div class="kicker" style="margin-bottom:32px">What We Build for AI Overviews <span class="kicker-num">/ 4</span></div>
+    <div class="pillar-grid">
+      <div class="pillar">
+        <h3>Inclusion</h3>
+        <p>Entity foundations plus verified Knowledge Graph presence. Brands with confirmed entity status appear in AI Overviews at higher rates.</p>
+      </div>
+      <div class="pillar">
+        <h3>Targeting</h3>
+        <p>Query mapping for high-intent commercial searches where Overview placement compounds brand recognition.</p>
+      </div>
+      <div class="pillar">
+        <h3>Retrieval</h3>
+        <p>Top-of-page direct answers, supporting depth below the fold. AI Overviews lift the first third of trusted pages.</p>
+      </div>
+      <div class="pillar">
+        <h3>Authority</h3>
+        <p>Topical authority through editorial coverage and third-party validation. Aggregator content has lost ground in recent core updates.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="pillars wrap" data-reveal>
+    <div class="kicker" style="margin-bottom:32px">How Google AI Overviews decide what to cite <span class="kicker-num">/ 3</span></div>
+    <div class="pillar-grid">
+      <div class="pillar">
+        <h3>Top-ranking organic pages</h3>
+        <p>If you rank in the top three organically, you are likely cited in the Overview for the same query.</p>
+      </div>
+      <div class="pillar">
+        <h3>Brand-owned content with topical depth</h3>
+        <p>Long-form reference content the algorithm treats as an authoritative source on the category.</p>
+      </div>
+      <div class="pillar">
+        <h3>Verified entities</h3>
+        <p>Brands with confirmed Knowledge Graph entries and consistent schema across the web.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap" style="padding:48px 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)" data-reveal>
+    <div class="kicker" style="margin-bottom:24px">Common questions about Google AI Overviews citation</div>
+    <div style="max-width:760px">
+      <details style="border-bottom:1px solid var(--rule);padding:20px 0">
+        <summary style="font-family:var(--serif);font-size:22px;line-height:1.3;cursor:pointer;color:var(--ink)">Will improving traditional SEO automatically improve AI Overview visibility?</summary>
+        <p style="font-size:15px;line-height:1.65;color:var(--mute);margin-top:16px">Partially. Traditional SEO is the foundation. Without on-page topical authority and clean technical SEO, AI Overview placement is unlikely. Topping organic rankings does not guarantee Overview citation. The entity-clarity layer matters separately.</p>
+      </details>
+      <details style="border-bottom:1px solid var(--rule);padding:20px 0">
+        <summary style="font-family:var(--serif);font-size:22px;line-height:1.3;cursor:pointer;color:var(--ink)">How is AI Mode different from AI Overviews?</summary>
+        <p style="font-size:15px;line-height:1.65;color:var(--mute);margin-top:16px">AI Mode is the dedicated chat experience inside Google Search. AI Overviews are the AI-generated answer box that appears above traditional results. They use overlapping but not identical retrieval systems. Citation overlap runs around 30 to 35 percent.</p>
+      </details>
+      <details style="padding:20px 0">
+        <summary style="font-family:var(--serif);font-size:22px;line-height:1.3;cursor:pointer;color:var(--ink)">Can I exclude my site from AI Overview citation?</summary>
+        <p style="font-size:15px;line-height:1.65;color:var(--mute);margin-top:16px">Yes, via robots.txt directives and the nosnippet meta tag. Most brands would not choose to exclude themselves, since Overview citations drive significant downstream brand recognition even when click-through declines.</p>
+      </details>
+    </div>
+  </section>
+
+  <section class="wrap section-sm" data-reveal>
+    <div class="kicker" style="margin-bottom:24px">Other engines we optimize for</div>
+    <div class="grid-3" style="gap:0;border:1px solid var(--rule)">
+      <a href="/services/aeo/chatgpt/" class="sector-cell">
+        <div class="classified-label">AEO</div>
+        <div class="classified-service">ChatGPT</div>
+        <p class="classified-desc">Get cited in the model 900M people use weekly.</p>
+      </a>
+      <a href="/services/aeo/perplexity/" class="sector-cell">
+        <div class="classified-label">AEO</div>
+        <div class="classified-service">Perplexity</div>
+        <p class="classified-desc">Earn the sources Perplexity attributes next to its answers.</p>
+      </a>
+      <a href="/services/aeo/gemini/" class="sector-cell">
+        <div class="classified-label">AEO</div>
+        <div class="classified-service">Gemini</div>
+        <p class="classified-desc">Show up across Google's 750M-user Gemini ecosystem.</p>
+      </a>
+      <a href="/services/aeo/copilot/" class="sector-cell">
+        <div class="classified-label">AEO</div>
+        <div class="classified-service">Copilot</div>
+        <p class="classified-desc">Be visible inside Microsoft 365, LinkedIn, and Edge.</p>
+      </a>
+      <a href="/services/aeo/claude/" class="sector-cell">
+        <div class="classified-label">AEO</div>
+        <div class="classified-service">Claude</div>
+        <p class="classified-desc">Earn citations from the model technical buyers trust.</p>
+      </a>
+      <a href="/services/aeo/" class="sector-cell">
+        <div class="classified-label">AEO</div>
+        <div class="classified-service">All engines</div>
+        <p class="classified-desc">The Citation Architecture method, across every major model.</p>
+      </a>
+    </div>
+    <div class="silo-links" style="margin-top:24px">
+      <a href="/services/aeo/" class="t-mono link-ul" style="font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:var(--orange)">← Back to AEO overview</a>
+    </div>
+  </section>
+
+  <section class="on-dark" style="padding:80px 32px;text-align:center">
+    <div class="wrap" style="max-width:600px">
+      <p style="font-size:15px;line-height:1.65;color:rgba(244,240,232,0.65);max-width:440px;margin:0 auto 24px">The free audit shows whether AI Overviews cite you for your top commercial queries.</p>
+      <a href="/audit/" class="btn btn-orange">Run a free audit</a>
+    </div>
+  </section>
+  </main>
+</BaseLayout>
