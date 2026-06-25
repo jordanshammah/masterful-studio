@@ -1,0 +1,165 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../../components/Breadcrumb.astro';
+const SITE = 'https://masterful-app.com';
+const graph = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Service',
+      name: 'Claude Citation Optimization',
+      alternateName: 'Claude AEO',
+      description:
+        "Citation optimization for Anthropic's Claude. We build the verifiable expertise signals that earn Claude citation for technical and B2B buyers.",
+      provider: { '@type': 'ProfessionalService', '@id': `${SITE}/#organization`, name: 'Masterful', url: SITE },
+      serviceType: 'Answer Engine Optimization',
+      url: `${SITE}/services/aeo/claude/`,
+      areaServed: ['Kenya', 'Nigeria', 'South Africa', 'Egypt', 'United Arab Emirates', 'United Kingdom', 'United States'],
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: [
+        { '@type': 'Question', name: 'Why does Claude refuse to make recommendations sometimes?', acceptedAnswer: { '@type': 'Answer', text: 'Claude is trained to express uncertainty rather than guess. If it cannot verify a brand\'s claims or finds conflicting information, it will hedge rather than recommend. Building Claude visibility means building verifiable claims across high-trust sources.' } },
+        { '@type': 'Question', name: 'Does Claude prefer certain content formats?', acceptedAnswer: { '@type': 'Answer', text: 'Long-form content with clear structure, named authors, and citations to primary sources tends to earn Claude trust. Listicles and surface-level overviews rarely surface in Claude\'s answers.' } },
+        { '@type': 'Question', name: 'How important is E-E-A-T for Claude?', acceptedAnswer: { '@type': 'Answer', text: 'Critically important. Claude\'s training prioritizes signals of authentic expertise. Anonymous content rarely surfaces. Content authored by named experts with verifiable credentials does.' } },
+      ],
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` },
+        { '@type': 'ListItem', position: 2, name: 'Services', item: `${SITE}/services/` },
+        { '@type': 'ListItem', position: 3, name: 'AEO', item: `${SITE}/services/aeo/` },
+        { '@type': 'ListItem', position: 4, name: 'Claude', item: `${SITE}/services/aeo/claude/` },
+      ],
+    },
+  ],
+};
+---
+<BaseLayout
+  title="Claude Citation: Be the Brand Anthropic's AI Trusts | Masterful"
+  description="Claude is the AI of choice for technical and B2B buyers. We build the verifiable expertise signals that earn Claude citation."
+  path="/services/aeo/claude/"
+  navActive="services"
+>
+  <script type="application/ld+json" slot="schema" set:html={JSON.stringify(graph)} />
+  <Breadcrumb items={[{ name: 'Home', href: '/' }, { name: 'Services', href: '/services/' }, { name: 'AEO', href: '/services/aeo/' }, { name: 'Claude' }]} />
+
+  <main>
+  <section class="service-hero wrap">
+    <div class="kicker" style="margin-bottom:20px">AEO Subpage · Claude Visibility</div>
+    <div class="sh-meta">
+      <span class="sh-meta-item">Minimum 3 months</span>
+      <span class="sh-meta-item">Flat retainer</span>
+    </div>
+    <h1 class="sh-headline">Cited by <em>Claude</em>.</h1>
+    <p class="lead-body" style="max-width:640px;margin-bottom:32px">Claude is the AI of choice for technical and B2B buyers. If you sell to developers, engineers, or strategic decision-makers, Claude's recommendation carries weight where ChatGPT's may not. Claude refuses to recommend brands it cannot verify.</p>
+    <p class="sh-tagline">Claude favors primary sources, named authors, and traceable credentials.</p>
+    <a href="/audit/" class="btn btn-orange">Run a free audit</a>
+  </section>
+
+  <section class="pillars wrap">
+    <div class="kicker" style="margin-bottom:32px">What We Build for Claude <span class="kicker-num">/ 4</span></div>
+    <div class="pillar-grid">
+      <div class="pillar">
+        <h3>Inclusion</h3>
+        <p>Entity foundations with verified authorship. Anonymous content rarely surfaces in Claude.</p>
+      </div>
+      <div class="pillar">
+        <h3>Targeting</h3>
+        <p>Query mapping for Claude's higher-intent technical and strategic queries.</p>
+      </div>
+      <div class="pillar">
+        <h3>Retrieval</h3>
+        <p>Long-form content with depth, citations to primary sources, and clear authorial expertise.</p>
+      </div>
+      <div class="pillar">
+        <h3>Authority</h3>
+        <p>Original research, expert commentary, and presence in publications with editorial standards.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="pillars wrap" data-reveal>
+    <div class="kicker" style="margin-bottom:32px">How Claude decides what to cite <span class="kicker-num">/ 3</span></div>
+    <div class="pillar-grid">
+      <div class="pillar">
+        <h3>Primary sources</h3>
+        <p>Research papers, white papers, and technical documentation Claude treats as ground truth.</p>
+      </div>
+      <div class="pillar">
+        <h3>Established publications</h3>
+        <p>Long-running trade press and official news outlets with editorial standards.</p>
+      </div>
+      <div class="pillar">
+        <h3>Verified expert authorship</h3>
+        <p>Named authors with traceable credentials and a public body of work.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap" style="padding:48px 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)" data-reveal>
+    <div class="kicker" style="margin-bottom:24px">Common questions about Claude citation</div>
+    <div style="max-width:760px">
+      <details style="border-bottom:1px solid var(--rule);padding:20px 0">
+        <summary style="font-family:var(--serif);font-size:22px;line-height:1.3;cursor:pointer;color:var(--ink)">Why does Claude refuse to make recommendations sometimes?</summary>
+        <p style="font-size:15px;line-height:1.65;color:var(--mute);margin-top:16px">Claude is trained to express uncertainty rather than guess. If it cannot verify a brand's claims or finds conflicting information, it will hedge rather than recommend. Building Claude visibility means building verifiable claims across high-trust sources.</p>
+      </details>
+      <details style="border-bottom:1px solid var(--rule);padding:20px 0">
+        <summary style="font-family:var(--serif);font-size:22px;line-height:1.3;cursor:pointer;color:var(--ink)">Does Claude prefer certain content formats?</summary>
+        <p style="font-size:15px;line-height:1.65;color:var(--mute);margin-top:16px">Long-form content with clear structure, named authors, and citations to primary sources tends to earn Claude trust. Listicles and surface-level overviews rarely surface in Claude's answers.</p>
+      </details>
+      <details style="padding:20px 0">
+        <summary style="font-family:var(--serif);font-size:22px;line-height:1.3;cursor:pointer;color:var(--ink)">How important is E-E-A-T for Claude?</summary>
+        <p style="font-size:15px;line-height:1.65;color:var(--mute);margin-top:16px">Critically important. Claude's training prioritizes signals of authentic expertise. Anonymous content rarely surfaces. Content authored by named experts with verifiable credentials does.</p>
+      </details>
+    </div>
+  </section>
+
+  <section class="wrap section-sm" data-reveal>
+    <div class="kicker" style="margin-bottom:24px">Other engines we optimize for</div>
+    <div class="grid-3" style="gap:0;border:1px solid var(--rule)">
+      <a href="/services/aeo/chatgpt/" class="sector-cell">
+        <div class="classified-label">AEO</div>
+        <div class="classified-service">ChatGPT</div>
+        <p class="classified-desc">Get cited in the model 900M people use weekly.</p>
+      </a>
+      <a href="/services/aeo/perplexity/" class="sector-cell">
+        <div class="classified-label">AEO</div>
+        <div class="classified-service">Perplexity</div>
+        <p class="classified-desc">Earn the sources Perplexity attributes next to its answers.</p>
+      </a>
+      <a href="/services/aeo/google-ai-overviews/" class="sector-cell">
+        <div class="classified-label">AEO</div>
+        <div class="classified-service">AI Overviews</div>
+        <p class="classified-desc">Appear above the blue links in Google AI Overviews.</p>
+      </a>
+      <a href="/services/aeo/gemini/" class="sector-cell">
+        <div class="classified-label">AEO</div>
+        <div class="classified-service">Gemini</div>
+        <p class="classified-desc">Show up across Google's 750M-user Gemini ecosystem.</p>
+      </a>
+      <a href="/services/aeo/copilot/" class="sector-cell">
+        <div class="classified-label">AEO</div>
+        <div class="classified-service">Copilot</div>
+        <p class="classified-desc">Be visible inside Microsoft 365, LinkedIn, and Edge.</p>
+      </a>
+      <a href="/services/aeo/" class="sector-cell">
+        <div class="classified-label">AEO</div>
+        <div class="classified-service">All engines</div>
+        <p class="classified-desc">The Citation Architecture method, across every major model.</p>
+      </a>
+    </div>
+    <div class="silo-links" style="margin-top:24px">
+      <a href="/services/aeo/" class="t-mono link-ul" style="font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:var(--orange)">← Back to AEO overview</a>
+    </div>
+  </section>
+
+  <section class="on-dark" style="padding:80px 32px;text-align:center">
+    <div class="wrap" style="max-width:600px">
+      <p style="font-size:15px;line-height:1.65;color:rgba(244,240,232,0.65);max-width:440px;margin:0 auto 24px">The free audit shows whether Claude recommends you for the technical queries your buyers ask.</p>
+      <a href="/audit/" class="btn btn-orange">Run a free audit</a>
+    </div>
+  </section>
+  </main>
+</BaseLayout>

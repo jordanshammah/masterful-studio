@@ -1,0 +1,165 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../../components/Breadcrumb.astro';
+const SITE = 'https://masterful-app.com';
+const graph = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Service',
+      name: 'Gemini Citation Optimization',
+      alternateName: 'Gemini AEO',
+      description:
+        'Citation optimization for Google Gemini. We build the visibility that surfaces across AI Overviews, the standalone Gemini app, and Workspace integrations.',
+      provider: { '@type': 'ProfessionalService', '@id': `${SITE}/#organization`, name: 'Masterful', url: SITE },
+      serviceType: 'Answer Engine Optimization',
+      url: `${SITE}/services/aeo/gemini/`,
+      areaServed: ['Kenya', 'Nigeria', 'South Africa', 'Egypt', 'United Arab Emirates', 'United Kingdom', 'United States'],
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: [
+        { '@type': 'Question', name: 'If I optimize for AI Overviews, do I also win in Gemini?', acceptedAnswer: { '@type': 'Answer', text: 'Largely yes. The underlying model is the same. The retrieval surfaces differ slightly. The signal categories overlap above 70 percent.' } },
+        { '@type': 'Question', name: 'Does Gemini favor Google-properties content like YouTube and Google Business Profile?', acceptedAnswer: { '@type': 'Answer', text: 'There is a measurable preference, particularly for product reviews on YouTube and verified Google Business Profiles for local queries. Brands with active presence on Google-owned surfaces have a small but real edge.' } },
+        { '@type': 'Question', name: 'How does Gemini\'s training cutoff affect visibility?', acceptedAnswer: { '@type': 'Answer', text: 'Gemini retrieves real-time data through its search integration, so training cutoff matters less than for offline models. Recently published content can appear in Gemini answers within days.' } },
+      ],
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` },
+        { '@type': 'ListItem', position: 2, name: 'Services', item: `${SITE}/services/` },
+        { '@type': 'ListItem', position: 3, name: 'AEO', item: `${SITE}/services/aeo/` },
+        { '@type': 'ListItem', position: 4, name: 'Gemini', item: `${SITE}/services/aeo/gemini/` },
+      ],
+    },
+  ],
+};
+---
+<BaseLayout
+  title="Gemini Citation: Be the Brand Google's AI Recommends | Masterful"
+  description="Gemini powers Google's AI Overviews, the standalone Gemini app, and Workspace integrations. We build the visibility that surfaces across all three."
+  path="/services/aeo/gemini/"
+  navActive="services"
+>
+  <script type="application/ld+json" slot="schema" set:html={JSON.stringify(graph)} />
+  <Breadcrumb items={[{ name: 'Home', href: '/' }, { name: 'Services', href: '/services/' }, { name: 'AEO', href: '/services/aeo/' }, { name: 'Gemini' }]} />
+
+  <main>
+  <section class="service-hero wrap">
+    <div class="kicker" style="margin-bottom:20px">AEO Subpage · Gemini Visibility</div>
+    <div class="sh-meta">
+      <span class="sh-meta-item">Minimum 3 months</span>
+      <span class="sh-meta-item">Flat retainer</span>
+    </div>
+    <h1 class="sh-headline">Cited by <em>Gemini</em>.</h1>
+    <p class="lead-body" style="max-width:640px;margin-bottom:32px">Gemini powers Google's AI Overviews, the standalone Gemini app, and Workspace integrations. The same answer appears across every Google surface. If Gemini does not name you, you disappear from the Google ecosystem at the exact moment buyers are forming opinions.</p>
+    <p class="sh-tagline">The Gemini app crossed 750 million monthly active users in Q1 2026.</p>
+    <a href="/audit/" class="btn btn-orange">Run a free audit</a>
+  </section>
+
+  <section class="pillars wrap">
+    <div class="kicker" style="margin-bottom:32px">What We Build for Gemini <span class="kicker-num">/ 4</span></div>
+    <div class="pillar-grid">
+      <div class="pillar">
+        <h3>Inclusion</h3>
+        <p>Entity foundations with emphasis on official documentation and verified Google Business Profile data.</p>
+      </div>
+      <div class="pillar">
+        <h3>Targeting</h3>
+        <p>Prompt research for Workspace-context queries and consumer-context queries. The same model answers differently across surfaces.</p>
+      </div>
+      <div class="pillar">
+        <h3>Retrieval</h3>
+        <p>Recent, well-structured content. Gemini favors freshness more than other engines.</p>
+      </div>
+      <div class="pillar">
+        <h3>Authority</h3>
+        <p>Established brand domains, official documentation, and presence on Google-owned surfaces like YouTube reviews and Google Business Profile.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="pillars wrap" data-reveal>
+    <div class="kicker" style="margin-bottom:32px">How Gemini decides what to cite <span class="kicker-num">/ 3</span></div>
+    <div class="pillar-grid">
+      <div class="pillar">
+        <h3>Established brand domains</h3>
+        <p>Corporate sites with deep topical coverage and consistent identity across the web.</p>
+      </div>
+      <div class="pillar">
+        <h3>Official documentation</h3>
+        <p>Product docs, support knowledge bases, and verified support articles.</p>
+      </div>
+      <div class="pillar">
+        <h3>Recently updated authority content</h3>
+        <p>Content republished or refreshed in the last 90 days surfaces at higher rates.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap" style="padding:48px 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)" data-reveal>
+    <div class="kicker" style="margin-bottom:24px">Common questions about Gemini citation</div>
+    <div style="max-width:760px">
+      <details style="border-bottom:1px solid var(--rule);padding:20px 0">
+        <summary style="font-family:var(--serif);font-size:22px;line-height:1.3;cursor:pointer;color:var(--ink)">If I optimize for AI Overviews, do I also win in Gemini?</summary>
+        <p style="font-size:15px;line-height:1.65;color:var(--mute);margin-top:16px">Largely yes. The underlying model is the same. The retrieval surfaces differ slightly. The signal categories overlap above 70 percent.</p>
+      </details>
+      <details style="border-bottom:1px solid var(--rule);padding:20px 0">
+        <summary style="font-family:var(--serif);font-size:22px;line-height:1.3;cursor:pointer;color:var(--ink)">Does Gemini favor Google-properties content like YouTube and Google Business Profile?</summary>
+        <p style="font-size:15px;line-height:1.65;color:var(--mute);margin-top:16px">There is a measurable preference, particularly for product reviews on YouTube and verified Google Business Profiles for local queries. Brands with active presence on Google-owned surfaces have a small but real edge.</p>
+      </details>
+      <details style="padding:20px 0">
+        <summary style="font-family:var(--serif);font-size:22px;line-height:1.3;cursor:pointer;color:var(--ink)">How does Gemini's training cutoff affect visibility?</summary>
+        <p style="font-size:15px;line-height:1.65;color:var(--mute);margin-top:16px">Gemini retrieves real-time data through its search integration, so training cutoff matters less than for offline models. Recently published content can appear in Gemini answers within days.</p>
+      </details>
+    </div>
+  </section>
+
+  <section class="wrap section-sm" data-reveal>
+    <div class="kicker" style="margin-bottom:24px">Other engines we optimize for</div>
+    <div class="grid-3" style="gap:0;border:1px solid var(--rule)">
+      <a href="/services/aeo/chatgpt/" class="sector-cell">
+        <div class="classified-label">AEO</div>
+        <div class="classified-service">ChatGPT</div>
+        <p class="classified-desc">Get cited in the model 900M people use weekly.</p>
+      </a>
+      <a href="/services/aeo/perplexity/" class="sector-cell">
+        <div class="classified-label">AEO</div>
+        <div class="classified-service">Perplexity</div>
+        <p class="classified-desc">Earn the sources Perplexity attributes next to its answers.</p>
+      </a>
+      <a href="/services/aeo/google-ai-overviews/" class="sector-cell">
+        <div class="classified-label">AEO</div>
+        <div class="classified-service">AI Overviews</div>
+        <p class="classified-desc">Appear above the blue links in Google AI Overviews.</p>
+      </a>
+      <a href="/services/aeo/copilot/" class="sector-cell">
+        <div class="classified-label">AEO</div>
+        <div class="classified-service">Copilot</div>
+        <p class="classified-desc">Be visible inside Microsoft 365, LinkedIn, and Edge.</p>
+      </a>
+      <a href="/services/aeo/claude/" class="sector-cell">
+        <div class="classified-label">AEO</div>
+        <div class="classified-service">Claude</div>
+        <p class="classified-desc">Earn citations from the model technical buyers trust.</p>
+      </a>
+      <a href="/services/aeo/" class="sector-cell">
+        <div class="classified-label">AEO</div>
+        <div class="classified-service">All engines</div>
+        <p class="classified-desc">The Citation Architecture method, across every major model.</p>
+      </a>
+    </div>
+    <div class="silo-links" style="margin-top:24px">
+      <a href="/services/aeo/" class="t-mono link-ul" style="font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:var(--orange)">← Back to AEO overview</a>
+    </div>
+  </section>
+
+  <section class="on-dark" style="padding:80px 32px;text-align:center">
+    <div class="wrap" style="max-width:600px">
+      <p style="font-size:15px;line-height:1.65;color:rgba(244,240,232,0.65);max-width:440px;margin:0 auto 24px">The free audit shows where Gemini cites you across the Google ecosystem.</p>
+      <a href="/audit/" class="btn btn-orange">Run a free audit</a>
+    </div>
+  </section>
+  </main>
+</BaseLayout>

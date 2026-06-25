@@ -1,0 +1,165 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../../components/Breadcrumb.astro';
+const SITE = 'https://masterful-app.com';
+const graph = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Service',
+      name: 'Microsoft Copilot Citation Optimization',
+      alternateName: 'Copilot AEO',
+      description:
+        'Citation optimization for Microsoft Copilot. We build the LinkedIn and Microsoft-adjacent presence that earns Copilot citation across Microsoft 365, Edge, Windows, and LinkedIn.',
+      provider: { '@type': 'ProfessionalService', '@id': `${SITE}/#organization`, name: 'Masterful', url: SITE },
+      serviceType: 'Answer Engine Optimization',
+      url: `${SITE}/services/aeo/copilot/`,
+      areaServed: ['Kenya', 'Nigeria', 'South Africa', 'Egypt', 'United Arab Emirates', 'United Kingdom', 'United States'],
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: [
+        { '@type': 'Question', name: 'Do I need a separate strategy for Bing to win in Copilot?', acceptedAnswer: { '@type': 'Answer', text: 'Some attention to Bing indexation is required, but not a separate strategy. Submitting sitemaps to Bing Webmaster Tools and ensuring crawlability addresses most gaps. The bigger lever is LinkedIn content density.' } },
+        { '@type': 'Question', name: 'How important is LinkedIn for Copilot visibility?', acceptedAnswer: { '@type': 'Answer', text: 'Materially important. LinkedIn-published thought leadership from your team members, especially long-form posts and articles, surfaces in Copilot at notably higher rates than equivalent content on your blog.' } },
+        { '@type': 'Question', name: 'Does Copilot work the same way across all Microsoft surfaces?', acceptedAnswer: { '@type': 'Answer', text: 'The underlying model is consistent but the retrieval context differs. Copilot in Outlook biases toward recent emails and contacts. Copilot in Edge biases toward open tabs and recently visited sites. Brand visibility moves with intent context.' } },
+      ],
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` },
+        { '@type': 'ListItem', position: 2, name: 'Services', item: `${SITE}/services/` },
+        { '@type': 'ListItem', position: 3, name: 'AEO', item: `${SITE}/services/aeo/` },
+        { '@type': 'ListItem', position: 4, name: 'Copilot', item: `${SITE}/services/aeo/copilot/` },
+      ],
+    },
+  ],
+};
+---
+<BaseLayout
+  title="Microsoft Copilot Citation: Be Visible Inside the Microsoft Ecosystem | Masterful"
+  description="Copilot lives inside Microsoft 365, Edge, Windows, and LinkedIn. We build the LinkedIn and Microsoft-adjacent presence that earns Copilot citation."
+  path="/services/aeo/copilot/"
+  navActive="services"
+>
+  <script type="application/ld+json" slot="schema" set:html={JSON.stringify(graph)} />
+  <Breadcrumb items={[{ name: 'Home', href: '/' }, { name: 'Services', href: '/services/' }, { name: 'AEO', href: '/services/aeo/' }, { name: 'Copilot' }]} />
+
+  <main>
+  <section class="service-hero wrap">
+    <div class="kicker" style="margin-bottom:20px">AEO Subpage · Microsoft Copilot Visibility</div>
+    <div class="sh-meta">
+      <span class="sh-meta-item">Minimum 3 months</span>
+      <span class="sh-meta-item">Flat retainer</span>
+    </div>
+    <h1 class="sh-headline">Cited by <em>Copilot</em>.</h1>
+    <p class="lead-body" style="max-width:640px;margin-bottom:32px">Microsoft Copilot lives inside Microsoft 365, Edge, Windows, and LinkedIn. Buyers researching during their workday are inside Microsoft's surfaces. If Copilot does not name you, the discovery moment passes you by while they switch context.</p>
+    <p class="sh-tagline">For B2B queries, Copilot weights LinkedIn-published content at roughly 3x the rate of general web content.</p>
+    <a href="/audit/" class="btn btn-orange">Run a free audit</a>
+  </section>
+
+  <section class="pillars wrap">
+    <div class="kicker" style="margin-bottom:32px">What We Build for Copilot <span class="kicker-num">/ 4</span></div>
+    <div class="pillar-grid">
+      <div class="pillar">
+        <h3>Inclusion</h3>
+        <p>Entity foundations plus Bing indexation. Brands missing from Bing are invisible to Copilot.</p>
+      </div>
+      <div class="pillar">
+        <h3>Targeting</h3>
+        <p>Workplace-context queries are different from consumer queries. We map both.</p>
+      </div>
+      <div class="pillar">
+        <h3>Retrieval</h3>
+        <p>LinkedIn long-form content, Microsoft Learn, GitHub READMEs, and B2B trade press.</p>
+      </div>
+      <div class="pillar">
+        <h3>Authority</h3>
+        <p>LinkedIn employee posts, company-page activity, and Microsoft-adjacent property presence.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="pillars wrap" data-reveal>
+    <div class="kicker" style="margin-bottom:32px">How Copilot decides what to cite <span class="kicker-num">/ 3</span></div>
+    <div class="pillar-grid">
+      <div class="pillar">
+        <h3>LinkedIn</h3>
+        <p>Long-form posts, articles, and company-page activity. LinkedIn content surfaces in Copilot at notably higher rates than equivalent content published only on your blog.</p>
+      </div>
+      <div class="pillar">
+        <h3>Microsoft-adjacent properties</h3>
+        <p>GitHub, MSN, Microsoft Learn, and Stack Overflow.</p>
+      </div>
+      <div class="pillar">
+        <h3>B2B trade publications</h3>
+        <p>Industry-specific media that Bing indexes and weights highly.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap" style="padding:48px 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)" data-reveal>
+    <div class="kicker" style="margin-bottom:24px">Common questions about Copilot citation</div>
+    <div style="max-width:760px">
+      <details style="border-bottom:1px solid var(--rule);padding:20px 0">
+        <summary style="font-family:var(--serif);font-size:22px;line-height:1.3;cursor:pointer;color:var(--ink)">Do I need a separate strategy for Bing to win in Copilot?</summary>
+        <p style="font-size:15px;line-height:1.65;color:var(--mute);margin-top:16px">Some attention to Bing indexation is required, but not a separate strategy. Submitting sitemaps to Bing Webmaster Tools and ensuring crawlability addresses most gaps. The bigger lever is LinkedIn content density.</p>
+      </details>
+      <details style="border-bottom:1px solid var(--rule);padding:20px 0">
+        <summary style="font-family:var(--serif);font-size:22px;line-height:1.3;cursor:pointer;color:var(--ink)">How important is LinkedIn for Copilot visibility?</summary>
+        <p style="font-size:15px;line-height:1.65;color:var(--mute);margin-top:16px">Materially important. LinkedIn-published thought leadership from your team members, especially long-form posts and articles, surfaces in Copilot at notably higher rates than equivalent content on your blog.</p>
+      </details>
+      <details style="padding:20px 0">
+        <summary style="font-family:var(--serif);font-size:22px;line-height:1.3;cursor:pointer;color:var(--ink)">Does Copilot work the same way across all Microsoft surfaces?</summary>
+        <p style="font-size:15px;line-height:1.65;color:var(--mute);margin-top:16px">The underlying model is consistent but the retrieval context differs. Copilot in Outlook biases toward recent emails and contacts. Copilot in Edge biases toward open tabs and recently visited sites. Brand visibility moves with intent context.</p>
+      </details>
+    </div>
+  </section>
+
+  <section class="wrap section-sm" data-reveal>
+    <div class="kicker" style="margin-bottom:24px">Other engines we optimize for</div>
+    <div class="grid-3" style="gap:0;border:1px solid var(--rule)">
+      <a href="/services/aeo/chatgpt/" class="sector-cell">
+        <div class="classified-label">AEO</div>
+        <div class="classified-service">ChatGPT</div>
+        <p class="classified-desc">Get cited in the model 900M people use weekly.</p>
+      </a>
+      <a href="/services/aeo/perplexity/" class="sector-cell">
+        <div class="classified-label">AEO</div>
+        <div class="classified-service">Perplexity</div>
+        <p class="classified-desc">Earn the sources Perplexity attributes next to its answers.</p>
+      </a>
+      <a href="/services/aeo/google-ai-overviews/" class="sector-cell">
+        <div class="classified-label">AEO</div>
+        <div class="classified-service">AI Overviews</div>
+        <p class="classified-desc">Appear above the blue links in Google AI Overviews.</p>
+      </a>
+      <a href="/services/aeo/gemini/" class="sector-cell">
+        <div class="classified-label">AEO</div>
+        <div class="classified-service">Gemini</div>
+        <p class="classified-desc">Show up across Google's 750M-user Gemini ecosystem.</p>
+      </a>
+      <a href="/services/aeo/claude/" class="sector-cell">
+        <div class="classified-label">AEO</div>
+        <div class="classified-service">Claude</div>
+        <p class="classified-desc">Earn citations from the model technical buyers trust.</p>
+      </a>
+      <a href="/services/aeo/" class="sector-cell">
+        <div class="classified-label">AEO</div>
+        <div class="classified-service">All engines</div>
+        <p class="classified-desc">The Citation Architecture method, across every major model.</p>
+      </a>
+    </div>
+    <div class="silo-links" style="margin-top:24px">
+      <a href="/services/aeo/" class="t-mono link-ul" style="font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:var(--orange)">← Back to AEO overview</a>
+    </div>
+  </section>
+
+  <section class="on-dark" style="padding:80px 32px;text-align:center">
+    <div class="wrap" style="max-width:600px">
+      <p style="font-size:15px;line-height:1.65;color:rgba(244,240,232,0.65);max-width:440px;margin:0 auto 24px">The free audit shows your Copilot citation footprint across Microsoft 365 and LinkedIn.</p>
+      <a href="/audit/" class="btn btn-orange">Run a free audit</a>
+    </div>
+  </section>
+  </main>
+</BaseLayout>
